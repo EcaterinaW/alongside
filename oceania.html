@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Financial Support — Australia & Oceania | Alongside</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #F2ECDD;
+      --light: #FAF8F5;
+      --green: #536B52;
+      --gold: #B4A276;
+      --text: #1D1D1A;
+      --muted: #5C5A54;
+      --border: #D9D1C1;
+      --quote: #EEE5D3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: "Lato", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      max-width: 1180px;
+      margin: auto;
+      padding: 28px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+    }
+
+    nav a {
+      color: var(--muted);
+      transition: 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--green);
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: auto;
+      padding: 90px 32px 80px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(48px, 7vw, 78px);
+      line-height: 0.95;
+      font-weight: 600;
+      max-width: 800px;
+      margin-bottom: 28px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .resources-section {
+      background: var(--light);
+      padding: 85px 32px;
+    }
+
+    .resources-inner {
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .section-label {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 48px;
+      line-height: 1;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      max-width: 680px;
+      color: var(--muted);
+      margin-bottom: 50px;
+    }
+
+    .resource {
+      display: grid;
+      grid-template-columns: 55px 1fr 150px;
+      gap: 28px;
+      align-items: start;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .resource-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 24px;
+      color: var(--gold);
+      padding-top: 2px;
+    }
+
+    .resource-info h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 29px;
+      line-height: 1.1;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .resource-info p {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 17px;
+    }
+
+    .resource-button {
+      display: inline-block;
+      border: 1px solid var(--green);
+      color: var(--green);
+      border-radius: 50px;
+      padding: 9px 17px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .resource-button:hover {
+      background: var(--green);
+      color: var(--light);
+    }
+
+    .location {
+      text-align: right;
+      padding-top: 5px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .note {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 70px 32px;
+    }
+
+    .note-box {
+      background: var(--quote);
+      padding: 38px 42px;
+      border-radius: 16px;
+    }
+
+    .note-box h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .note-box p {
+      color: var(--muted);
+      max-width: 800px;
+      font-size: 14px;
+    }
+
+    .closing {
+      max-width: 1180px;
+      margin: auto;
+      padding: 70px 32px 100px;
+      text-align: center;
+    }
+
+    .closing p:first-child {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .closing h2 {
+      max-width: 650px;
+      margin: auto;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 32px;
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 750px) {
+      header {
+        padding: 22px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 12px 18px;
+      }
+
+      .hero {
+        padding: 65px 20px 60px;
+      }
+
+      .resources-section {
+        padding: 65px 20px;
+      }
+
+      h2 {
+        font-size: 40px;
+      }
+
+      .resource {
+        grid-template-columns: 40px 1fr;
+        gap: 18px;
+        padding: 28px 0;
+      }
+
+      .resource-info {
+        grid-column: 2;
+      }
+
+      .location {
+        grid-column: 2;
+        text-align: left;
+        padding-top: 0;
+        margin-top: -4px;
+      }
+
+      .note {
+        padding: 55px 20px;
+      }
+
+      .note-box {
+        padding: 28px 25px;
+      }
+
+      .closing {
+        padding: 55px 20px 75px;
+      }
+
+      footer {
+        padding: 25px 20px;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html" class="logo">Alongside ♡</a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="financial-support.html" class="active">Financial Support</a>
+      <a href="psychological-support.html">Psychological Support</a>
+      <a href="about.html">About Website</a>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <section class="hero">
+      <div class="eyebrow">FINANCIAL SUPPORT · AUSTRALIA & OCEANIA</div>
+
+      <h1>Support for families across Australia & Oceania.</h1>
+
+      <p>
+        These organisations provide financial, practical, accommodation,
+        emotional, or family support for children and young people affected
+        by cancer and the people caring for them.
+      </p>
+    </section>
+
+
+    <section class="resources-section">
+
+      <div class="resources-inner">
+
+        <div class="section-label">FIND SUPPORT</div>
+
+        <h2>Resources for families.</h2>
+
+        <p class="section-intro">
+          Explore organisations across Australia and New Zealand that may
+          help families manage some of the practical and financial challenges
+          that can come with childhood cancer.
+        </p>
+
+
+        <!-- 01 -->
+
+        <div class="resource">
+
+          <div class="resource-number">01</div>
+
+          <div class="resource-info">
+
+            <h3>Redkite</h3>
+
+            <p>
+              Provides financial assistance to families caring for a child
+              with cancer, including help with rent, mortgage, groceries,
+              petrol, electricity, phone bills, car costs and treatment-related
+              accommodation.
+            </p>
+
+            <a
+              href="https://www.redkite.org.au/service/financial-assistance-program/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Redkite →
+            </a>
+
+          </div>
+
+          <div class="location">Australia</div>
+
+        </div>
+
+
+        <!-- 02 -->
+
+        <div class="resource">
+
+          <div class="resource-number">02</div>
+
+          <div class="resource-info">
+
+            <h3>Kids With Cancer Foundation Australia</h3>
+
+            <p>
+              Offers financial assistance for families of children aged
+              0–18 receiving treatment for cancer, helping with household
+              bills, rent or mortgage, groceries, petrol, car expenses,
+              phone and internet costs, and other essential expenses.
+            </p>
+
+            <a
+              href="https://kidswithcancer.org.au/financial-assistance-for-families/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Kids With Cancer Foundation Australia →
+            </a>
+
+          </div>
+
+          <div class="location">Australia</div>
+
+        </div>
+
+
+        <!-- 03 -->
+
+        <div class="resource">
+
+          <div class="resource-number">03</div>
+
+          <div class="resource-info">
+
+            <h3>Childhood Cancer Association</h3>
+
+            <p>
+              Supports children with cancer and their families in South
+              Australia and the Northern Territory through financial
+              assistance, accommodation, counselling, education and practical
+              family support.
+            </p>
+
+            <a
+              href="https://childhoodcancer.asn.au/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Childhood Cancer Association →
+            </a>
+
+          </div>
+
+          <div class="location">Australia<br>South Australia</div>
+
+        </div>
+
+
+        <!-- 04 -->
+
+        <div class="resource">
+
+          <div class="resource-number">04</div>
+
+          <div class="resource-info">
+
+            <h3>Camp Quality</h3>
+
+            <p>
+              Provides free camps, family experiences, counselling and other
+              support programs for children and families affected by cancer,
+              helping families reconnect and cope throughout the cancer journey.
+            </p>
+
+            <a
+              href="https://www.campquality.org.au/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Camp Quality →
+            </a>
+
+          </div>
+
+          <div class="location">Australia</div>
+
+        </div>
+
+
+        <!-- 05 -->
+
+        <div class="resource">
+
+          <div class="resource-number">05</div>
+
+          <div class="resource-info">
+
+            <h3>Canteen Australia</h3>
+
+            <p>
+              Provides free support for young people aged 12–25 affected by
+              cancer, including counselling, peer support, information and
+              practical resources for young people and their families.
+            </p>
+
+            <a
+              href="https://www.canteen.org.au/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Canteen Australia →
+            </a>
+
+          </div>
+
+          <div class="location">Australia</div>
+
+        </div>
+
+
+        <!-- 06 -->
+
+        <div class="resource">
+
+          <div class="resource-number">06</div>
+
+          <div class="resource-info">
+
+            <h3>Neuroblastoma Australia</h3>
+
+            <p>
+              Supports families affected by childhood neuroblastoma through
+              professionally facilitated family support groups and connections
+              with other parents who understand the experience.
+            </p>
+
+            <a
+              href="https://www.neuroblastoma.org.au/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Neuroblastoma Australia →
+            </a>
+
+          </div>
+
+          <div class="location">Australia</div>
+
+        </div>
+
+
+        <!-- 07 -->
+
+        <div class="resource">
+
+          <div class="resource-number">07</div>
+
+          <div class="resource-info">
+
+            <h3>Children’s Cancer Foundation</h3>
+
+            <p>
+              Funds clinical care, support services and practical family
+              programs for children and families affected by cancer across
+              Australia, alongside investment in childhood cancer research
+              and treatment.
+            </p>
+
+            <a
+              href="https://www.childrenscancerfoundation.com.au/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Children’s Cancer Foundation →
+            </a>
+
+          </div>
+
+          <div class="location">Australia</div>
+
+        </div>
+
+
+        <!-- 08 -->
+
+        <div class="resource">
+
+          <div class="resource-number">08</div>
+
+          <div class="resource-info">
+
+            <h3>Ronald McDonald House Charities Australia</h3>
+
+            <p>
+              Helps families stay close to a child receiving hospital care by
+              providing accommodation, meals, family spaces and practical
+              support near hospitals across Australia.
+            </p>
+
+            <a
+              href="https://ronaldmcdonaldhouse.org.au/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Ronald McDonald House Charities Australia →
+            </a>
+
+          </div>
+
+          <div class="location">Australia</div>
+
+        </div>
+
+
+        <!-- 09 -->
+
+        <div class="resource">
+
+          <div class="resource-number">09</div>
+
+          <div class="resource-info">
+
+            <h3>Cancer Council Australia</h3>
+
+            <p>
+              Provides national information and support around the financial
+              and practical costs of cancer, including guidance on travel,
+              accommodation, financial assistance and other services available
+              to people affected by cancer and their carers.
+            </p>
+
+            <a
+              href="https://www.cancer.org.au/support-and-services/financial-assistance"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Cancer Council Australia →
+            </a>
+
+          </div>
+
+          <div class="location">Australia</div>
+
+        </div>
+
+
+        <!-- 10 -->
+
+        <div class="resource">
+
+          <div class="resource-number">10</div>
+
+          <div class="resource-info">
+
+            <h3>Child Cancer Foundation</h3>
+
+            <p>
+              Provides emotional, social and financial support to children
+              with cancer and their families throughout New Zealand, including
+              family support services and personal development grants.
+            </p>
+
+            <a
+              href="https://childcancer.org.nz/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Child Cancer Foundation →
+            </a>
+
+          </div>
+
+          <div class="location">New Zealand</div>
+
+        </div>
+
+
+        <!-- 11 -->
+
+        <div class="resource">
+
+          <div class="resource-number">11</div>
+
+          <div class="resource-info">
+
+            <h3>Ronald McDonald House Charities New Zealand</h3>
+
+            <p>
+              Provides accommodation and family support for families whose
+              children are receiving medical treatment away from home, helping
+              families stay together during their child’s medical journey.
+            </p>
+
+            <a
+              href="https://www.rmhc.org.nz/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Ronald McDonald House Charities New Zealand →
+            </a>
+
+          </div>
+
+          <div class="location">New Zealand</div>
+
+        </div>
+
+
+        <!-- 12 -->
+
+        <div class="resource">
+
+          <div class="resource-number">12</div>
+
+          <div class="resource-info">
+
+            <h3>Cancer Society New Zealand</h3>
+
+            <p>
+              Offers support to people with cancer and their families,
+              including counselling, practical support, transport to treatment,
+              information and help navigating the challenges that come with
+              cancer.
+            </p>
+
+            <a
+              href="https://www.cancer.org.nz/how-we-can-help/support-we-offer/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Cancer Society New Zealand →
+            </a>
+
+          </div>
+
+          <div class="location">New Zealand</div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="note">
+
+      <div class="note-box">
+
+        <h3>A note about financial assistance</h3>
+
+        <p>
+          Eligibility, application procedures and available services can
+          change. Some organisations may require confirmation from a hospital,
+          healthcare professional or social worker. Always check the
+          organisation’s official website for the most current information
+          before applying.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="closing">
+
+      <p>YOU DON'T HAVE TO NAVIGATE THIS ALONE</p>
+
+      <h2>
+        Finding the right support can make the journey a little lighter.
+      </h2>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div>© 2026 Alongside</div>
+
+    <div>Families are stronger together.</div>
+
+  </footer>
+
+</body>
+</html>
