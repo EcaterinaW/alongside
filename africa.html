@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Africa — Alongside</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -141,6 +142,8 @@
       font-size: 16px;
     }
 
+    /* RESOURCE ROW */
+
     .resource {
       display: grid;
       grid-template-columns: 55px 1fr 150px;
@@ -171,19 +174,19 @@
       font-size: 15px;
       line-height: 1.7;
       max-width: 650px;
+      margin-bottom: 17px;
     }
 
     .resource-button {
-      justify-self: end;
+      display: inline-block;
       border: 1px solid var(--green);
       color: var(--green);
       border-radius: 999px;
-      padding: 10px 17px;
+      padding: 9px 17px;
       font-size: 13px;
       font-weight: 600;
       white-space: nowrap;
       transition: all 0.2s ease;
-      margin-top: 2px;
     }
 
     .resource-button:hover {
@@ -196,7 +199,7 @@
       font-size: 12px;
       letter-spacing: 0.5px;
       text-align: right;
-      margin-top: 10px;
+      padding-top: 5px;
     }
 
     .note {
@@ -292,14 +295,14 @@
         padding: 28px 0;
       }
 
-      .resource-button {
+      .resource-info {
         grid-column: 2;
-        justify-self: start;
-        margin-top: 5px;
       }
 
       .location {
+        grid-column: 2;
         text-align: left;
+        padding-top: 0;
         margin-top: 8px;
       }
 
@@ -354,7 +357,9 @@
 <body>
 
   <header>
-    <a href="index.html" class="logo">Alongside <span>♡</span></a>
+    <a href="index.html" class="logo">
+      Alongside <span>♡</span>
+    </a>
 
     <nav>
       <a href="index.html">Home</a>
@@ -366,20 +371,28 @@
 
 
   <section class="hero">
-    <div class="eyebrow">FINANCIAL SUPPORT · AFRICA</div>
 
-    <h1>Support for families across Africa.</h1>
+    <div class="eyebrow">
+      FINANCIAL SUPPORT · AFRICA
+    </div>
+
+    <h1>
+      Support for families across Africa.
+    </h1>
 
     <p>
-      Finding financial and practical support can be difficult while a child is
-      receiving cancer treatment. These organizations support children with
-      cancer and their families through assistance such as accommodation,
-      transportation, food, medical expenses and other essential needs.
+      Finding financial and practical support can be difficult while a child
+      is receiving cancer treatment. These organizations support children
+      with cancer and their families through assistance such as
+      accommodation, transportation, food, medical expenses and other
+      essential needs.
     </p>
+
   </section>
 
 
   <section class="resources-section">
+
     <div class="resources-inner">
 
       <div class="section-label">AFRICA</div>
@@ -393,306 +406,368 @@
       </p>
 
 
-      <!-- 01 -->
       <div class="resource">
+
         <div class="resource-number">01</div>
 
         <div class="resource-info">
+
           <h3>CHOC Childhood Cancer Foundation</h3>
+
           <p>
             Supports children with cancer and their families through
             accommodation, meals, transportation, nutritional support and
             psychosocial services during treatment.
           </p>
-        </div>
 
-        <div>
-          <a class="resource-button"
-             href="https://choc.org.za/"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            class="resource-button"
+            href="https://choc.org.za/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             CHOC Foundation →
           </a>
-          <div class="location">South Africa</div>
+
         </div>
+
+        <div class="location">South Africa</div>
+
       </div>
 
 
-      <!-- 02 -->
       <div class="resource">
+
         <div class="resource-number">02</div>
 
         <div class="resource-info">
+
           <h3>KidzCan Zimbabwe</h3>
+
           <p>
             Helps children with cancer and their families with treatment
             costs, medicines, diagnostic services, transportation,
             accommodation and other essential support.
           </p>
-        </div>
 
-        <div>
-          <a class="resource-button"
-             href="https://kidzcanzimbabwe.org/"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            class="resource-button"
+            href="https://kidzcanzimbabwe.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             KidzCan →
           </a>
-          <div class="location">Zimbabwe</div>
+
         </div>
+
+        <div class="location">Zimbabwe</div>
+
       </div>
 
 
-      <!-- 03 -->
       <div class="resource">
+
         <div class="resource-number">03</div>
 
         <div class="resource-info">
+
           <h3>Hope for Cancer Kids</h3>
+
           <p>
             Supports children with cancer and their families by helping
             address financial, logistical and emotional barriers to cancer
             treatment.
           </p>
-        </div>
 
-        <div>
-          <a class="resource-button"
-             href="https://hope4cancerkids.org/"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            class="resource-button"
+            href="https://hope4cancerkids.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Hope for Cancer Kids →
           </a>
-          <div class="location">Kenya</div>
+
         </div>
+
+        <div class="location">Kenya</div>
+
       </div>
 
 
-      <!-- 04 -->
       <div class="resource">
+
         <div class="resource-number">04</div>
 
         <div class="resource-info">
+
           <h3>Bless a Child Foundation</h3>
+
           <p>
             Provides children with cancer and their caregivers with
             accommodation, meals, transportation, medical and psychosocial
             support during treatment.
           </p>
-        </div>
 
-        <div>
-          <a class="resource-button"
-             href="https://blessachildfoundation.org/"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            class="resource-button"
+            href="https://blessachildfoundation.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Bless a Child →
           </a>
-          <div class="location">Uganda</div>
+
         </div>
+
+        <div class="location">Uganda</div>
+
       </div>
 
 
-      <!-- 05 -->
       <div class="resource">
+
         <div class="resource-number">05</div>
 
         <div class="resource-info">
+
           <h3>Kayula Childhood Cancer Foundation</h3>
+
           <p>
             Supports children with cancer and their families, including
             families who travel long distances for treatment and need
             accommodation and practical assistance.
           </p>
-        </div>
 
-        <div>
-          <a class="resource-button"
-             href="https://www.kayulachildcancer.org/"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            class="resource-button"
+            href="https://www.kayulachildcancer.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Kayula Foundation →
           </a>
-          <div class="location">Zambia</div>
+
         </div>
+
+        <div class="location">Zambia</div>
+
       </div>
 
 
-      <!-- 06 -->
       <div class="resource">
+
         <div class="resource-number">06</div>
 
         <div class="resource-info">
+
           <h3>Zambian Childhood Cancer Foundation</h3>
+
           <p>
             Provides practical, psychosocial and emergency support to
             children with cancer and their caregivers.
           </p>
-        </div>
 
-        <div>
-          <a class="resource-button"
-             href="https://www.zaccaf.org/"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            class="resource-button"
+            href="https://www.zaccaf.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             ZACCAF →
           </a>
-          <div class="location">Zambia</div>
+
         </div>
+
+        <div class="location">Zambia</div>
+
       </div>
 
 
-      <!-- 07 -->
       <div class="resource">
+
         <div class="resource-number">07</div>
 
         <div class="resource-info">
+
           <h3>Tumaini La Maisha</h3>
+
           <p>
             Works to improve access to childhood cancer care in Tanzania,
             providing free treatment and support for children and their
             families.
           </p>
-        </div>
 
-        <div>
-          <a class="resource-button"
-             href="https://www.wearetlm.org/"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            class="resource-button"
+            href="https://www.wearetlm.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Tumaini La Maisha →
           </a>
-          <div class="location">Tanzania</div>
+
         </div>
+
+        <div class="location">Tanzania</div>
+
       </div>
 
 
-      <!-- 08 -->
       <div class="resource">
+
         <div class="resource-number">08</div>
 
         <div class="resource-info">
+
           <h3>Association L’Avenir</h3>
+
           <p>
             Provides medical, social and psychological support to children
             with cancer and their families, including practical assistance
             such as accommodation and transportation.
           </p>
-        </div>
 
-        <div>
-          <a class="resource-button"
-             href="https://associationlavenir.ma/"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            class="resource-button"
+            href="https://associationlavenir.ma/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             L’Avenir →
           </a>
-          <div class="location">Morocco</div>
+
         </div>
+
+        <div class="location">Morocco</div>
+
       </div>
 
 
-      <!-- 09 -->
       <div class="resource">
+
         <div class="resource-number">09</div>
 
         <div class="resource-info">
+
           <h3>Noujoum</h3>
+
           <p>
             Provides material, psychological and practical support for
             children with cancer and their families, including assistance
             connected with treatment and medicines.
           </p>
-        </div>
 
-        <div>
-          <a class="resource-button"
-             href="https://www.noujoum.org/"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            class="resource-button"
+            href="https://www.noujoum.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Noujoum →
           </a>
-          <div class="location">Morocco</div>
+
         </div>
+
+        <div class="location">Morocco</div>
+
       </div>
 
 
-      <!-- 10 -->
       <div class="resource">
+
         <div class="resource-number">10</div>
 
         <div class="resource-info">
+
           <h3>TAPCCO</h3>
+
           <p>
             Supports children with cancer and their families during
             treatment, including accommodation and practical family
             assistance.
           </p>
-        </div>
 
-        <div>
-          <a class="resource-button"
-             href="https://tapcco.org/"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            class="resource-button"
+            href="https://tapcco.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             TAPCCO →
           </a>
-          <div class="location">Ethiopia</div>
+
         </div>
+
+        <div class="location">Ethiopia</div>
+
       </div>
 
 
-      <!-- 11 -->
       <div class="resource">
+
         <div class="resource-number">11</div>
 
         <div class="resource-info">
+
           <h3>Children Living With Cancer Foundation</h3>
+
           <p>
             Helps children from low-income families access cancer treatment,
             medicines and other essential support.
           </p>
-        </div>
 
-        <div>
-          <a class="resource-button"
-             href="https://www.clwcf-ngo.org/"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            class="resource-button"
+            href="https://www.clwcf-ngo.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             CLWCF →
           </a>
-          <div class="location">Nigeria</div>
+
         </div>
+
+        <div class="location">Nigeria</div>
+
       </div>
 
 
-      <!-- 12 -->
       <div class="resource">
+
         <div class="resource-number">12</div>
 
         <div class="resource-info">
+
           <h3>Cure Childhood Cancer Ghana</h3>
+
           <p>
             Provides financial assistance for treatment together with
             transportation, nutrition, hygiene and psychosocial support
             for children with cancer and their families.
           </p>
-        </div>
 
-        <div>
-          <a class="resource-button"
-             href="https://www.childhoodcancerghana.com/"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            class="resource-button"
+            href="https://www.childhoodcancerghana.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Cure Childhood Cancer →
           </a>
-          <div class="location">Ghana</div>
+
         </div>
+
+        <div class="location">Ghana</div>
+
       </div>
 
 
       <div class="note">
+
         <h3>A note about financial assistance</h3>
+
         <p>
           Every organization has its own eligibility requirements,
           application process and available services. Some forms of support
@@ -701,16 +776,23 @@
           check the organization's official website for the most current
           information before applying.
         </p>
+
       </div>
 
     </div>
+
   </section>
 
 
   <section class="closing">
-    <div class="closing-label">ALONGSIDE</div>
 
-    <h2>You don't have to navigate this alone.</h2>
+    <div class="closing-label">
+      ALONGSIDE
+    </div>
+
+    <h2>
+      You don't have to navigate this alone.
+    </h2>
 
     <p>
       Financial difficulties can add another layer of stress during a child's
@@ -718,12 +800,20 @@
       practical support and focus on what matters most: being there for your
       child.
     </p>
+
   </section>
 
 
   <footer>
-    <div class="footer-logo">Alongside ♡</div>
-    <div>Resources for families facing childhood cancer.</div>
+
+    <div class="footer-logo">
+      Alongside ♡
+    </div>
+
+    <div>
+      Resources for families facing childhood cancer.
+    </div>
+
   </footer>
 
 </body>
