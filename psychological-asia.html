@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psychological Support — Alongside</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #F2ECDD;
+  --light: #FAF8F5;
+  --green: #536B52;
+  --gold: #B4A276;
+  --text: #1D1D1A;
+  --muted: #5C5A54;
+  --border: #D9D1C1;
+  --quote: #EEE5D3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: "Lato", sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  padding: 28px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+}
+
+nav a {
+  color: var(--muted);
+  transition: 0.2s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--green);
+}
+
+.hero {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 95px 7% 80px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(48px, 7vw, 76px);
+  line-height: 0.95;
+  font-weight: 600;
+  margin: 0 0 28px;
+  max-width: 800px;
+}
+
+.hero p {
+  max-width: 700px;
+  font-size: 18px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.resources-section {
+  background: var(--light);
+  padding: 85px 7% 100px;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 600;
+  margin: 0 0 18px;
+}
+
+.section-intro {
+  color: var(--muted);
+  max-width: 700px;
+  margin-bottom: 55px;
+}
+
+.resource {
+  display: grid;
+  grid-template-columns: 55px 1fr 150px;
+  gap: 28px;
+  align-items: start;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.resource-number {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  color: var(--gold);
+  padding-top: 2px;
+}
+
+.resource-info h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 29px;
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.resource-info p {
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 680px;
+  margin: 0 0 17px;
+}
+
+.resource-button {
+  display: inline-block;
+  border: 1px solid var(--green);
+  color: var(--green);
+  padding: 7px 17px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.resource-button:hover {
+  background: var(--green);
+  color: var(--light);
+}
+
+.location {
+  text-align: right;
+  padding-top: 5px;
+  color: var(--gold);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.note {
+  max-width: 900px;
+  margin: 75px auto 0;
+  padding: 30px 34px;
+  background: var(--quote);
+}
+
+.note h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  margin: 0 0 8px;
+}
+
+.note p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.closing {
+  padding: 100px 7%;
+  text-align: center;
+}
+
+.closing h2 {
+  max-width: 650px;
+  margin: 0 auto 18px;
+}
+
+.closing p {
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 30px 7%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 20px;
+  }
+
+  .hero {
+    padding-top: 70px;
+  }
+
+  .resource {
+    grid-template-columns: 42px 1fr;
+    gap: 18px;
+  }
+
+  .location {
+    grid-column: 2;
+    text-align: left;
+    padding-top: 0;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  .resources-section {
+    padding-top: 65px;
+  }
+
+  .resource {
+    grid-template-columns: 35px 1fr;
+    gap: 12px;
+    padding: 27px 0;
+  }
+
+  .resource-info h3 {
+    font-size: 25px;
+  }
+
+  .note {
+    padding: 25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" class="logo">Alongside <span>♡</span></a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="financial-support.html">Financial Support</a>
+    <a href="psychological-support.html" class="active">Psychological Support</a>
+    <a href="about.html">About Website</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">PSYCHOLOGICAL SUPPORT · ASIA</div>
+
+  <h1>
+    Support for the emotional side of childhood cancer.
+  </h1>
+
+  <p>
+    These organizations provide psychological, emotional, psychosocial,
+    or family support for children with cancer and the people caring for them.
+    Some offer direct counselling and therapy, while others provide child-life
+    services, support groups, or professional guidance.
+  </p>
+</section>
+
+<section class="resources-section">
+  <div class="section-inner">
+
+    <div class="section-label">FIND SUPPORT</div>
+
+    <h2>Resources across Asia.</h2>
+
+    <p class="section-intro">
+      Support can look different from one organization to another.
+      Some services are available directly to children and parents,
+      while others work through hospitals, social workers, or specialized
+      pediatric oncology programs.
+    </p>
+
+
+    <!-- 01 -->
+    <div class="resource">
+      <div class="resource-number">01</div>
+
+      <div class="resource-info">
+        <h3>CanKids KidsCan</h3>
+
+        <p>
+          India’s pediatric psycho-oncology program provides psychological
+          counselling, teletherapy, expressive therapies, parent support
+          groups, child-life interventions, psychoeducation, and bereavement
+          support for children with cancer, caregivers, and survivors.
+        </p>
+
+        <a
+          href="https://cankidsindia.org/pediatric-psycho%E2%80%91oncology-program/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          CanKids KidsCan →
+        </a>
+      </div>
+
+      <div class="location">India</div>
+    </div>
+
+
+    <!-- 02 -->
+    <div class="resource">
+      <div class="resource-number">02</div>
+
+      <div class="resource-info">
+        <h3>St. Jude India ChildCare Centres</h3>
+
+        <p>
+          Provides counselling as part of its holistic support for children
+          undergoing cancer treatment and their families, including support
+          for emotional and psychological needs and guidance for parents.
+        </p>
+
+        <a
+          href="https://stjudechild.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          St. Jude India →
+        </a>
+      </div>
+
+      <div class="location">India</div>
+    </div>
+
+
+    <!-- 03 -->
+    <div class="resource">
+      <div class="resource-number">03</div>
+
+      <div class="resource-info">
+        <h3>Children’s Cancer Foundation</h3>
+
+        <p>
+          Provides psychosocial care for children with cancer and their
+          families through casework, counselling, therapeutic play,
+          child-life services, emotional support, and caregiver support
+          groups.
+        </p>
+
+        <a
+          href="https://www.ccf.org.sg/programmes-and-services/ccf-model-of-care/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Children’s Cancer Foundation →
+        </a>
+      </div>
+
+      <div class="location">Singapore</div>
+    </div>
+
+
+    <!-- 04 -->
+    <div class="resource">
+      <div class="resource-number">04</div>
+
+      <div class="resource-info">
+        <h3>Korean Association for Children with Leukemia and Cancer</h3>
+
+        <p>
+          Supports children affected by childhood cancer through integrated
+          programs that include counselling and therapeutic activities such
+          as art, music, language, cognitive, and play therapy.
+        </p>
+
+        <a
+          href="https://childhoodcancer.or.kr/Integration"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Childhood Cancer Korea →
+        </a>
+      </div>
+
+      <div class="location">South Korea</div>
+    </div>
+
+
+    <!-- 05 -->
+    <div class="resource">
+      <div class="resource-number">05</div>
+
+      <div class="resource-info">
+        <h3>Children’s Cancer Association of Japan</h3>
+
+        <p>
+          Offers counselling by social workers specialized in childhood
+          cancer, along with self-help groups, activities for children,
+          siblings and parents, and other family support programs.
+        </p>
+
+        <a
+          href="https://www.ccaj-found.or.jp/english/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Children’s Cancer Association of Japan →
+        </a>
+      </div>
+
+      <div class="location">Japan</div>
+    </div>
+
+
+    <!-- 06 -->
+    <div class="resource">
+      <div class="resource-number">06</div>
+
+      <div class="resource-info">
+        <h3>CHANCE Association</h3>
+
+        <p>
+          Supports children with cancer and blood disorders and their families
+          with psychosocial care. The organization also helps parents talk
+          through their emotions and connects families with additional
+          support and resources.
+        </p>
+
+        <a
+          href="https://chanceassociation.org/parent-resources/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          CHANCE Association →
+        </a>
+      </div>
+
+      <div class="location">Lebanon</div>
+    </div>
+
+
+    <!-- 07 -->
+    <div class="resource">
+      <div class="resource-number">07</div>
+
+      <div class="resource-info">
+        <h3>King Hussein Cancer Center</h3>
+
+        <p>
+          Its psychosocial oncology program includes psychology services,
+          individual and family counselling, supportive groups, child-life
+          services, play therapy, coping strategies, psychoeducation,
+          and support for siblings and families.
+        </p>
+
+        <a
+          href="https://www.khcc.jo/en/psychosocial-oncology-program"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          King Hussein Cancer Center →
+        </a>
+      </div>
+
+      <div class="location">Jordan</div>
+    </div>
+
+
+    <!-- 08 -->
+    <div class="resource">
+      <div class="resource-number">08</div>
+
+      <div class="resource-info">
+        <h3>Hayim Association</h3>
+
+        <p>
+          Works with children with cancer and their families throughout
+          Israel. Its hospital-based welfare support focuses on the emotional
+          and social side of childhood cancer and provides ongoing family
+          accompaniment.
+        </p>
+
+        <a
+          href="https://www.hayim.org.il/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Hayim Association →
+        </a>
+      </div>
+
+      <div class="location">Israel</div>
+    </div>
+
+
+    <!-- 09 -->
+    <div class="resource">
+      <div class="resource-number">09</div>
+
+      <div class="resource-info">
+        <h3>Indira Cancer Trust</h3>
+
+        <p>
+          Provides free counselling and psychological services, including
+          face-to-face and telephone counselling. Its programs for young
+          cancer patients also include creative activities designed to reduce
+          stress and help children cope with treatment.
+        </p>
+
+        <a
+          href="https://indiracancertrust.org/councelling-support.php"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Indira Cancer Trust →
+        </a>
+      </div>
+
+      <div class="location">Sri Lanka</div>
+    </div>
+
+
+    <!-- 10 -->
+    <div class="resource">
+      <div class="resource-number">10</div>
+
+      <div class="resource-info">
+        <h3>Everlasting Hope</h3>
+
+        <p>
+          Supports families dealing with childhood cancer through a
+          holistic approach that includes emotional and spiritual care,
+          psychosocial support, coping strategies, and family support.
+        </p>
+
+        <a
+          href="https://everlastinghope.org/programs-and-services"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Everlasting Hope →
+        </a>
+      </div>
+
+      <div class="location">Philippines</div>
+    </div>
+
+
+    <!-- 11 -->
+    <div class="resource">
+      <div class="resource-number">11</div>
+
+      <div class="resource-info">
+        <h3>Pita Kuning</h3>
+
+        <p>
+          Provides psychosocial accompaniment for children with cancer and
+          their families through certified social workers, including regular
+          support, monitoring of psychosocial needs, counselling, and
+          family-support activities.
+        </p>
+
+        <a
+          href="https://pitakuning.or.id/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Pita Kuning →
+        </a>
+      </div>
+
+      <div class="location">Indonesia</div>
+    </div>
+
+
+    <!-- 12 -->
+    <div class="resource">
+      <div class="resource-number">12</div>
+
+      <div class="resource-info">
+        <h3>National Cancer Society Malaysia</h3>
+
+        <p>
+          Its childhood-cancer halfway-home services include psychosocial
+          support for children and caregivers, including counselling,
+          therapy, support groups, and cancer information during treatment.
+        </p>
+
+        <a
+          href="https://cancer.org.my/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          National Cancer Society Malaysia →
+        </a>
+      </div>
+
+      <div class="location">Malaysia</div>
+    </div>
+
+
+    <div class="note">
+      <h3>A note about psychological support</h3>
+
+      <p>
+        Services vary by organization, location, eligibility, and treatment
+        stage. Some organizations provide direct counselling or therapy,
+        while others offer psychosocial support, child-life programs,
+        peer groups, or referrals to specialists. Please check the official
+        website before contacting an organization, as programs and
+        availability can change.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="closing">
+  <h2>You don't have to navigate this alone.</h2>
+
+  <p>
+    Finding emotional support can be an important part of caring for a child
+    with cancer — and for taking care of yourself, too.
+  </p>
+</section>
+
+
+<footer>
+  <div>© 2026 Alongside</div>
+  <div>FAMILIES ARE STRONGER TOGETHER</div>
+</footer>
+
+</body>
+</html>
