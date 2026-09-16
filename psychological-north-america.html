@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Psychological Support — North America | Alongside</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #F2ECDD;
+      --light: #FAF8F5;
+      --green: #536B52;
+      --gold: #B4A276;
+      --text: #1D1D1A;
+      --muted: #5C5A54;
+      --border: #D9D1C1;
+      --quote: #EEE5D3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: "Lato", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      max-width: 1180px;
+      margin: auto;
+      padding: 28px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+    }
+
+    nav a {
+      color: var(--muted);
+      transition: 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--green);
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: auto;
+      padding: 90px 32px 80px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(48px, 7vw, 78px);
+      line-height: 0.95;
+      font-weight: 600;
+      max-width: 850px;
+      margin-bottom: 28px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .resources-section {
+      background: var(--light);
+      padding: 85px 32px;
+    }
+
+    .resources-inner {
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .section-label {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 48px;
+      line-height: 1;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      max-width: 700px;
+      color: var(--muted);
+      margin-bottom: 50px;
+    }
+
+    .resource {
+      display: grid;
+      grid-template-columns: 55px 1fr 150px;
+      gap: 28px;
+      align-items: start;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .resource-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 24px;
+      color: var(--gold);
+      padding-top: 2px;
+    }
+
+    .resource-info h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 29px;
+      line-height: 1.1;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .resource-info p {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 17px;
+    }
+
+    .resource-button {
+      display: inline-block;
+      border: 1px solid var(--green);
+      color: var(--green);
+      border-radius: 50px;
+      padding: 9px 17px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .resource-button:hover {
+      background: var(--green);
+      color: var(--light);
+    }
+
+    .location {
+      text-align: right;
+      padding-top: 5px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .note {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 70px 32px;
+    }
+
+    .note-box {
+      background: var(--quote);
+      padding: 38px 42px;
+      border-radius: 16px;
+    }
+
+    .note-box h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .note-box p {
+      color: var(--muted);
+      max-width: 850px;
+      font-size: 14px;
+    }
+
+    .closing {
+      max-width: 1180px;
+      margin: auto;
+      padding: 70px 32px 100px;
+      text-align: center;
+    }
+
+    .closing p:first-child {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .closing h2 {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 32px;
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 750px) {
+
+      header {
+        padding: 22px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 12px 18px;
+      }
+
+      .hero {
+        padding: 65px 20px 60px;
+      }
+
+      .resources-section {
+        padding: 65px 20px;
+      }
+
+      h2 {
+        font-size: 40px;
+      }
+
+      .resource {
+        grid-template-columns: 40px 1fr;
+        gap: 18px;
+        padding: 28px 0;
+      }
+
+      .resource-info {
+        grid-column: 2;
+      }
+
+      .location {
+        grid-column: 2;
+        text-align: left;
+        padding-top: 0;
+        margin-top: -4px;
+      }
+
+      .note {
+        padding: 55px 20px;
+      }
+
+      .note-box {
+        padding: 28px 25px;
+      }
+
+      .closing {
+        padding: 55px 20px 75px;
+      }
+
+      footer {
+        padding: 25px 20px;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <a href="index.html" class="logo">
+      Alongside ♡
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="financial.html">Financial Support</a>
+      <a href="psychological.html" class="active">Psychological Support</a>
+      <a href="about.html">About Website</a>
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <section class="hero">
+
+      <div class="eyebrow">
+        PSYCHOLOGICAL SUPPORT · NORTH AMERICA
+      </div>
+
+      <h1>
+        Emotional support for children and families.
+      </h1>
+
+      <p>
+        Childhood cancer can affect the emotional wellbeing of the whole
+        family. These organisations offer counselling, psychosocial care,
+        support groups, family programmes and other resources to help
+        children, parents, siblings and caregivers cope.
+      </p>
+
+    </section>
+
+
+    <section class="resources-section">
+
+      <div class="resources-inner">
+
+        <div class="section-label">
+          FIND SUPPORT
+        </div>
+
+        <h2>
+          Organisations that can help.
+        </h2>
+
+        <p class="section-intro">
+          The resources below were selected because their official websites
+          specifically describe emotional, psychological, psychosocial or
+          family support connected to childhood cancer.
+        </p>
+
+
+        <!-- 01 -->
+
+        <div class="resource">
+
+          <div class="resource-number">
+            01
+          </div>
+
+          <div class="resource-info">
+
+            <h3>
+              St. Jude Children's Research Hospital
+            </h3>
+
+            <p>
+              Provides psychosocial services and family support throughout
+              a child's illness. The team includes psychologists, social
+              workers, child-life specialists, music therapists and other
+              professionals who support children, siblings, parents and
+              caregivers.
+            </p>
+
+            <a
+              href="https://www.stjude.org/care-treatment/patient-families/family-caregiver.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              St. Jude →
+            </a>
+
+          </div>
+
+          <div class="location">
+            United States
+          </div>
+
+        </div>
+
+
+        <!-- 02 -->
+
+        <div class="resource">
+
+          <div class="resource-number">
+            02
+          </div>
+
+          <div class="resource-info">
+
+            <h3>
+              CURE Childhood Cancer
+            </h3>
+
+            <p>
+              Offers a dedicated counselling programme addressing the
+              psychological needs of families affected by childhood cancer.
+              Support can include counselling sessions for the child,
+              parents and siblings through licensed therapists.
+            </p>
+
+            <a
+              href="https://curechildhoodcancer.org/family-support/counseling/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              CURE Childhood Cancer →
+            </a>
+
+          </div>
+
+          <div class="location">
+            United States<br>
+            Georgia & eligible families
+          </div>
+
+        </div>
+
+
+        <!-- 03 -->
+
+        <div class="resource">
+
+          <div class="resource-number">
+            03
+          </div>
+
+          <div class="resource-info">
+
+            <h3>
+              CancerCare for Kids
+            </h3>
+
+            <p>
+              Provides free professional support from oncology social workers
+              for children and adolescents affected by cancer, including
+              one-on-one counselling, support groups, resource navigation and
+              programmes for parents and families.
+            </p>
+
+            <a
+              href="https://www.cancercare.org/services/specialized-programs/cancercare-for-kids"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              CancerCare for Kids →
+            </a>
+
+          </div>
+
+          <div class="location">
+            United States
+          </div>
+
+        </div>
+
+
+        <!-- 04 -->
+
+        <div class="resource">
+
+          <div class="resource-number">
+            04
+          </div>
+
+          <div class="resource-info">
+
+            <h3>
+              Candlelighters Childhood Cancer Family Alliance
+            </h3>
+
+            <p>
+              Provides emotional, educational and practical support to
+              families of children with cancer. Parent consultants and family
+              programmes help families navigate the emotional challenges of
+              childhood cancer.
+            </p>
+
+            <a
+              href="https://candle.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Candlelighters →
+            </a>
+
+          </div>
+
+          <div class="location">
+            United States<br>
+            Texas
+          </div>
+
+        </div>
+
+
+        <!-- 05 -->
+
+        <div class="resource">
+
+          <div class="resource-number">
+            05
+          </div>
+
+          <div class="resource-info">
+
+            <h3>
+              Candlelighters Childhood Cancer Foundation of Nevada
+            </h3>
+
+            <p>
+              Offers emotional support, peer connection, art therapy and
+              professional counselling for children with cancer, siblings,
+              parents and families. Counselling is available through
+              in-person and telemedicine options.
+            </p>
+
+            <a
+              href="https://www.candlelightersnv.org/programs-services/emotional-support/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Candlelighters Nevada →
+            </a>
+
+          </div>
+
+          <div class="location">
+            United States<br>
+            Nevada
+          </div>
+
+        </div>
+
+
+        <!-- 06 -->
+
+        <div class="resource">
+
+          <div class="resource-number">
+            06
+          </div>
+
+          <div class="resource-info">
+
+            <h3>
+              Cancer Support Community
+            </h3>
+
+            <p>
+              Provides professionally led psychosocial support for people
+              affected by cancer and their families. Services include
+              individual and group counselling, support for children and
+              teens, education, navigation and community connection.
+            </p>
+
+            <a
+              href="https://www.cancersupportcommunity.org/institute-excellence-psychosocial-care"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Cancer Support Community →
+            </a>
+
+          </div>
+
+          <div class="location">
+            United States<br>
+            Nationwide network
+          </div>
+
+        </div>
+
+
+        <!-- 07 -->
+
+        <div class="resource">
+
+          <div class="resource-number">
+            07
+          </div>
+
+          <div class="resource-info">
+
+            <h3>
+              Children's Oncology Group
+            </h3>
+
+            <p>
+              Provides trusted patient and family resources for children and
+              young people with cancer, including guidance for families from
+              diagnosis through treatment and survivorship. Its network also
+              connects families with specialised childhood cancer care.
+            </p>
+
+            <a
+              href="https://childrensoncologygroup.org/patients-families/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Children's Oncology Group →
+            </a>
+
+          </div>
+
+          <div class="location">
+            North America<br>
+            International network
+          </div>
+
+        </div>
+
+
+        <!-- 08 -->
+
+        <div class="resource">
+
+          <div class="resource-number">
+            08
+          </div>
+
+          <div class="resource-info">
+
+            <h3>
+              National Cancer Institute
+            </h3>
+
+            <p>
+              Provides evidence-based guidance specifically for families
+              facing childhood cancer, including resources on coping,
+              communication, sibling support, relationships and finding
+              professional and community support.
+            </p>
+
+            <a
+              href="https://www.cancer.gov/about-cancer/coping/caregiver-support/parents"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              National Cancer Institute →
+            </a>
+
+          </div>
+
+          <div class="location">
+            United States
+          </div>
+
+        </div>
+
+
+        <!-- 09 -->
+
+        <div class="resource">
+
+          <div class="resource-number">
+            09
+          </div>
+
+          <div class="resource-info">
+
+            <h3>
+              Alex's Lemonade Stand Foundation
+            </h3>
+
+            <p>
+              Its Resource Navigator helps childhood cancer families identify
+              and connect with support that fits their individual needs,
+              including resources provided by trusted organisations.
+            </p>
+
+            <a
+              href="https://www.alexslemonade.org/childhood-cancer/for-families/resource-navigator"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Alex's Lemonade Stand Foundation →
+            </a>
+
+          </div>
+
+          <div class="location">
+            United States
+          </div>
+
+        </div>
+
+
+        <!-- 10 -->
+
+        <div class="resource">
+
+          <div class="resource-number">
+            10
+          </div>
+
+          <div class="resource-info">
+
+            <h3>
+              Childhood Cancer Canada
+            </h3>
+
+            <p>
+              Provides emotional and mental wellness support to children,
+              parents, caregivers and siblings affected by childhood cancer,
+              including virtual support groups, one-on-one counselling,
+              sibling and teen programmes and wellness sessions.
+            </p>
+
+            <a
+              href="https://www.childhoodcancer.ca/compassionate-care-program/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Childhood Cancer Canada →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Canada
+          </div>
+
+        </div>
+
+
+        <!-- 11 -->
+
+        <div class="resource">
+
+          <div class="resource-number">
+            11
+          </div>
+
+          <div class="resource-info">
+
+            <h3>
+              Canadian Cancer Society
+            </h3>
+
+            <p>
+              Provides information and access to support for children and
+              families affected by childhood cancer, including peer support,
+              family counselling resources, online communities, camps and
+              connections to local services.
+            </p>
+
+            <a
+              href="https://cdn.cancer.ca/en/living-with-cancer/your-child-has-cancer/coping-with-a-child-s-cancer/finding-support"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Canadian Cancer Society →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Canada
+          </div>
+
+        </div>
+
+
+        <!-- 12 -->
+
+        <div class="resource">
+
+          <div class="resource-number">
+            12
+          </div>
+
+          <div class="resource-info">
+
+            <h3>
+              Asociación Mexicana de Ayuda a Niños con Cáncer (AMANC)
+            </h3>
+
+            <p>
+              Provides comprehensive support to children and adolescents with
+              cancer and their families in Mexico. Its psychosocial model
+              includes psychological support, social assistance and
+              interventions throughout treatment and beyond.
+            </p>
+
+            <a
+              href="https://www.amanc.org/apoyo/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              AMANC →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Mexico
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <section class="note">
+
+      <div class="note-box">
+
+        <h3>
+          A note about psychological support
+        </h3>
+
+        <p>
+          Psychological and psychosocial services can vary by location,
+          age, diagnosis and stage of treatment. Some organisations serve
+          families only within specific states or through participating
+          hospitals. Always check the organisation's official website and
+          eligibility requirements before contacting or applying for support.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="closing">
+
+      <p>
+        YOU DON'T HAVE TO NAVIGATE THIS ALONE
+      </p>
+
+      <h2>
+        Support can help families feel less alone through every stage of the journey.
+      </h2>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div>
+      © 2026 Alongside
+    </div>
+
+    <div>
+      Families are stronger together.
+    </div>
+
+  </footer>
+
+</body>
+</html>
