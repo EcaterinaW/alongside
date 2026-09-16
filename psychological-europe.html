@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Psychological Support — Europe | Alongside</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #F2ECDD;
+      --light: #FAF8F5;
+      --green: #536B52;
+      --gold: #B4A276;
+      --text: #1D1D1A;
+      --muted: #5C5A54;
+      --border: #D9D1C1;
+      --quote: #EEE5D3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: "Lato", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      max-width: 1180px;
+      margin: auto;
+      padding: 28px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+    }
+
+    nav a {
+      color: var(--muted);
+      transition: 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--green);
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: auto;
+      padding: 90px 32px 80px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(48px, 7vw, 78px);
+      line-height: 0.95;
+      font-weight: 600;
+      max-width: 850px;
+      margin-bottom: 28px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .resources-section {
+      background: var(--light);
+      padding: 85px 32px;
+    }
+
+    .resources-inner {
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .section-label {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 48px;
+      line-height: 1;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      max-width: 700px;
+      color: var(--muted);
+      margin-bottom: 50px;
+    }
+
+    .resource {
+      display: grid;
+      grid-template-columns: 55px 1fr 150px;
+      gap: 28px;
+      align-items: start;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .resource-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 24px;
+      color: var(--gold);
+      padding-top: 2px;
+    }
+
+    .resource-info h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 29px;
+      line-height: 1.1;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .resource-info p {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 17px;
+    }
+
+    .resource-button {
+      display: inline-block;
+      border: 1px solid var(--green);
+      color: var(--green);
+      border-radius: 50px;
+      padding: 9px 17px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .resource-button:hover {
+      background: var(--green);
+      color: var(--light);
+    }
+
+    .location {
+      text-align: right;
+      padding-top: 5px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .note {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 70px 32px;
+    }
+
+    .note-box {
+      background: var(--quote);
+      padding: 38px 42px;
+      border-radius: 16px;
+    }
+
+    .note-box h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .note-box p {
+      color: var(--muted);
+      max-width: 850px;
+      font-size: 14px;
+    }
+
+    .closing {
+      max-width: 1180px;
+      margin: auto;
+      padding: 70px 32px 100px;
+      text-align: center;
+    }
+
+    .closing p:first-child {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .closing h2 {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 32px;
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 750px) {
+
+      header {
+        padding: 22px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 12px 18px;
+      }
+
+      .hero {
+        padding: 65px 20px 60px;
+      }
+
+      .resources-section {
+        padding: 65px 20px;
+      }
+
+      h2 {
+        font-size: 40px;
+      }
+
+      .resource {
+        grid-template-columns: 40px 1fr;
+        gap: 18px;
+        padding: 28px 0;
+      }
+
+      .resource-info {
+        grid-column: 2;
+      }
+
+      .location {
+        grid-column: 2;
+        text-align: left;
+        padding-top: 0;
+        margin-top: -4px;
+      }
+
+      .note {
+        padding: 55px 20px;
+      }
+
+      .note-box {
+        padding: 28px 25px;
+      }
+
+      .closing {
+        padding: 55px 20px 75px;
+      }
+
+      footer {
+        padding: 25px 20px;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <a href="index.html" class="logo">
+      Alongside ♡
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="financial-support.html">Financial Support</a>
+      <a href="psychological-support.html" class="active">Psychological Support</a>
+      <a href="about.html">About Website</a>
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <section class="hero">
+
+      <div class="eyebrow">
+        PSYCHOLOGICAL SUPPORT · EUROPE
+      </div>
+
+      <h1>
+        Emotional support for children and families.
+      </h1>
+
+      <p>
+        Childhood cancer can affect the emotional wellbeing of the whole
+        family. These organisations provide psychological, emotional and
+        psychosocial support for children, parents, siblings and caregivers.
+      </p>
+
+    </section>
+
+
+    <section class="resources-section">
+
+      <div class="resources-inner">
+
+        <div class="section-label">
+          FIND SUPPORT
+        </div>
+
+        <h2>
+          Organisations that can help.
+        </h2>
+
+        <p class="section-intro">
+          The resources below were selected because their official websites
+          describe psychological, psychosocial, emotional or family support
+          connected to childhood cancer.
+        </p>
+
+
+        <!-- 01 -->
+
+        <div class="resource">
+
+          <div class="resource-number">01</div>
+
+          <div class="resource-info">
+
+            <h3>
+              Österreichische Kinderkrebshilfe
+            </h3>
+
+            <p>
+              Supports children and families affected by childhood cancer
+              through psychological and psychosocial services, including
+              funding for psychotherapeutic care and aftercare programmes
+              for children, adolescents, parents and siblings.
+            </p>
+
+            <a
+              href="https://kinderkrebshilfe.at/ueber-uns/mission-aufgabe/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Österreichische Kinderkrebshilfe →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Austria
+          </div>
+
+        </div>
+
+
+        <!-- 02 -->
+
+        <div class="resource">
+
+          <div class="resource-number">02</div>
+
+          <div class="resource-info">
+
+            <h3>
+              Floga
+            </h3>
+
+            <p>
+              The Greek Parents' Association of Children with Cancer provides
+              psychological support to families alongside medical and social
+              care, with programmes designed around the emotional needs of
+              children and their parents.
+            </p>
+
+            <a
+              href="https://www.floga.org.gr/en/about-us-3/floga-2/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Floga →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Greece
+          </div>
+
+        </div>
+
+
+        <!-- 03 -->
+
+        <div class="resource">
+
+          <div class="resource-number">03</div>
+
+          <div class="resource-info">
+
+            <h3>
+              Acreditar
+            </h3>
+
+            <p>
+              Provides professional psychological support to children and
+              young people with cancer, parents, siblings and survivors.
+              Sessions can be individual or family-based and available
+              in person or remotely.
+            </p>
+
+            <a
+              href="https://acreditar.org.pt/para-pais/apoio-psicologico/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Acreditar →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Portugal
+          </div>
+
+        </div>
+
+
+        <!-- 04 -->
+
+        <div class="resource">
+
+          <div class="resource-number">04</div>
+
+          <div class="resource-info">
+
+            <h3>
+              Asociația P.A.V.E.L.
+            </h3>
+
+            <p>
+              Provides free psycho-emotional support and psychological
+              counselling for children and young people with cancer and
+              their families, including support in paediatric oncology
+              hospitals in Bucharest.
+            </p>
+
+            <a
+              href="https://asociatiapavel.ro/cosiliere-psihologica"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              P.A.V.E.L. →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Romania
+          </div>
+
+        </div>
+
+
+        <!-- 05 -->
+
+        <div class="resource">
+
+          <div class="resource-number">05</div>
+
+          <div class="resource-info">
+
+            <h3>
+              NURDOR
+            </h3>
+
+            <p>
+              Provides psychosocial support through psychologists and social
+              workers, counselling, workshops for children and parents,
+              rehabilitation programmes and support for families experiencing
+              bereavement.
+            </p>
+
+            <a
+              href="https://www.nurdor.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              NURDOR →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Serbia
+          </div>
+
+        </div>
+
+
+        <!-- 06 -->
+
+        <div class="resource">
+
+          <div class="resource-number">06</div>
+
+          <div class="resource-info">
+
+            <h3>
+              Fundacja ISKIERKA
+            </h3>
+
+            <p>
+              Provides psychological and informational support for families
+              affected by childhood cancer. Its ONKOPORADNIK project,
+              created by a psychologist and psychotherapist, addresses
+              communication, emotions, behaviour changes and coping with
+              childhood cancer.
+            </p>
+
+            <a
+              href="https://fundacjaiskierka.pl/nasze-projekty/onkoporadnik/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Fundacja ISKIERKA →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Poland
+          </div>
+
+        </div>
+
+
+        <!-- 07 -->
+
+        <div class="resource">
+
+          <div class="resource-number">07</div>
+
+          <div class="resource-info">
+
+            <h3>
+              Vereniging Kinderkanker Nederland
+            </h3>
+
+            <p>
+              Provides information, peer connection and support around the
+              psychosocial effects of childhood cancer, including emotional
+              wellbeing, anxiety, depression, relationships and long-term
+              effects for survivors and their families.
+            </p>
+
+            <a
+              href="https://www.kinderkankernederland.nl/psychosociale-gevolgen"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Vereniging Kinderkanker Nederland →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Netherlands
+          </div>
+
+        </div>
+
+
+        <!-- 08 -->
+
+        <div class="resource">
+
+          <div class="resource-number">08</div>
+
+          <div class="resource-info">
+
+            <h3>
+              FIAGOP
+            </h3>
+
+            <p>
+              The Italian federation of childhood cancer parent organisations
+              coordinates psychological, social and family support across
+              paediatric oncology organisations, including programmes designed
+              to improve quality of life during and after treatment.
+            </p>
+
+            <a
+              href="https://fiagop.it/dedicato-alle-famiglie/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              FIAGOP →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Italy
+          </div>
+
+        </div>
+
+
+        <!-- 09 -->
+
+        <div class="resource">
+
+          <div class="resource-number">09</div>
+
+          <div class="resource-info">
+
+            <h3>
+              Barnekreftforeningen
+            </h3>
+
+            <p>
+              Provides guidance and support for families affected by
+              childhood cancer, including information on accessing
+              psychologists in hospital departments and support for children,
+              parents and siblings.
+            </p>
+
+            <a
+              href="https://www.barnekreftforeningen.no/foreldre"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Barnekreftforeningen →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Norway
+          </div>
+
+        </div>
+
+
+        <!-- 10 -->
+
+        <div class="resource">
+
+          <div class="resource-number">10</div>
+
+          <div class="resource-info">
+
+            <h3>
+              Viața fără leucemie
+            </h3>
+
+            <p>
+              Supports children with cancer and their families in Moldova
+              through psychological and social programmes. Its work includes
+              parent support, emotional support for children and a
+              psychological support group for parents experiencing bereavement.
+            </p>
+
+            <a
+              href="https://viatafaraleucemie.md/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Viața fără leucemie →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Moldova
+          </div>
+
+        </div>
+
+
+        <!-- 11 -->
+
+        <div class="resource">
+
+          <div class="resource-number">11</div>
+
+          <div class="resource-info">
+
+            <h3>
+              Children with Cancer UK
+            </h3>
+
+            <p>
+              Provides families affected by childhood cancer with access
+              to emotional support resources, including counselling,
+              bereavement support, family support organisations and
+              wellbeing services.
+            </p>
+
+            <a
+              href="https://www.childrenwithcancer.org.uk/childhood-cancer-info/coping-with-cancer/help-and-support/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Children with Cancer UK →
+            </a>
+
+          </div>
+
+          <div class="location">
+            United Kingdom
+          </div>
+
+        </div>
+
+
+        <!-- 12 -->
+
+        <div class="resource">
+
+          <div class="resource-number">12</div>
+
+          <div class="resource-info">
+
+            <h3>
+              Children Cancer Foundation
+            </h3>
+
+            <p>
+              Supports families affected by childhood cancer in Switzerland,
+              Liechtenstein and Germany and helps connect families with
+              additional services through professional guidance and
+              networking with support organisations.
+            </p>
+
+            <a
+              href="https://www.childrencancer.eu/en/support-for"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Children Cancer Foundation →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Switzerland<br>
+            Liechtenstein<br>
+            Germany
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <section class="note">
+
+      <div class="note-box">
+
+        <h3>
+          A note about psychological support
+        </h3>
+
+        <p>
+          The type of support varies between organisations. Some provide
+          direct psychological or psychotherapeutic care, while others offer
+          psychosocial counselling, peer support, family programmes or
+          connections to professional services. Availability can also depend
+          on the child's location, age and treatment centre. Check the
+          organisation's official website for current eligibility and
+          contact information.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="closing">
+
+      <p>
+        YOU DON'T HAVE TO NAVIGATE THIS ALONE
+      </p>
+
+      <h2>
+        Support can help families feel less alone through every stage of the journey.
+      </h2>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div>
+      © 2026 Alongside
+    </div>
+
+    <div>
+      Families are stronger together.
+    </div>
+
+  </footer>
+
+</body>
+</html>
