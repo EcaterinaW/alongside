@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Psychological Support — South America | Alongside</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #F2ECDD;
+      --light: #FAF8F5;
+      --green: #536B52;
+      --gold: #B4A276;
+      --text: #1D1D1A;
+      --muted: #5C5A54;
+      --border: #D9D1C1;
+      --quote: #EEE5D3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: "Lato", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      max-width: 1180px;
+      margin: auto;
+      padding: 28px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+    }
+
+    nav a {
+      color: var(--muted);
+      transition: 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--green);
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: auto;
+      padding: 90px 32px 80px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(48px, 7vw, 78px);
+      line-height: 0.95;
+      font-weight: 600;
+      max-width: 850px;
+      margin-bottom: 28px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .resources-section {
+      background: var(--light);
+      padding: 85px 32px;
+    }
+
+    .resources-inner {
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .section-label {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 48px;
+      line-height: 1;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      max-width: 700px;
+      color: var(--muted);
+      margin-bottom: 50px;
+    }
+
+    .resource {
+      display: grid;
+      grid-template-columns: 55px 1fr 150px;
+      gap: 28px;
+      align-items: start;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .resource-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 24px;
+      color: var(--gold);
+      padding-top: 2px;
+    }
+
+    .resource-info h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 29px;
+      line-height: 1.1;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .resource-info p {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 17px;
+    }
+
+    .resource-button {
+      display: inline-block;
+      border: 1px solid var(--green);
+      color: var(--green);
+      border-radius: 50px;
+      padding: 9px 17px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .resource-button:hover {
+      background: var(--green);
+      color: var(--light);
+    }
+
+    .location {
+      text-align: right;
+      padding-top: 5px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .note {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 70px 32px;
+    }
+
+    .note-box {
+      background: var(--quote);
+      padding: 38px 42px;
+      border-radius: 16px;
+    }
+
+    .note-box h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .note-box p {
+      color: var(--muted);
+      max-width: 850px;
+      font-size: 14px;
+    }
+
+    .closing {
+      max-width: 1180px;
+      margin: auto;
+      padding: 70px 32px 100px;
+      text-align: center;
+    }
+
+    .closing p:first-child {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .closing h2 {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 32px;
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 750px) {
+
+      header {
+        padding: 22px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 12px 18px;
+      }
+
+      .hero {
+        padding: 65px 20px 60px;
+      }
+
+      .resources-section {
+        padding: 65px 20px;
+      }
+
+      h2 {
+        font-size: 40px;
+      }
+
+      .resource {
+        grid-template-columns: 40px 1fr;
+        gap: 18px;
+        padding: 28px 0;
+      }
+
+      .resource-info {
+        grid-column: 2;
+      }
+
+      .location {
+        grid-column: 2;
+        text-align: left;
+        padding-top: 0;
+        margin-top: -4px;
+      }
+
+      .note {
+        padding: 55px 20px;
+      }
+
+      .note-box {
+        padding: 28px 25px;
+      }
+
+      .closing {
+        padding: 55px 20px 75px;
+      }
+
+      footer {
+        padding: 25px 20px;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <a href="index.html" class="logo">
+      Alongside ♡
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="financial-support.html">Financial Support</a>
+      <a href="psychological-support.html" class="active">Psychological Support</a>
+      <a href="about.html">About Website</a>
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <section class="hero">
+
+      <div class="eyebrow">
+        PSYCHOLOGICAL SUPPORT · SOUTH AMERICA
+      </div>
+
+      <h1>
+        Emotional support for children and families.
+      </h1>
+
+      <p>
+        Childhood cancer can affect the emotional wellbeing of the whole
+        family. These organisations offer psychological, emotional and
+        psychosocial support for children, parents, siblings and caregivers.
+      </p>
+
+    </section>
+
+
+    <section class="resources-section">
+
+      <div class="resources-inner">
+
+        <div class="section-label">
+          FIND SUPPORT
+        </div>
+
+        <h2>
+          Organisations that can help.
+        </h2>
+
+        <p class="section-intro">
+          The resources below provide psychological, emotional or
+          psychosocial support specifically connected to childhood cancer
+          and its impact on children and families.
+        </p>
+
+
+        <!-- 01 -->
+
+        <div class="resource">
+
+          <div class="resource-number">01</div>
+
+          <div class="resource-info">
+
+            <h3>
+              Fundación Natalí Dafne Flexer
+            </h3>
+
+            <p>
+              Provides psychological support for children and young people
+              with cancer, as well as guidance and emotional support for
+              parents, grandparents and other family members. The foundation
+              also runs parent groups, bereavement groups and support for
+              young cancer survivors.
+            </p>
+
+            <a
+              href="https://www.fundacionflexer.org/nuestro-trabajo/apoyo-psicologico"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Fundación Natalí Dafne Flexer →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Argentina
+          </div>
+
+        </div>
+
+
+        <!-- 02 -->
+
+        <div class="resource">
+
+          <div class="resource-number">02</div>
+
+          <div class="resource-info">
+
+            <h3>
+              Fundación María Cecilia
+            </h3>
+
+            <p>
+              Provides psychological and emotional support to children with
+              cancer and their families throughout treatment, including
+              personalised care from psycho-oncology professionals and
+              emotional support for parents and caregivers.
+            </p>
+
+            <a
+              href="https://fmc.org.ar/familias/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Fundación María Cecilia →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Argentina
+          </div>
+
+        </div>
+
+
+        <!-- 03 -->
+
+        <div class="resource">
+
+          <div class="resource-number">03</div>
+
+          <div class="resource-info">
+
+            <h3>
+              Fundação Sara
+            </h3>
+
+            <p>
+              Offers psychological follow-up and emotional support to
+              children and adolescents undergoing cancer treatment. Its
+              multidisciplinary programmes also include recreational,
+              educational and social support for families.
+            </p>
+
+            <a
+              href="https://www.fundacaosara.org.br/projetos/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Fundação Sara →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Brazil
+          </div>
+
+        </div>
+
+
+        <!-- 04 -->
+
+        <div class="resource">
+
+          <div class="resource-number">04</div>
+
+          <div class="resource-info">
+
+            <h3>
+              Fundación Nuestros Hijos
+            </h3>
+
+            <p>
+              Provides psychological care for children with cancer and their
+              families as part of its medical and social support programmes,
+              including emotional support during palliative care and
+              throughout the treatment journey.
+            </p>
+
+            <a
+              href="https://fnh.cl/apoyo-medico-y-social/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Fundación Nuestros Hijos →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Chile
+          </div>
+
+        </div>
+
+
+        <!-- 05 -->
+
+        <div class="resource">
+
+          <div class="resource-number">05</div>
+
+          <div class="resource-info">
+
+            <h3>
+              Fundación Camino
+            </h3>
+
+            <p>
+              Provides individual and group psychological support for
+              adolescents with cancer and their caregivers, guided by a
+              psycho-oncology professional. Its programmes also include
+              recreational activities and spaces for conversation and
+              emotional connection.
+            </p>
+
+            <a
+              href="https://fundacioncamino.cl/programas/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Fundación Camino →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Chile
+          </div>
+
+        </div>
+
+
+        <!-- 06 -->
+
+        <div class="resource">
+
+          <div class="resource-number">06</div>
+
+          <div class="resource-info">
+
+            <h3>
+              Oncomamás
+            </h3>
+
+            <p>
+              Runs a dedicated mental health programme for parents and
+              caregivers of children with cancer, offering emotional
+              accompaniment, psychosocial support, group spaces and
+              specialised psycho-oncology guidance.
+            </p>
+
+            <a
+              href="https://oncomamas.cl/pages/programas/salud-mental"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Oncomamás →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Chile
+          </div>
+
+        </div>
+
+
+        <!-- 07 -->
+
+        <div class="resource">
+
+          <div class="resource-number">07</div>
+
+          <div class="resource-info">
+
+            <h3>
+              Fundación SANAR
+            </h3>
+
+            <p>
+              Supports children and adolescents with cancer and their
+              families through psychological, social and emotional support,
+              helping families navigate treatment and its broader impact.
+            </p>
+
+            <a
+              href="https://www.sanarcancer.org/sanar-ninos-con-cancer/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Fundación SANAR →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Colombia
+          </div>
+
+        </div>
+
+
+        <!-- 08 -->
+
+        <div class="resource">
+
+          <div class="resource-number">08</div>
+
+          <div class="resource-info">
+
+            <h3>
+              Fundación Peruana de Cáncer
+            </h3>
+
+            <p>
+              Provides specialised psychological support for children and
+              adults receiving assistance at its Frieda Heller centre, along
+              with social, emotional and practical support during treatment.
+            </p>
+
+            <a
+              href="https://fpc.pe/nuestro-impacto"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Fundación Peruana de Cáncer →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Peru
+          </div>
+
+        </div>
+
+
+        <!-- 09 -->
+
+        <div class="resource">
+
+          <div class="resource-number">09</div>
+
+          <div class="resource-info">
+
+            <h3>
+              MAGIA
+            </h3>
+
+            <p>
+              Provides emotional and psychological support to children with
+              cancer and their accompanying family members through its
+              programmes and Casa Magia, helping families cope with the
+              emotional effects of illness and treatment.
+            </p>
+
+            <a
+              href="https://www.lamagiacuraelcancer.com/mago-solidario/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              MAGIA →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Peru
+          </div>
+
+        </div>
+
+
+        <!-- 10 -->
+
+        <div class="resource">
+
+          <div class="resource-number">10</div>
+
+          <div class="resource-info">
+
+            <h3>
+              Fundación Pérez Scremini
+            </h3>
+
+            <p>
+              Provides free, comprehensive childhood cancer care in Uruguay,
+              including psychosocial support for children, adolescents and
+              their families through a multidisciplinary team.
+            </p>
+
+            <a
+              href="https://perezscremini.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Fundación Pérez Scremini →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Uruguay
+          </div>
+
+        </div>
+
+
+        <!-- 11 -->
+
+        <div class="resource">
+
+          <div class="resource-number">11</div>
+
+          <div class="resource-info">
+
+            <h3>
+              Instituto Ronald McDonald
+            </h3>
+
+            <p>
+              Supports children and families affected by childhood cancer
+              through programmes focused on wellbeing and psychosocial
+              support, including family-centred care and support spaces
+              connected with paediatric hospitals.
+            </p>
+
+            <a
+              href="https://institutoronald.org.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Instituto Ronald McDonald →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Brazil
+          </div>
+
+        </div>
+
+
+        <!-- 12 -->
+
+        <div class="resource">
+
+          <div class="resource-number">12</div>
+
+          <div class="resource-info">
+
+            <h3>
+              Casa Ronald McDonald Perú
+            </h3>
+
+            <p>
+              Provides family support around paediatric medical treatment,
+              including welcoming spaces where children and caregivers can
+              rest, connect and receive psychological support while their
+              child is receiving care.
+            </p>
+
+            <a
+              href="https://casaronaldmcdonald.org.pe/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resource-button">
+              Casa Ronald McDonald Perú →
+            </a>
+
+          </div>
+
+          <div class="location">
+            Peru
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <section class="note">
+
+      <div class="note-box">
+
+        <h3>
+          A note about psychological support
+        </h3>
+
+        <p>
+          The type and availability of psychological support varies between
+          organisations. Some programmes provide direct counselling or
+          psycho-oncology services, while others offer group support,
+          emotional accompaniment or family-centred programmes. Check each
+          organisation's official website for current eligibility,
+          location and contact information.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="closing">
+
+      <p>
+        YOU DON'T HAVE TO NAVIGATE THIS ALONE
+      </p>
+
+      <h2>
+        Support can help families feel less alone through every stage of the journey.
+      </h2>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div>
+      © 2026 Alongside
+    </div>
+
+    <div>
+      Families are stronger together.
+    </div>
+
+  </footer>
+
+</body>
+</html>
