@@ -8,30 +8,307 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #F2ECDD;
+      --light: #FAF8F5;
+      --green: #536B52;
+      --gold: #B4A276;
+      --text: #1D1D1A;
+      --muted: #5C5A54;
+      --border: #D9D1C1;
+      --quote: #EEE5D3;
+    }
 
-  <link rel="stylesheet" href="styles.css">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: "Lato", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      max-width: 1180px;
+      margin: auto;
+      padding: 28px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+    }
+
+    nav a {
+      color: var(--muted);
+      transition: 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--green);
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: auto;
+      padding: 90px 32px 80px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(48px, 7vw, 78px);
+      line-height: 0.95;
+      font-weight: 600;
+      max-width: 850px;
+      margin-bottom: 28px;
+    }
+
+    .hero p {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .regions-section {
+      background: var(--light);
+      padding: 85px 32px;
+    }
+
+    .regions-inner {
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .section-label {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 48px;
+      line-height: 1;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      max-width: 680px;
+      color: var(--muted);
+      margin-bottom: 48px;
+    }
+
+    .region-list {
+      border-top: 1px solid var(--border);
+    }
+
+    .region {
+      display: grid;
+      grid-template-columns: 70px 1fr auto;
+      gap: 28px;
+      align-items: center;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--border);
+      transition: 0.2s ease;
+    }
+
+    .region:hover {
+      padding-left: 8px;
+    }
+
+    .region-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+      color: var(--gold);
+    }
+
+    .region-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 31px;
+      font-weight: 600;
+    }
+
+    .region-description {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 4px;
+      max-width: 620px;
+    }
+
+    .arrow {
+      font-size: 24px;
+      color: var(--green);
+      transition: 0.2s ease;
+    }
+
+    .region:hover .arrow {
+      transform: translateX(5px);
+    }
+
+    .note {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 70px 32px;
+    }
+
+    .note-box {
+      background: var(--quote);
+      padding: 38px 42px;
+      border-radius: 16px;
+    }
+
+    .note-box h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .note-box p {
+      color: var(--muted);
+      max-width: 800px;
+      font-size: 14px;
+    }
+
+    .closing {
+      max-width: 1180px;
+      margin: auto;
+      padding: 70px 32px 100px;
+      text-align: center;
+    }
+
+    .closing p:first-child {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .closing h2 {
+      max-width: 650px;
+      margin: auto;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 32px;
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 750px) {
+
+      header {
+        padding: 22px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 12px 18px;
+      }
+
+      .hero {
+        padding: 65px 20px 60px;
+      }
+
+      .regions-section {
+        padding: 65px 20px;
+      }
+
+      h2 {
+        font-size: 40px;
+      }
+
+      .region {
+        grid-template-columns: 40px 1fr auto;
+        gap: 16px;
+        padding: 25px 0;
+      }
+
+      .region-name {
+        font-size: 26px;
+      }
+
+      .region-description {
+        font-size: 13px;
+      }
+
+      .note {
+        padding: 55px 20px;
+      }
+
+      .note-box {
+        padding: 28px 25px;
+      }
+
+      .closing {
+        padding: 55px 20px 75px;
+      }
+
+      footer {
+        padding: 25px 20px;
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
+  <header>
 
-    <a class="brand" href="index.html">
-      <span class="brand-heart">♡</span>
-
-      <span>
-        <span class="brand-name">Alongside</span>
-        <span class="brand-tagline">FAMILIES ARE STRONGER TOGETHER</span>
-      </span>
+    <a href="index.html" class="logo">
+      Alongside ♡
     </a>
 
-    <nav class="nav">
-      <a href="index.html">Homepage</a>
+    <nav>
+      <a href="index.html">Home</a>
       <a href="financial-support.html">Financial Support</a>
-      <a class="active" href="psychological-support.html">Psychological Support</a>
+      <a href="psychological-support.html" class="active">Psychological Support</a>
       <a href="about.html">About Website</a>
     </nav>
 
@@ -40,210 +317,242 @@
 
   <main>
 
-    <!-- PAGE INTRO -->
-    <section class="financial-hero">
+    <section class="hero">
 
-      <p class="eyebrow">PSYCHOLOGICAL SUPPORT</p>
+      <div class="eyebrow">
+        PSYCHOLOGICAL SUPPORT
+      </div>
 
-      <h1>Emotional support for children and their families.</h1>
+      <h1>
+        Support for the emotional side of childhood cancer.
+      </h1>
 
-      <p class="financial-intro">
-        Childhood cancer can affect the emotional well-being of the entire family.
-        These organizations offer counseling, support groups, educational resources,
-        and tools that can help children, parents, caregivers, and siblings cope.
+      <p>
+        A child's cancer diagnosis can affect the whole family.
+        Find organisations and resources that offer psychological,
+        emotional and psychosocial support for children, parents,
+        siblings and caregivers.
       </p>
 
     </section>
 
 
-    <!-- SUPPORT RESOURCES -->
-    <section class="support-resources">
+    <section class="regions-section">
 
-      <!-- CANCERCARE -->
-      <article class="support-card">
+      <div class="regions-inner">
 
-        <div class="support-icon" aria-hidden="true">♡</div>
+        <div class="section-label">
+          FIND SUPPORT BY REGION
+        </div>
 
-        <p class="support-category">COUNSELING · SUPPORT GROUPS</p>
+        <h2>
+          Resources around the world.
+        </h2>
 
-        <h2>CancerCare</h2>
-
-        <p>
-          Provides free emotional and practical support from professional
-          oncology social workers, including counseling, support groups,
-          resource navigation, and programs for children and families.
+        <p class="section-intro">
+          Explore support organisations by region. Many provide
+          counselling, peer support, family programmes, psychosocial
+          services and practical guidance for coping with childhood cancer.
         </p>
 
-        <a
-          class="support-link"
-          href="https://www.cancercare.org/services"
-          target="_blank"
-          rel="noopener noreferrer">
-          Visit Website →
-        </a>
 
-      </article>
+        <div class="region-list">
 
 
-      <!-- CANCER SUPPORT COMMUNITY -->
-      <article class="support-card">
+          <!-- 01 -->
 
-        <div class="support-icon" aria-hidden="true">◯</div>
+          <a href="psychological-north-america.html" class="region">
 
-        <p class="support-category">FAMILY · CAREGIVER SUPPORT</p>
+            <div class="region-number">
+              01
+            </div>
 
-        <h2>Cancer Support Community</h2>
+            <div>
+              <div class="region-name">
+                North America
+              </div>
 
-        <p>
-          Offers professionally led support programs for people affected by
-          cancer, including children, teens, parents, caregivers, and families.
-          Services may include counseling, support groups, education, and navigation.
-        </p>
+              <div class="region-description">
+                Psychological and family support services across the United
+                States, Canada and Mexico.
+              </div>
+            </div>
 
-        <a
-          class="support-link"
-          href="https://www.cancersupportcommunity.org/find-location-near-you"
-          target="_blank"
-          rel="noopener noreferrer">
-          Find Support →
-        </a>
+            <div class="arrow">
+              →
+            </div>
 
-      </article>
-
-
-      <!-- ACCO -->
-      <article class="support-card">
-
-        <div class="support-icon" aria-hidden="true">★</div>
-
-        <p class="support-category">CHILDREN · FAMILY RESOURCES</p>
-
-        <h2>American Childhood Cancer Organization</h2>
-
-        <p>
-          Provides free resources created for children with cancer and their
-          families, including books, comfort materials, journals, and tools
-          designed to help children process difficult emotions and experiences.
-        </p>
-
-        <a
-          class="support-link"
-          href="https://www.acco.org/we-can-help/"
-          target="_blank"
-          rel="noopener noreferrer">
-          Visit Website →
-        </a>
-
-      </article>
+          </a>
 
 
-      <!-- SUPERSIBS -->
-      <article class="support-card">
+          <!-- 02 -->
 
-        <div class="support-icon" aria-hidden="true">♡</div>
+          <a href="psychological-south-america.html" class="region">
 
-        <p class="support-category">SIBLING SUPPORT</p>
+            <div class="region-number">
+              02
+            </div>
 
-        <h2>SuperSibs</h2>
+            <div>
+              <div class="region-name">
+                South America
+              </div>
 
-        <p>
-          A program from Alex's Lemonade Stand Foundation that provides
-          age-appropriate emotional support and activities for children and
-          teens who have a brother or sister diagnosed with cancer.
-        </p>
+              <div class="region-description">
+                Organisations supporting children with cancer and their
+                families through counselling, connection and psychosocial care.
+              </div>
+            </div>
 
-        <a
-          class="support-link"
-          href="https://www.alexslemonade.org/childhood-cancer/for-families/supporting-siblings/supersibs-mailing-programs"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn More →
-        </a>
+            <div class="arrow">
+              →
+            </div>
 
-      </article>
-
-
-      <!-- ALSF RESOURCE NAVIGATOR -->
-      <article class="support-card">
-
-        <div class="support-icon" aria-hidden="true">→</div>
-
-        <p class="support-category">RESOURCE NAVIGATION</p>
-
-        <h2>ALSF Resource Navigator</h2>
-
-        <p>
-          Helps families affected by childhood cancer find resources based on
-          their individual needs, including emotional support, sibling support,
-          grief resources, support groups, and other family services.
-        </p>
-
-        <a
-          class="support-link"
-          href="https://www.alexslemonade.org/childhood-cancer/for-families/resource-navigator"
-          target="_blank"
-          rel="noopener noreferrer">
-          Find Resources →
-        </a>
-
-      </article>
+          </a>
 
 
-      <!-- CHILDREN'S ONCOLOGY GROUP -->
-      <article class="support-card">
+          <!-- 03 -->
 
-        <div class="support-icon" aria-hidden="true">i</div>
+          <a href="psychological-europe.html" class="region">
 
-        <p class="support-category">EDUCATION · COPING</p>
+            <div class="region-number">
+              03
+            </div>
 
-        <h2>Children's Oncology Group</h2>
+            <div>
+              <div class="region-name">
+                Europe
+              </div>
 
-        <p>
-          Offers trusted resources for families navigating childhood cancer,
-          including a Family Handbook with information about coping, family
-          relationships, emotional concerns, and supportive care.
-        </p>
+              <div class="region-description">
+                Emotional and psychosocial support from childhood cancer
+                organisations across Europe.
+              </div>
+            </div>
 
-        <a
-          class="support-link"
-          href="https://childrensoncologygroup.org/patients-families/education-resources/"
-          target="_blank"
-          rel="noopener noreferrer">
-          View Resources →
-        </a>
+            <div class="arrow">
+              →
+            </div>
 
-      </article>
-
-    </section>
+          </a>
 
 
-    <!-- CARE TEAM NOTE -->
-    <section class="financial-note">
+          <!-- 04 -->
 
-      <div class="note-icon">i</div>
+          <a href="psychological-asia.html" class="region">
 
-      <div>
-        <h2>Your child's care team can also help</h2>
+            <div class="region-number">
+              04
+            </div>
 
-        <p>
-          Pediatric cancer centers often have social workers, psychologists,
-          child life specialists, counselors, or other professionals who can
-          support children and families during treatment. Ask your child's
-          healthcare team what psychosocial services are available.
-        </p>
+            <div>
+              <div class="region-name">
+                Asia
+              </div>
+
+              <div class="region-description">
+                Family support, counselling, peer connection and emotional
+                wellbeing resources across Asia.
+              </div>
+            </div>
+
+            <div class="arrow">
+              →
+            </div>
+
+          </a>
+
+
+          <!-- 05 -->
+
+          <a href="psychological-africa.html" class="region">
+
+            <div class="region-number">
+              05
+            </div>
+
+            <div>
+              <div class="region-name">
+                Africa
+              </div>
+
+              <div class="region-description">
+                Psychosocial and emotional support resources for children
+                with cancer and their families across Africa.
+              </div>
+            </div>
+
+            <div class="arrow">
+              →
+            </div>
+
+          </a>
+
+
+          <!-- 06 -->
+
+          <a href="psychological-oceania.html" class="region">
+
+            <div class="region-number">
+              06
+            </div>
+
+            <div>
+              <div class="region-name">
+                Australia & Oceania
+              </div>
+
+              <div class="region-description">
+                Family wellbeing, counselling, peer support and emotional
+                resources across Australia and New Zealand.
+              </div>
+            </div>
+
+            <div class="arrow">
+              →
+            </div>
+
+          </a>
+
+
+        </div>
+
       </div>
 
     </section>
 
 
-    <!-- CLOSING SECTION -->
-    <section class="financial-closing">
+    <section class="note">
 
-      <p class="eyebrow">SUPPORT FOR THE WHOLE FAMILY</p>
+      <div class="note-box">
+
+        <h3>
+          A note about psychological support
+        </h3>
+
+        <p>
+          Every family responds to a cancer diagnosis differently.
+          Psychological and psychosocial support can include professional
+          counselling, child-life services, peer support, family programmes,
+          support for siblings and help from social workers. If a child or
+          family member is experiencing persistent distress, anxiety or
+          changes in mood, consider speaking with the child's healthcare
+          team about appropriate professional support.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="closing">
+
+      <p>
+        YOU DON'T HAVE TO NAVIGATE THIS ALONE
+      </p>
 
       <h2>
-        Asking for emotional support can be an important part of caring
-        for both your child and your family.
+        There is support for the child — and for the people beside them.
       </h2>
 
     </section>
@@ -251,19 +560,14 @@
   </main>
 
 
-  <!-- FOOTER -->
   <footer>
 
     <div>
-      <div class="footer-brand">Alongside</div>
-      <div class="footer-tagline">FAMILIES ARE STRONGER TOGETHER</div>
+      © 2026 Alongside
     </div>
 
-    <div class="footer-links">
-      <a href="index.html">Homepage</a>
-      <a href="financial-support.html">Financial Support</a>
-      <a href="psychological-support.html">Psychological Support</a>
-      <a href="about.html">About Website</a>
+    <div>
+      Families are stronger together.
     </div>
 
   </footer>
