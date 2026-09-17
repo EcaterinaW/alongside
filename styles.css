@@ -86,7 +86,6 @@ a {
   align-items: center;
   gap: 40px;
   min-height: 560px;
-
   padding: 10px 5% 35px;
 }
 
@@ -100,7 +99,6 @@ a {
   min-height: 560px;
   object-fit: cover;
   display: block;
-
   transform: scale(1.04) translate(2.5%, 2%);
 }
 
@@ -155,9 +153,14 @@ h1 {
   font-weight: 700;
 }
 
+
+/* --------------------------------
+   HOMEPAGE RESOURCE CARDS
+----------------------------------- */
+
 .resources {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 20px;
   padding: 34px 5%;
 }
@@ -170,6 +173,22 @@ h1 {
   background: var(--light);
   text-decoration: none;
   transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* Three cards on the first row */
+.resource-card:nth-child(1),
+.resource-card:nth-child(2),
+.resource-card:nth-child(3) {
+  grid-column: span 2;
+}
+
+/* Two centered cards on the second row */
+.resource-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.resource-card:nth-child(5) {
+  grid-column: 4 / span 2;
 }
 
 .resource-card:hover {
@@ -214,6 +233,11 @@ h1 {
   font-weight: 700;
 }
 
+
+/* --------------------------------
+   QUOTE SECTION
+----------------------------------- */
+
 .quote-section {
   display: grid;
   grid-template-columns: 1.4fr .8fr;
@@ -257,6 +281,11 @@ blockquote {
   text-align: center;
 }
 
+
+/* --------------------------------
+   FOOTER
+----------------------------------- */
+
 footer {
   display: flex;
   justify-content: space-between;
@@ -283,7 +312,13 @@ footer {
   font-size: 14px;
 }
 
+
+/* --------------------------------
+   HOMEPAGE — TABLET
+----------------------------------- */
+
 @media (max-width: 850px) {
+
   .site-header {
     align-items: flex-start;
     flex-direction: column;
@@ -310,6 +345,15 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .resource-card,
+  .resource-card:nth-child(1),
+  .resource-card:nth-child(2),
+  .resource-card:nth-child(3),
+  .resource-card:nth-child(4),
+  .resource-card:nth-child(5) {
+    grid-column: auto;
+  }
+
   .resource-card p {
     min-height: auto;
   }
@@ -328,7 +372,13 @@ footer {
   }
 }
 
+
+/* --------------------------------
+   HOMEPAGE — PHONE
+----------------------------------- */
+
 @media (max-width: 520px) {
+
   .site-header {
     padding: 16px 5%;
   }
@@ -368,7 +418,9 @@ footer {
     padding: 24px;
   }
 }
-  /* --------------------------------
+
+
+/* --------------------------------
    FINANCIAL SUPPORT PAGE
 ----------------------------------- */
 
@@ -421,12 +473,9 @@ footer {
   display: grid;
   place-items: center;
   margin-bottom: 22px;
-
   border-radius: 50%;
-
   background: var(--cream);
   color: var(--gold);
-
   font-family: "Cormorant Garamond", serif;
   font-size: 30px;
   font-weight: 500;
@@ -434,9 +483,7 @@ footer {
 
 .support-category {
   margin: 0 0 8px;
-
   color: var(--gold);
-
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 1.5px;
@@ -444,7 +491,6 @@ footer {
 
 .support-card h2 {
   margin: 0 0 14px;
-
   font-family: "Cormorant Garamond", serif;
   font-size: 30px;
   font-weight: 600;
@@ -452,18 +498,14 @@ footer {
 
 .support-card p:not(.support-category) {
   margin: 0 0 25px;
-
   color: var(--muted);
-
   font-size: 15px;
   line-height: 1.6;
 }
 
 .support-link {
   margin-top: auto;
-
   color: var(--green);
-
   text-decoration: none;
   font-weight: 700;
 }
@@ -478,45 +520,34 @@ footer {
 .financial-note {
   display: flex;
   gap: 22px;
-
   max-width: 1000px;
-
   margin: 0 auto 75px;
   padding: 30px;
-
   background: #EEE5D3;
   border-radius: 18px;
 }
 
 .note-icon {
   flex-shrink: 0;
-
   width: 42px;
   height: 42px;
-
   display: grid;
   place-items: center;
-
   border: 1px solid var(--gold);
   border-radius: 50%;
-
   color: var(--gold);
-
   font-family: "Cormorant Garamond", serif;
   font-size: 24px;
 }
 
 .financial-note h2 {
   margin: 0 0 8px;
-
   font-size: 19px;
 }
 
 .financial-note p {
   margin: 0;
-
   color: var(--muted);
-
   line-height: 1.65;
 }
 
@@ -525,17 +556,13 @@ footer {
 
 .financial-closing {
   padding: 70px 7%;
-
   background: #EEE5D3;
-
   text-align: center;
 }
 
 .financial-closing h2 {
   max-width: 800px;
-
   margin: 15px auto 0;
-
   font-family: "Cormorant Garamond", serif;
   font-size: 38px;
   font-weight: 500;
@@ -586,7 +613,6 @@ footer {
 
   .financial-note {
     align-items: flex-start;
-
     margin-bottom: 50px;
     padding: 24px;
   }
@@ -600,6 +626,7 @@ footer {
   }
 
 }
+
 
 /* --------------------------------
    FINANCIAL SUPPORT — REGIONS
@@ -699,6 +726,7 @@ footer {
 .region-row:hover .region-arrow {
   transform: translateX(6px);
 }
+
 
 /* MOBILE */
 
