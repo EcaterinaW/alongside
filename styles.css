@@ -29,7 +29,9 @@ a {
   color: inherit;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 .site-header {
   display: flex;
@@ -44,15 +46,15 @@ a {
   display: flex;
   align-items: center;
   gap: 12px;
-  text-decoration: none;
   flex-shrink: 0;
+  text-decoration: none;
 }
 
 .brand-heart {
+  color: var(--green);
   font-family: "Cormorant Garamond", serif;
   font-size: 38px;
   line-height: 1;
-  color: var(--green);
 }
 
 .brand-name {
@@ -81,9 +83,9 @@ a {
 
 .nav a {
   position: relative;
-  text-decoration: none;
   color: var(--muted);
   font-size: 13px;
+  text-decoration: none;
 }
 
 .nav a:hover,
@@ -101,7 +103,9 @@ a {
   background: var(--green);
 }
 
-/* GENERAL */
+/* =========================
+   GENERAL
+========================= */
 
 h1,
 h2,
@@ -117,7 +121,9 @@ p {
   margin-top: 0;
 }
 
-/* HERO */
+/* =========================
+   HOMEPAGE HERO
+========================= */
 
 .hero {
   display: grid;
@@ -187,11 +193,13 @@ p {
   transform: translateY(-2px);
 }
 
-/* HOMEPAGE RESOURCE CARDS */
+/* =========================
+   HOMEPAGE RESOURCE CARDS
+========================= */
 
 .resources {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 20px;
   padding: 34px 5%;
 }
@@ -211,12 +219,28 @@ p {
   box-shadow: 0 10px 28px rgba(0, 0, 0, .07);
 }
 
+/* FIRST ROW — 3 equal cards */
+
+.resource-card:nth-child(1) {
+  grid-column: 1 / span 2;
+}
+
+.resource-card:nth-child(2) {
+  grid-column: 3 / span 2;
+}
+
+.resource-card:nth-child(3) {
+  grid-column: 5 / span 2;
+}
+
+/* SECOND ROW — 2 equal cards, centered */
+
 .resource-card:nth-child(4) {
-  margin-left: 50%;
+  grid-column: 2 / span 2;
 }
 
 .resource-card:nth-child(5) {
-  margin-right: 50%;
+  grid-column: 4 / span 2;
 }
 
 .icon-circle {
@@ -262,7 +286,9 @@ p {
   letter-spacing: .5px;
 }
 
-/* QUOTE */
+/* =========================
+   QUOTE
+========================= */
 
 .quote-section {
   display: grid;
@@ -316,7 +342,9 @@ blockquote {
   padding-left: 56px;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
   display: flex;
@@ -357,7 +385,9 @@ footer {
   color: var(--green);
 }
 
-/* FINANCIAL SUPPORT PAGE */
+/* =========================
+   FINANCIAL SUPPORT PAGE
+========================= */
 
 .page-hero {
   padding: 90px 8% 70px;
@@ -477,7 +507,9 @@ footer {
   letter-spacing: 2px;
 }
 
-/* FINANCIAL SUPPORT — REGIONAL PAGES */
+/* =========================
+   REGIONAL RESOURCE PAGES
+========================= */
 
 .resources-page {
   padding: 70px 8%;
@@ -560,9 +592,12 @@ footer {
   text-align: right;
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width: 1000px) {
+
   .site-header {
     align-items: flex-start;
     flex-direction: column;
@@ -590,14 +625,17 @@ footer {
 }
 
 @media (max-width: 850px) {
+
   .resources {
     grid-template-columns: 1fr;
   }
 
+  .resource-card:nth-child(1),
+  .resource-card:nth-child(2),
+  .resource-card:nth-child(3),
   .resource-card:nth-child(4),
   .resource-card:nth-child(5) {
-    margin-left: 0;
-    margin-right: 0;
+    grid-column: auto;
   }
 
   .resource-card p {
@@ -616,6 +654,7 @@ footer {
 }
 
 @media (max-width: 600px) {
+
   .site-header {
     padding: 20px 6%;
   }
