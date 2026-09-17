@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psychological Support — Africa | Alongside</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #F2ECDD;
+  --light: #FAF8F5;
+  --green: #536B52;
+  --gold: #B4A276;
+  --text: #1D1D1A;
+  --muted: #5C5A54;
+  --border: #D9D1C1;
+  --quote: #EEE5D3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: "Lato", sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  padding: 28px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+}
+
+nav a {
+  color: var(--muted);
+  transition: 0.2s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--green);
+}
+
+.hero {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 95px 7% 80px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(48px, 7vw, 76px);
+  line-height: 0.95;
+  font-weight: 600;
+  margin: 0 0 28px;
+  max-width: 800px;
+}
+
+.hero p {
+  max-width: 700px;
+  font-size: 18px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.resources-section {
+  background: var(--light);
+  padding: 85px 7% 100px;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 600;
+  margin: 0 0 18px;
+}
+
+.section-intro {
+  color: var(--muted);
+  max-width: 700px;
+  margin-bottom: 55px;
+}
+
+.resource {
+  display: grid;
+  grid-template-columns: 55px 1fr 150px;
+  gap: 28px;
+  align-items: start;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.resource-number {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  color: var(--gold);
+  padding-top: 2px;
+}
+
+.resource-info h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 29px;
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.resource-info p {
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 680px;
+  margin: 0 0 17px;
+}
+
+.resource-button {
+  display: inline-block;
+  border: 1px solid var(--green);
+  color: var(--green);
+  padding: 7px 17px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.resource-button:hover {
+  background: var(--green);
+  color: var(--light);
+}
+
+.location {
+  text-align: right;
+  padding-top: 5px;
+  color: var(--gold);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.note {
+  max-width: 900px;
+  margin: 75px auto 0;
+  padding: 30px 34px;
+  background: var(--quote);
+}
+
+.note h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  margin: 0 0 8px;
+}
+
+.note p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.closing {
+  padding: 100px 7%;
+  text-align: center;
+}
+
+.closing h2 {
+  max-width: 650px;
+  margin: 0 auto 18px;
+}
+
+.closing p {
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 30px 7%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 20px;
+  }
+
+  .hero {
+    padding-top: 70px;
+  }
+
+  .resource {
+    grid-template-columns: 42px 1fr;
+    gap: 18px;
+  }
+
+  .location {
+    grid-column: 2;
+    text-align: left;
+    padding-top: 0;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  .resources-section {
+    padding-top: 65px;
+  }
+
+  .resource {
+    grid-template-columns: 35px 1fr;
+    gap: 12px;
+    padding: 27px 0;
+  }
+
+  .resource-info h3 {
+    font-size: 25px;
+  }
+
+  .note {
+    padding: 25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" class="logo">Alongside <span>♡</span></a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="financial-support.html">Financial Support</a>
+    <a href="psychological-support.html" class="active">Psychological Support</a>
+    <a href="about.html">About Website</a>
+  </nav>
+</header>
+
+
+<section class="hero">
+
+  <div class="eyebrow">PSYCHOLOGICAL SUPPORT · AFRICA</div>
+
+  <h1>
+    Support for the emotional side of childhood cancer.
+  </h1>
+
+  <p>
+    These organizations provide psychological, emotional, psychosocial,
+    or family support for children with cancer and the people caring for them.
+    Some offer direct counselling and therapy, while others provide
+    psychosocial programs, support groups, or family-centered care.
+  </p>
+
+</section>
+
+
+<section class="resources-section">
+
+  <div class="section-inner">
+
+    <div class="section-label">FIND SUPPORT</div>
+
+    <h2>Resources across Africa.</h2>
+
+    <p class="section-intro">
+      Psychological support can take many forms during childhood cancer.
+      Depending on the organization, families may find counselling,
+      psychosocial care, therapeutic activities, peer support, or help
+      coping with the emotional impact of diagnosis and treatment.
+    </p>
+
+
+    <!-- 01 -->
+    <div class="resource">
+
+      <div class="resource-number">01</div>
+
+      <div class="resource-info">
+
+        <h3>CHOC Childhood Cancer Foundation</h3>
+
+        <p>
+          CHOC provides professional psychosocial and emotional support
+          through social workers, counsellors, and social auxiliary workers
+          based in paediatric oncology units. Support is available to children
+          and families throughout the cancer journey, including bereavement
+          support.
+        </p>
+
+        <a
+          href="https://choc.org.za/choc-counselling-support/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          CHOC →
+        </a>
+
+      </div>
+
+      <div class="location">
+        South Africa
+      </div>
+
+    </div>
+
+
+    <!-- 02 -->
+    <div class="resource">
+
+      <div class="resource-number">02</div>
+
+      <div class="resource-info">
+
+        <h3>KidzCan Zimbabwe</h3>
+
+        <p>
+          Provides holistic psychosocial care addressing the emotional and
+          social burden of childhood cancer. The organization supports children
+          and families alongside its medical, practical, accommodation,
+          transport, and case-management services.
+        </p>
+
+        <a
+          href="https://kidzcanzimbabwe.org/our-services/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          KidzCan Zimbabwe →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Zimbabwe
+      </div>
+
+    </div>
+
+
+    <!-- 03 -->
+    <div class="resource">
+
+      <div class="resource-number">03</div>
+
+      <div class="resource-info">
+
+        <h3>Hope for Cancer Kids</h3>
+
+        <p>
+          Provides psychosocial support to children with cancer and their
+          caregivers in Kenya. Its program includes art therapy for children,
+          caregiver support groups, coping mechanisms, and activities designed
+          to reduce isolation and help families manage the emotional impact
+          of treatment.
+        </p>
+
+        <a
+          href="https://hope4cancerkids.org/psychosocial-support/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Hope for Cancer Kids →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Kenya
+      </div>
+
+    </div>
+
+
+    <!-- 04 -->
+    <div class="resource">
+
+      <div class="resource-number">04</div>
+
+      <div class="resource-info">
+
+        <h3>Bless a Child Foundation</h3>
+
+        <p>
+          Supports children with cancer and their caregivers with counselling,
+          psychosocial support, parent and caregiver groups, bereavement
+          support, play therapy, and other family-centered services during
+          treatment.
+        </p>
+
+        <a
+          href="https://blessachildfoundation.org/about-us/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Bless a Child Foundation →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Uganda
+      </div>
+
+    </div>
+
+
+    <!-- 05 -->
+    <div class="resource">
+
+      <div class="resource-number">05</div>
+
+      <div class="resource-info">
+
+        <h3>Zambian Childhood Cancer Foundation</h3>
+
+        <p>
+          ZACCAF provides psychosocial support and counselling for children
+          with cancer, families, and caregivers. Its programs also include
+          patient and family support, treatment coordination, and practical
+          assistance throughout the cancer journey.
+        </p>
+
+        <a
+          href="https://zaccaf.org/programs"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          ZACCAF →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Zambia
+      </div>
+
+    </div>
+
+
+    <!-- 06 -->
+    <div class="resource">
+
+      <div class="resource-number">06</div>
+
+      <div class="resource-info">
+
+        <h3>Tumaini La Maisha</h3>
+
+        <p>
+          Tumaini La Maisha provides psychosocial support to children with
+          cancer and their families in Tanzania. Its programs have included
+          counselling, therapeutic play, child-life activities, and
+          psychosocial activities for children and caregivers during treatment.
+        </p>
+
+        <a
+          href="https://www.wearetlm.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Tumaini La Maisha →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Tanzania
+      </div>
+
+    </div>
+
+
+    <!-- 07 -->
+    <div class="resource">
+
+      <div class="resource-number">07</div>
+
+      <div class="resource-info">
+
+        <h3>Association L’Avenir</h3>
+
+        <p>
+          Provides medico-psycho-social support to children with cancer and
+          their families in Morocco. The organization accompanies families
+          through the physical, psychological, social, and practical
+          difficulties associated with childhood cancer.
+        </p>
+
+        <a
+          href="https://associationlavenir.ma/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Association L’Avenir →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Morocco
+      </div>
+
+    </div>
+
+
+    <!-- 08 -->
+    <div class="resource">
+
+      <div class="resource-number">08</div>
+
+      <div class="resource-info">
+
+        <h3>Association Noujoum</h3>
+
+        <p>
+          Provides material and psychological support to hospitalized children
+          with cancer. Its work in pediatric oncology includes social and
+          psychological accompaniment designed to make hospitalization and
+          treatment less difficult for children and families.
+        </p>
+
+        <a
+          href="https://www.noujoum.org/concer.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Association Noujoum →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Morocco
+      </div>
+
+    </div>
+
+
+    <!-- 09 -->
+    <div class="resource">
+
+      <div class="resource-number">09</div>
+
+      <div class="resource-info">
+
+        <h3>TAPCCO</h3>
+
+        <p>
+          Tesfa Addis Parents Childhood Cancer Organization supports children
+          with cancer and their parents in Ethiopia. Its activities include
+          psychosocial support, family assistance, play and recreational
+          activities, and programs intended to improve children's emotional
+          wellbeing during treatment.
+        </p>
+
+        <a
+          href="https://tapcco.org/about-us/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          TAPCCO →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Ethiopia
+      </div>
+
+    </div>
+
+
+    <!-- 10 -->
+    <div class="resource">
+
+      <div class="resource-number">10</div>
+
+      <div class="resource-info">
+
+        <h3>Mathiwos Wondu Foundation</h3>
+
+        <p>
+          Provides psychosocial support to children with cancer and their
+          caregivers in Ethiopia through its dedicated Psychosocial Support
+          Center. Support includes assistance with accommodation, meals,
+          transportation, education, and the emotional and social challenges
+          of treatment.
+        </p>
+
+        <a
+          href="https://mathiwos.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Mathiwos Wondu Foundation →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Ethiopia
+      </div>
+
+    </div>
+
+
+    <!-- 11 -->
+    <div class="resource">
+
+      <div class="resource-number">11</div>
+
+      <div class="resource-info">
+
+        <h3>Children Living With Cancer Foundation</h3>
+
+        <p>
+          Supports children with cancer and their families in Nigeria.
+          Its services include family support, counselling, sibling support
+          groups, educational activities, and other programs intended to help
+          families cope with the impact of childhood cancer.
+        </p>
+
+        <a
+          href="https://clwcf-ngo.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          CLWCF →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Nigeria
+      </div>
+
+    </div>
+
+
+    <!-- 12 -->
+    <div class="resource">
+
+      <div class="resource-number">12</div>
+
+      <div class="resource-info">
+
+        <h3>Cure Childhood Cancer Ghana</h3>
+
+        <p>
+          Provides psychosocial support for children with cancer and their
+          families and works to strengthen family resilience. Its parent
+          support activities create space for families to share experiences,
+          receive guidance, and discuss the psychological challenges of
+          childhood cancer.
+        </p>
+
+        <a
+          href="https://childhoodcancerghana.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Cure Childhood Cancer Ghana →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Ghana
+      </div>
+
+    </div>
+
+
+    <div class="note">
+
+      <h3>A note about psychological support</h3>
+
+      <p>
+        Services vary by organization, location, eligibility, and treatment
+        stage. Some organizations provide direct counselling or psychosocial
+        care, while others offer family support, therapeutic activities,
+        support groups, or referral and navigation services. Please check the
+        official website before contacting an organization, as programs and
+        availability can change.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="closing">
+
+  <h2>You don't have to navigate this alone.</h2>
+
+  <p>
+    Finding emotional support can be an important part of caring for a child
+    with cancer — and for taking care of yourself, too.
+  </p>
+
+</section>
+
+
+<footer>
+
+  <div>© 2026 Alongside</div>
+
+  <div>FAMILIES ARE STRONGER TOGETHER</div>
+
+</footer>
+
+</body>
+</html>
