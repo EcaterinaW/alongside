@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psychological Support — Australia & Oceania | Alongside</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #F2ECDD;
+  --light: #FAF8F5;
+  --green: #536B52;
+  --gold: #B4A276;
+  --text: #1D1D1A;
+  --muted: #5C5A54;
+  --border: #D9D1C1;
+  --quote: #EEE5D3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: "Lato", sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  padding: 28px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+}
+
+nav a {
+  color: var(--muted);
+  transition: 0.2s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--green);
+}
+
+.hero {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 95px 7% 80px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(48px, 7vw, 76px);
+  line-height: 0.95;
+  font-weight: 600;
+  margin: 0 0 28px;
+  max-width: 800px;
+}
+
+.hero p {
+  max-width: 700px;
+  font-size: 18px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.resources-section {
+  background: var(--light);
+  padding: 85px 7% 100px;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 600;
+  margin: 0 0 18px;
+}
+
+.section-intro {
+  color: var(--muted);
+  max-width: 700px;
+  margin-bottom: 55px;
+}
+
+.resource {
+  display: grid;
+  grid-template-columns: 55px 1fr 150px;
+  gap: 28px;
+  align-items: start;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.resource-number {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  color: var(--gold);
+  padding-top: 2px;
+}
+
+.resource-info h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 29px;
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.resource-info p {
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 680px;
+  margin: 0 0 17px;
+}
+
+.resource-button {
+  display: inline-block;
+  border: 1px solid var(--green);
+  color: var(--green);
+  padding: 7px 17px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.resource-button:hover {
+  background: var(--green);
+  color: var(--light);
+}
+
+.location {
+  text-align: right;
+  padding-top: 5px;
+  color: var(--gold);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.note {
+  max-width: 900px;
+  margin: 75px auto 0;
+  padding: 30px 34px;
+  background: var(--quote);
+}
+
+.note h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  margin: 0 0 8px;
+}
+
+.note p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.closing {
+  padding: 100px 7%;
+  text-align: center;
+}
+
+.closing h2 {
+  max-width: 650px;
+  margin: 0 auto 18px;
+}
+
+.closing p {
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 30px 7%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 20px;
+  }
+
+  .hero {
+    padding-top: 70px;
+  }
+
+  .resource {
+    grid-template-columns: 42px 1fr;
+    gap: 18px;
+  }
+
+  .location {
+    grid-column: 2;
+    text-align: left;
+    padding-top: 0;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  .resources-section {
+    padding-top: 65px;
+  }
+
+  .resource {
+    grid-template-columns: 35px 1fr;
+    gap: 12px;
+    padding: 27px 0;
+  }
+
+  .resource-info h3 {
+    font-size: 25px;
+  }
+
+  .note {
+    padding: 25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" class="logo">Alongside <span>♡</span></a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="financial-support.html">Financial Support</a>
+    <a href="psychological-support.html" class="active">Psychological Support</a>
+    <a href="about.html">About Website</a>
+  </nav>
+</header>
+
+
+<section class="hero">
+
+  <div class="eyebrow">PSYCHOLOGICAL SUPPORT · AUSTRALIA & OCEANIA</div>
+
+  <h1>
+    Support for the emotional side of childhood cancer.
+  </h1>
+
+  <p>
+    These organizations provide psychological, emotional, psychosocial,
+    or family support for children with cancer and the people caring for them.
+    Some offer direct counselling and therapy, while others provide
+    therapeutic programs, peer connection, or pathways to professional care.
+  </p>
+
+</section>
+
+
+<section class="resources-section">
+
+  <div class="section-inner">
+
+    <div class="section-label">FIND SUPPORT</div>
+
+    <h2>Resources across Australia & Oceania.</h2>
+
+    <p class="section-intro">
+      Psychological support can include counselling, child-life therapy,
+      peer groups, family programs, or help connecting with a psychologist.
+      The type of support and eligibility can differ between organizations.
+    </p>
+
+
+    <!-- 01 -->
+    <div class="resource">
+
+      <div class="resource-number">01</div>
+
+      <div class="resource-info">
+
+        <h3>Redkite</h3>
+
+        <p>
+          Provides free emotional and mental health support to children with
+          cancer, parents, carers, siblings, and extended family members.
+          Services include children's counselling, adult counselling,
+          social work, group support, music therapy, and grief support.
+        </p>
+
+        <a
+          href="https://www.redkite.org.au/cancer-support-programs/our-services/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Redkite →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Australia
+      </div>
+
+    </div>
+
+
+    <!-- 02 -->
+    <div class="resource">
+
+      <div class="resource-number">02</div>
+
+      <div class="resource-info">
+
+        <h3>Camp Quality</h3>
+
+        <p>
+          Supports children affected by cancer through Child Life Therapy,
+          family camps, kids' camps, therapeutic activities, and professional
+          counselling pathways. Its programs focus on resilience, confidence,
+          connection, and helping children cope with the cancer experience.
+        </p>
+
+        <a
+          href="https://www.campquality.org.au/how-we-help/services-and-programs/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Camp Quality →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Australia
+      </div>
+
+    </div>
+
+
+    <!-- 03 -->
+    <div class="resource">
+
+      <div class="resource-number">03</div>
+
+      <div class="resource-info">
+
+        <h3>Canteen Australia</h3>
+
+        <p>
+          Provides free, tailored counselling and psychosocial support to
+          young people aged 12–25 affected by cancer. Support includes
+          individual counselling, peer connection, online support, and
+          specialist services for young people with cancer.
+        </p>
+
+        <a
+          href="https://www.canteen.org.au/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Canteen Australia →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Australia
+      </div>
+
+    </div>
+
+
+    <!-- 04 -->
+    <div class="resource">
+
+      <div class="resource-number">04</div>
+
+      <div class="resource-info">
+
+        <h3>Children’s Cancer Foundation</h3>
+
+        <p>
+          Funds psychosocial and clinical-care programs that address the
+          psychological and emotional distress experienced by children with
+          cancer. Supported professionals include paediatric psychologists,
+          mental health clinicians, play therapists, art therapists, and
+          music therapists.
+        </p>
+
+        <a
+          href="https://www.childrenscancerfoundation.com.au/what-we-do/clinical-care/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Children’s Cancer Foundation →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Australia
+      </div>
+
+    </div>
+
+
+    <!-- 05 -->
+    <div class="resource">
+
+      <div class="resource-number">05</div>
+
+      <div class="resource-info">
+
+        <h3>Childhood Cancer Association</h3>
+
+        <p>
+          Provides counselling and psychological support to children with
+          cancer and their families in South Australia and the Northern
+          Territory. Services include individual counselling, sibling
+          programs, survivorship counselling, and grief and loss support.
+        </p>
+
+        <a
+          href="https://childhoodcancer.asn.au/how-we-help/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Childhood Cancer Association →
+        </a>
+
+      </div>
+
+      <div class="location">
+        South Australia · Northern Territory
+      </div>
+
+    </div>
+
+
+    <!-- 06 -->
+    <div class="resource">
+
+      <div class="resource-number">06</div>
+
+      <div class="resource-info">
+
+        <h3>Cancer Hub</h3>
+
+        <p>
+          A national support pathway created by Canteen, Redkite, and Camp
+          Quality. Families affected by cancer can connect with a specialist
+          team that assesses their needs and links them with practical,
+          psychosocial, and emotional support services.
+        </p>
+
+        <a
+          href="https://cancerhub.org.au/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Cancer Hub →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Australia
+      </div>
+
+    </div>
+
+
+    <!-- 07 -->
+    <div class="resource">
+
+      <div class="resource-number">07</div>
+
+      <div class="resource-info">
+
+        <h3>Neuroblastoma Australia</h3>
+
+        <p>
+          Provides family-to-family support for families affected by
+          neuroblastoma. Volunteer parent contacts can help families discuss
+          experiences such as accessing psychological support, supporting
+          siblings, communicating a diagnosis, and managing the challenges
+          of treatment.
+        </p>
+
+        <a
+          href="https://www.neuroblastoma.org.au/get-support/volunteer-parent-contacts/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Neuroblastoma Australia →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Australia
+      </div>
+
+    </div>
+
+
+    <!-- 08 -->
+    <div class="resource">
+
+      <div class="resource-number">08</div>
+
+      <div class="resource-info">
+
+        <h3>Child Cancer Foundation</h3>
+
+        <p>
+          Supports children with cancer and their families throughout
+          Aotearoa New Zealand. Its family support includes emotional
+          wellbeing services, dedicated Family Support Coordinators,
+          peer connection, and access to counselling through its
+          Counselling Network.
+        </p>
+
+        <a
+          href="https://childcancer.org.nz/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Child Cancer Foundation →
+        </a>
+
+      </div>
+
+      <div class="location">
+        New Zealand
+      </div>
+
+    </div>
+
+
+    <!-- 09 -->
+    <div class="resource">
+
+      <div class="resource-number">09</div>
+
+      <div class="resource-info">
+
+        <h3>Cancer Society New Zealand</h3>
+
+        <p>
+          Offers free psychology and counselling services for people affected
+          by cancer and their family/whānau. Services include individual and
+          group sessions, local counselling, referrals, and psychological
+          support depending on the region.
+        </p>
+
+        <a
+          href="https://www.cancer.org.nz/how-we-can-help/support-we-offer/psychology-and-counselling/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Cancer Society NZ →
+        </a>
+
+      </div>
+
+      <div class="location">
+        New Zealand
+      </div>
+
+    </div>
+
+
+    <!-- 10 -->
+    <div class="resource">
+
+      <div class="resource-number">10</div>
+
+      <div class="resource-info">
+
+        <h3>Ronald McDonald House Charities New Zealand</h3>
+
+        <p>
+          Provides a home-away-from-home and wraparound support for families
+          with a child receiving hospital treatment. Family Rooms and Houses
+          offer a safe place to rest, stay together, connect with other
+          families, and access support during stressful periods.
+        </p>
+
+        <a
+          href="https://rmhc.org.nz/stay-with-us/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          RMHC New Zealand →
+        </a>
+
+      </div>
+
+      <div class="location">
+        New Zealand
+      </div>
+
+    </div>
+
+
+    <!-- 11 -->
+    <div class="resource">
+
+      <div class="resource-number">11</div>
+
+      <div class="resource-info">
+
+        <h3>Ronald McDonald House Charities Australia</h3>
+
+        <p>
+          Provides family-centered support around children's hospital care,
+          including family accommodation, Family Rooms, activities for
+          siblings, and a supportive environment designed to reduce the
+          emotional and practical stress of prolonged hospital stays.
+        </p>
+
+        <a
+          href="https://www.rmhc.org.au/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          RMHC Australia →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Australia
+      </div>
+
+    </div>
+
+
+    <!-- 12 -->
+    <div class="resource">
+
+      <div class="resource-number">12</div>
+
+      <div class="resource-info">
+
+        <h3>Kids with Cancer Foundation Australia</h3>
+
+        <p>
+          Supports children with cancer and their families through programs
+          designed to improve wellbeing during treatment. Families can also
+          be connected with practical and emotional support services through
+          the Foundation's network of childhood cancer organizations.
+        </p>
+
+        <a
+          href="https://kidswithcancer.org.au/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resource-button"
+        >
+          Kids with Cancer Foundation Australia →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Australia
+      </div>
+
+    </div>
+
+
+    <div class="note">
+
+      <h3>A note about psychological support</h3>
+
+      <p>
+        Services vary by organization, location, age, diagnosis, and family
+        circumstances. Some organizations provide direct counselling or
+        psychology services, while others offer therapeutic programs,
+        peer support, family wellbeing services, or connections to
+        professional care. Please check the official website before
+        contacting an organization, as programs and eligibility can change.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="closing">
+
+  <h2>You don't have to navigate this alone.</h2>
+
+  <p>
+    Finding emotional support can be an important part of caring for a child
+    with cancer — and for taking care of yourself, too.
+  </p>
+
+</section>
+
+
+<footer>
+
+  <div>© 2026 Alongside</div>
+
+  <div>FAMILIES ARE STRONGER TOGETHER</div>
+
+</footer>
+
+</body>
+</html>
