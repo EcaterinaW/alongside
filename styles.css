@@ -5,6 +5,7 @@
   --gold: #B4A276;
   --text: #1D1D1A;
   --muted: #5C5A54;
+  --border: #D9D1C1;
   --quote: #EEE5D3;
 }
 
@@ -18,61 +19,71 @@ html {
 
 body {
   margin: 0;
-  color: var(--text);
   background: var(--cream);
-  font-family: "Lato", Arial, sans-serif;
+  color: var(--text);
+  font-family: "Lato", sans-serif;
+  line-height: 1.6;
 }
 
 a {
   color: inherit;
 }
 
+/* HEADER */
+
 .site-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   gap: 30px;
-  padding: 18px 6%;
-  background: var(--light);
+  padding: 24px 5%;
+  border-bottom: 1px solid var(--border);
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .brand-heart {
-  color: var(--gold);
+  font-family: "Cormorant Garamond", serif;
   font-size: 38px;
   line-height: 1;
+  color: var(--green);
 }
 
 .brand-name {
   display: block;
   font-family: "Cormorant Garamond", serif;
-  font-size: 30px;
+  font-size: 31px;
+  font-weight: 600;
   line-height: 1;
 }
 
-.brand-tagline,
-.footer-tagline {
+.brand-tagline {
   display: block;
   margin-top: 4px;
+  color: var(--muted);
   font-size: 9px;
-  letter-spacing: 2.2px;
+  letter-spacing: 1.6px;
 }
 
 .nav {
   display: flex;
+  align-items: center;
+  justify-content: flex-end;
   flex-wrap: wrap;
-  gap: 28px;
+  gap: 20px;
 }
 
 .nav a {
+  position: relative;
   text-decoration: none;
-  font-size: 15px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .nav a:hover,
@@ -80,87 +91,107 @@ a {
   color: var(--green);
 }
 
+.nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -7px;
+  height: 1px;
+  background: var(--green);
+}
+
+/* GENERAL */
+
+h1,
+h2,
+h3,
+blockquote {
+  font-family: "Cormorant Garamond", serif;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+/* HERO */
+
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-  align-items: center;
-  gap: 40px;
-  min-height: 560px;
-  padding: 10px 5% 35px;
+  grid-template-columns: 1.05fr .95fr;
+  min-height: 570px;
 }
 
 .hero-image {
+  min-height: 570px;
   overflow: hidden;
 }
 
 .hero-image img {
   width: 100%;
   height: 100%;
-  min-height: 560px;
-  object-fit: cover;
   display: block;
-  transform: scale(1.04) translate(2.5%, 2%);
-}
-
-.image-placeholder {
-  height: 100%;
-  min-height: 560px;
-  display: grid;
-  place-items: center;
-  padding: 30px;
-  background:
-    linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)),
-    linear-gradient(135deg, #dce5e8, #a8bba6 50%, #d4b96d);
-  color: rgba(29, 29, 26, .65);
-  font-size: 16px;
+  object-fit: cover;
 }
 
 .hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 70px 8%;
+  background: var(--light);
 }
 
 .eyebrow {
-  margin: 0 0 12px;
-  color: #675b42;
-  letter-spacing: 1.4px;
-  font-size: 13px;
+  margin-bottom: 18px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
 }
 
-h1 {
-  max-width: 650px;
-  margin: 0 0 22px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(48px, 5.2vw, 76px);
+.hero h1 {
+  max-width: 620px;
+  margin-bottom: 22px;
+  font-size: clamp(43px, 5vw, 68px);
   font-weight: 500;
   line-height: .98;
 }
 
 .intro {
-  max-width: 650px;
-  margin-bottom: 28px;
+  max-width: 560px;
+  margin-bottom: 30px;
   color: var(--muted);
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.8;
 }
 
 .primary-button {
   display: inline-block;
-  padding: 14px 24px;
+  width: fit-content;
+  padding: 13px 21px;
   border-radius: 999px;
   background: var(--green);
   color: white;
   text-decoration: none;
+  font-size: 13px;
   font-weight: 700;
+  transition: opacity .2s ease, transform .2s ease;
 }
 
+.primary-button:hover {
+  opacity: .9;
+  transform: translateY(-2px);
+}
 
-/* --------------------------------
-   HOMEPAGE RESOURCE CARDS
------------------------------------ */
+/* HOMEPAGE RESOURCE CARDS */
 
 .resources {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
   padding: 34px 5%;
 }
@@ -175,601 +206,496 @@ h1 {
   transition: transform .2s ease, box-shadow .2s ease;
 }
 
-/* Three cards on the first row */
-.resource-card:nth-child(1),
-.resource-card:nth-child(2),
-.resource-card:nth-child(3) {
-  grid-column: span 2;
+.resource-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .07);
 }
 
-/* Two centered cards on the second row */
 .resource-card:nth-child(4) {
-  grid-column: 2 / span 2;
+  margin-left: 50%;
 }
 
 .resource-card:nth-child(5) {
-  grid-column: 4 / span 2;
-}
-
-.resource-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(0,0,0,.07);
+  margin-right: 50%;
 }
 
 .icon-circle {
-  width: 62px;
-  height: 62px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 18px;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
   border-radius: 50%;
   background: var(--cream);
 }
 
 .icon-circle svg {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   fill: none;
-  stroke: var(--gold);
-  stroke-width: 2.3;
+  stroke: var(--green);
+  stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
 .resource-card h2 {
-  margin: 0 0 10px;
-  font-size: 21px;
+  margin-bottom: 10px;
+  font-size: 29px;
+  font-weight: 500;
+  line-height: 1.05;
 }
 
 .resource-card p {
-  min-height: 72px;
-  margin: 0 0 18px;
+  min-height: 52px;
+  margin-bottom: 22px;
   color: var(--muted);
-  line-height: 1.55;
+  font-size: 14px;
+  line-height: 1.7;
 }
 
 .card-link {
   color: var(--green);
+  font-size: 12px;
   font-weight: 700;
+  letter-spacing: .5px;
 }
 
-
-/* --------------------------------
-   QUOTE SECTION
------------------------------------ */
+/* QUOTE */
 
 .quote-section {
   display: grid;
-  grid-template-columns: 1.4fr .8fr;
-  gap: 40px;
+  grid-template-columns: 1.3fr .7fr;
+  gap: 50px;
   align-items: center;
-  padding: 62px 6%;
-  background: var(--quote);
+  padding: 80px 8%;
 }
 
 .quote-mark {
-  height: 34px;
+  margin-bottom: -12px;
   color: var(--gold);
-  font-family: Georgia, serif;
-  font-size: 70px;
-  line-height: 1;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 75px;
+  line-height: .8;
 }
 
 blockquote {
-  margin: 0;
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(28px, 3vw, 42px);
-  font-style: italic;
-  line-height: 1.25;
+  max-width: 800px;
+  margin: 0 0 18px;
+  font-size: clamp(31px, 4vw, 49px);
+  font-weight: 500;
+  line-height: 1.05;
 }
 
 .quote-credit {
-  margin-top: 24px;
-  font-size: 11px;
-  letter-spacing: 3px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
 .hope-note {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  color: var(--gold);
+  gap: 13px;
+  padding: 35px;
+  border: 1px solid var(--border);
+  background: rgba(250, 248, 245, .45);
+  color: var(--green);
   font-family: "Cormorant Garamond", serif;
-  font-size: 34px;
-  font-style: italic;
-  line-height: 1.1;
-  text-align: center;
+  font-size: 27px;
 }
 
+.hope-note span:nth-child(2) {
+  padding-left: 28px;
+}
 
-/* --------------------------------
-   FOOTER
------------------------------------ */
+.hope-note span:nth-child(3) {
+  padding-left: 56px;
+}
+
+/* FOOTER */
 
 footer {
   display: flex;
   justify-content: space-between;
-  gap: 30px;
-  padding: 30px 5%;
+  gap: 40px;
+  padding: 40px 5%;
+  border-top: 1px solid var(--border);
   background: var(--light);
 }
 
 .footer-brand {
   font-family: "Cormorant Garamond", serif;
-  font-size: 26px;
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.footer-tagline {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 1.4px;
 }
 
 .footer-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 22px;
-  align-items: center;
+  justify-content: flex-end;
+  gap: 12px 22px;
 }
 
 .footer-links a {
   color: var(--muted);
+  font-size: 12px;
   text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--green);
+}
+
+/* FINANCIAL SUPPORT PAGE */
+
+.page-hero {
+  padding: 90px 8% 70px;
+  background: var(--light);
+}
+
+.page-hero h1 {
+  max-width: 850px;
+  margin-bottom: 20px;
+  font-size: clamp(45px, 6vw, 72px);
+  font-weight: 500;
+  line-height: .98;
+}
+
+.page-hero p {
+  max-width: 720px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.support-resources {
+  padding: 70px 8%;
+}
+
+.section-label {
+  margin-bottom: 8px;
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.support-resources h2 {
+  margin-bottom: 12px;
+  font-size: 42px;
+  font-weight: 500;
+}
+
+.support-intro {
+  max-width: 700px;
+  margin-bottom: 45px;
+  color: var(--muted);
+}
+
+.regions-section {
+  padding-top: 10px;
+}
+
+.regions-list {
+  border-top: 1px solid var(--border);
+}
+
+.region-link {
+  display: grid;
+  grid-template-columns: 55px 1fr 30px;
+  align-items: center;
+  gap: 25px;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+}
+
+.region-number {
+  color: var(--gold);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+}
+
+.region-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 29px;
+  font-weight: 500;
+}
+
+.region-arrow {
+  color: var(--green);
+  font-size: 22px;
+  text-align: right;
+}
+
+.region-link:hover .region-name {
+  color: var(--green);
+}
+
+.support-note {
+  max-width: 850px;
+  margin-top: 55px;
+  padding: 28px 30px;
+  border-left: 3px solid var(--gold);
+  background: var(--quote);
+}
+
+.support-note h3 {
+  margin-bottom: 8px;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.support-note p {
+  margin-bottom: 0;
+  color: var(--muted);
   font-size: 14px;
 }
 
+.closing-message {
+  padding: 65px 8%;
+  text-align: center;
+}
 
-/* --------------------------------
-   HOMEPAGE — TABLET
------------------------------------ */
+.closing-message p {
+  margin: 0;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
 
-@media (max-width: 850px) {
+/* FINANCIAL SUPPORT — REGIONAL PAGES */
 
+.resources-page {
+  padding: 70px 8%;
+}
+
+.resources-page-header {
+  margin-bottom: 45px;
+}
+
+.resources-page-header h1 {
+  max-width: 850px;
+  margin-bottom: 18px;
+  font-size: clamp(43px, 5vw, 65px);
+  font-weight: 500;
+  line-height: .98;
+}
+
+.resources-page-header p {
+  max-width: 720px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.resource-list {
+  border-top: 1px solid var(--border);
+}
+
+.resource {
+  display: grid;
+  grid-template-columns: 55px 1fr 150px;
+  gap: 28px;
+  align-items: start;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.resource-number {
+  color: var(--gold);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+}
+
+.resource-info h2 {
+  margin-bottom: 8px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.resource-info p {
+  margin-bottom: 17px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.resource-button {
+  display: inline-block;
+  padding: 8px 15px;
+  border: 1px solid var(--green);
+  border-radius: 999px;
+  color: var(--green);
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  transition: background .2s ease, color .2s ease;
+}
+
+.resource-button:hover {
+  background: var(--green);
+  color: white;
+}
+
+.location {
+  padding-top: 5px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: right;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
   .site-header {
     align-items: flex-start;
     flex-direction: column;
   }
 
   .nav {
-    gap: 14px 20px;
+    justify-content: flex-start;
   }
 
   .hero {
     grid-template-columns: 1fr;
   }
 
-  .hero-image,
-  .image-placeholder {
-    min-height: 390px;
+  .hero-image {
+    min-height: 420px;
   }
 
   .hero-copy {
-    padding: 48px 6%;
+    padding: 60px 7%;
   }
 
+  .quote-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 850px) {
   .resources {
     grid-template-columns: 1fr;
   }
 
-  .resource-card,
-  .resource-card:nth-child(1),
-  .resource-card:nth-child(2),
-  .resource-card:nth-child(3),
   .resource-card:nth-child(4),
   .resource-card:nth-child(5) {
-    grid-column: auto;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .resource-card p {
     min-height: auto;
   }
 
+  .resource {
+    grid-template-columns: 45px 1fr;
+  }
+
+  .location {
+    grid-column: 2;
+    padding-top: 0;
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    padding: 20px 6%;
+  }
+
+  .nav {
+    gap: 14px;
+  }
+
+  .nav a {
+    font-size: 12px;
+  }
+
+  .hero-image {
+    min-height: 330px;
+  }
+
+  .hero-copy {
+    padding: 50px 7%;
+  }
+
+  .hero h1 {
+    font-size: 46px;
+  }
+
+  .resources {
+    padding: 25px 6%;
+  }
+
+  .resource-card {
+    padding: 25px;
+  }
+
   .quote-section {
-    grid-template-columns: 1fr;
+    padding: 60px 7%;
   }
 
   .hope-note {
-    align-items: flex-start;
-    text-align: left;
+    padding: 27px;
   }
 
   footer {
     flex-direction: column;
-  }
-}
-
-
-/* --------------------------------
-   HOMEPAGE — PHONE
------------------------------------ */
-
-@media (max-width: 520px) {
-
-  .site-header {
-    padding: 16px 5%;
+    padding: 35px 6%;
   }
 
-  .brand-name {
-    font-size: 26px;
+  .footer-links {
+    justify-content: flex-start;
   }
 
-  .brand-tagline {
-    font-size: 8px;
+  .page-hero,
+  .support-resources,
+  .resources-page {
+    padding-left: 7%;
+    padding-right: 7%;
   }
 
-  .nav {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-  }
-
-  h1 {
-    font-size: 46px;
-  }
-
-  .intro {
-    font-size: 16px;
-  }
-
-  .hero-image,
-  .image-placeholder {
-    min-height: 300px;
-  }
-
-  .resources {
-    padding: 24px 5%;
-  }
-
-  .resource-card {
-    padding: 24px;
-  }
-}
-
-
-/* --------------------------------
-   FINANCIAL SUPPORT PAGE
------------------------------------ */
-
-.financial-hero {
-  padding: 90px 7% 65px;
-  text-align: center;
-}
-
-.financial-hero h1 {
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.financial-intro {
-  max-width: 760px;
-  margin: 0 auto;
-  color: var(--muted);
-  font-size: 18px;
-  line-height: 1.7;
-}
-
-
-/* RESOURCE CARDS */
-
-.support-resources {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-  padding: 10px 5% 70px;
-}
-
-.support-card {
-  display: flex;
-  flex-direction: column;
-  padding: 32px;
-  background: var(--light);
-  border-radius: 18px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.support-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);
-}
-
-.support-icon {
-  width: 56px;
-  height: 56px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 22px;
-  border-radius: 50%;
-  background: var(--cream);
-  color: var(--gold);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 30px;
-  font-weight: 500;
-}
-
-.support-category {
-  margin: 0 0 8px;
-  color: var(--gold);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-}
-
-.support-card h2 {
-  margin: 0 0 14px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 30px;
-  font-weight: 600;
-}
-
-.support-card p:not(.support-category) {
-  margin: 0 0 25px;
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.support-link {
-  margin-top: auto;
-  color: var(--green);
-  text-decoration: none;
-  font-weight: 700;
-}
-
-.support-link:hover {
-  text-decoration: underline;
-}
-
-
-/* INFORMATION BOX */
-
-.financial-note {
-  display: flex;
-  gap: 22px;
-  max-width: 1000px;
-  margin: 0 auto 75px;
-  padding: 30px;
-  background: #EEE5D3;
-  border-radius: 18px;
-}
-
-.note-icon {
-  flex-shrink: 0;
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-  color: var(--gold);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 24px;
-}
-
-.financial-note h2 {
-  margin: 0 0 8px;
-  font-size: 19px;
-}
-
-.financial-note p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.65;
-}
-
-
-/* CLOSING SECTION */
-
-.financial-closing {
-  padding: 70px 7%;
-  background: #EEE5D3;
-  text-align: center;
-}
-
-.financial-closing h2 {
-  max-width: 800px;
-  margin: 15px auto 0;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 38px;
-  font-weight: 500;
-  line-height: 1.2;
-}
-
-
-/* TABLET */
-
-@media (max-width: 900px) {
-
-  .support-resources {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .financial-note {
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-
-}
-
-
-/* PHONE */
-
-@media (max-width: 600px) {
-
-  .financial-hero {
-    padding: 60px 6% 40px;
-  }
-
-  .financial-hero h1 {
-    font-size: 44px;
-  }
-
-  .financial-intro {
-    font-size: 16px;
+  .page-hero {
+    padding-top: 65px;
+    padding-bottom: 55px;
   }
 
   .support-resources {
-    grid-template-columns: 1fr;
-    padding: 10px 5% 50px;
+    padding-top: 55px;
   }
 
-  .support-card {
-    padding: 26px;
-  }
-
-  .financial-note {
-    align-items: flex-start;
-    margin-bottom: 50px;
-    padding: 24px;
-  }
-
-  .financial-closing {
-    padding: 55px 7%;
-  }
-
-  .financial-closing h2 {
-    font-size: 31px;
-  }
-
-}
-
-
-/* --------------------------------
-   FINANCIAL SUPPORT — REGIONS
------------------------------------ */
-
-.regions-section {
-  padding: 35px 7% 90px;
-}
-
-.regions-heading {
-  max-width: 760px;
-  margin: 0 auto 55px;
-  text-align: center;
-}
-
-.regions-heading h2 {
-  margin: 0 0 18px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(42px, 5vw, 64px);
-  font-weight: 500;
-  line-height: 1;
-}
-
-.regions-heading > p:last-child {
-  max-width: 650px;
-  margin: 0 auto;
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.7;
-}
-
-.regions-list {
-  max-width: 1050px;
-  margin: 0 auto;
-  border-top: 1px solid rgba(83, 107, 82, 0.25);
-}
-
-.region-row {
-  display: grid;
-  grid-template-columns: 70px 1fr 45px;
-  align-items: center;
-  gap: 25px;
-  min-height: 125px;
-  padding: 18px 10px;
-  border-bottom: 1px solid rgba(83, 107, 82, 0.25);
-  color: var(--text);
-  text-decoration: none;
-  transition: padding .25s ease, background .25s ease;
-}
-
-.region-row:hover {
-  padding-left: 24px;
-  padding-right: 24px;
-  background: rgba(250, 248, 245, 0.55);
-}
-
-.region-number {
-  align-self: start;
-  padding-top: 8px;
-  color: var(--gold);
-  font-size: 11px;
-  letter-spacing: 2px;
-}
-
-.region-content {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-}
-
-.region-name {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(30px, 3.2vw, 43px);
-  font-weight: 500;
-  line-height: 1;
-  transition: color .25s ease;
-}
-
-.region-countries {
-  color: var(--muted);
-  font-size: 12px;
-  letter-spacing: .5px;
-}
-
-.region-arrow {
-  color: var(--green);
-  font-size: 28px;
-  font-weight: 300;
-  text-align: right;
-  transition: transform .25s ease;
-}
-
-.region-row:hover .region-name {
-  color: var(--green);
-}
-
-.region-row:hover .region-arrow {
-  transform: translateX(6px);
-}
-
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-
-  .regions-section {
-    padding: 20px 6% 60px;
-  }
-
-  .regions-heading {
-    margin-bottom: 35px;
-  }
-
-  .regions-heading h2 {
-    font-size: 43px;
-  }
-
-  .regions-heading > p:last-child {
-    font-size: 15px;
-  }
-
-  .region-row {
-    grid-template-columns: 38px 1fr 25px;
-    gap: 10px;
-    min-height: 105px;
-    padding: 15px 4px;
-  }
-
-  .region-row:hover {
-    padding-left: 8px;
-    padding-right: 8px;
+  .region-link {
+    grid-template-columns: 40px 1fr 25px;
+    gap: 15px;
   }
 
   .region-name {
-    font-size: 30px;
+    font-size: 25px;
   }
 
-  .region-countries {
-    font-size: 10px;
-    line-height: 1.5;
+  .resource {
+    grid-template-columns: 40px 1fr;
+    gap: 18px;
   }
 
-  .region-arrow {
-    font-size: 22px;
+  .resource-info h2 {
+    font-size: 27px;
   }
 }
