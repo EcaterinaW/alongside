@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Support · Africa · Alongside</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #F2ECDD;
+      --light: #FAF8F5;
+      --green: #536B52;
+      --gold: #B4A276;
+      --text: #1D1D1A;
+      --muted: #5C5A54;
+      --quote: #EEE5D3;
+      --border: #DCD5C7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: "Lato", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+    .site-header {
+      width: 100%;
+      padding: 28px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(29, 29, 26, 0.08);
+    }
+
+    .logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: var(--green);
+    }
+
+    .nav {
+      display: flex;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .nav a {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: var(--muted);
+      transition: 0.2s ease;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--green);
+    }
+
+    /* HERO */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 105px 7% 80px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2.4px;
+      color: var(--green);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(58px, 8vw, 92px);
+      line-height: 0.95;
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    /* RESOURCES */
+    .resources-section {
+      background: var(--light);
+      padding: 95px 7% 100px;
+    }
+
+    .resources-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      margin-bottom: 55px;
+    }
+
+    .section-heading h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 50px;
+      line-height: 1;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    .section-heading p {
+      max-width: 690px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .resource-list {
+      border-top: 1px solid var(--border);
+    }
+
+    .resource {
+      display: grid;
+      grid-template-columns: 55px 1fr 150px;
+      gap: 28px;
+      align-items: start;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .resource-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 22px;
+      color: var(--gold);
+      padding-top: 8px;
+    }
+
+    .resource-info h3 {
+      margin-bottom: 12px;
+    }
+
+    .resource-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border: 1px solid var(--green);
+      border-radius: 30px;
+      color: var(--green);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 23px;
+      line-height: 1;
+      transition: all 0.2s ease;
+    }
+
+    .resource-button span {
+      font-family: "Lato", sans-serif;
+      font-size: 14px;
+    }
+
+    .resource-button:hover {
+      background: var(--green);
+      color: white;
+    }
+
+    .resource-info p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 650px;
+    }
+
+    .location {
+      justify-self: end;
+      padding-top: 12px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--green);
+      font-weight: 600;
+      text-align: right;
+    }
+
+    /* NOTE */
+    .note-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 90px 7%;
+    }
+
+    .note {
+      background: var(--quote);
+      padding: 45px 50px;
+      border-radius: 4px;
+    }
+
+    .note .eyebrow {
+      margin-bottom: 12px;
+    }
+
+    .note h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 38px;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .note p {
+      color: var(--muted);
+      max-width: 760px;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* CLOSING */
+    .closing {
+      background: var(--green);
+      color: white;
+      text-align: center;
+      padding: 90px 7%;
+    }
+
+    .closing .eyebrow {
+      color: #DCD2B6;
+    }
+
+    .closing h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .closing p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--green);
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding: 25px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: rgba(255,255,255,0.65);
+      font-size: 12px;
+    }
+
+    footer .footer-logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 23px;
+      color: white;
+    }
+
+    /* MOBILE */
+    @media (max-width: 850px) {
+      .site-header {
+        padding: 24px 6%;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .nav {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .nav a {
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+
+      .hero {
+        padding: 75px 6% 65px;
+      }
+
+      .resources-section {
+        padding: 70px 6%;
+      }
+
+      .resource {
+        grid-template-columns: 40px 1fr;
+        gap: 10px 20px;
+        padding: 30px 0;
+      }
+
+      .resource-number {
+        grid-row: span 2;
+      }
+
+      .location {
+        grid-column: 2;
+        justify-self: start;
+        text-align: left;
+        padding-top: 4px;
+      }
+
+      .note-section {
+        padding: 65px 6%;
+      }
+
+      .note {
+        padding: 35px 28px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .logo {
+        font-size: 29px;
+      }
+
+      .hero h1 {
+        font-size: 62px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .section-heading h2 {
+        font-size: 42px;
+      }
+
+      .resource-button {
+        font-size: 21px;
+      }
+
+      .resource-info p {
+        font-size: 13px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+    <a href="index.html" class="logo">
+      Alongside <span>♡</span>
+    </a>
+
+```
+<nav class="nav">
+  <a href="index.html">Home</a>
+  <a href="financial-support.html">Financial Support</a>
+  <a href="psychological-support.html">Psychological Support</a>
+  <a href="social-support.html">Social Support</a>
+  <a href="legal-support.html" class="active">Legal Support</a>
+  <a href="about.html">About Website</a>
+</nav>
+```
+
+  </header>
+
+  <main>
+
+```
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow">
+    LEGAL SUPPORT · AFRICA
+  </div>
+
+  <h1>Africa</h1>
+
+  <p>
+    Organizations and networks that may help families affected by
+    childhood cancer understand patient rights, access healthcare,
+    find family support, connect with advocacy organizations, and
+    navigate healthcare and social systems across Africa.
+  </p>
+</section>
+
+
+<!-- RESOURCES -->
+<section class="resources-section">
+  <div class="resources-inner">
+
+    <div class="section-heading">
+      <div class="eyebrow">
+        LEGAL RESOURCES
+      </div>
+
+      <h2>
+        Support for families.
+      </h2>
+
+      <p>
+        The organizations below work on childhood cancer care,
+        family support, healthcare access, advocacy, policy,
+        and rights-related issues across different parts of Africa.
+        Some provide direct services to families, while others
+        focus on healthcare systems, advocacy, information,
+        referrals, or professional networks. Always check the
+        organization's official website for current services
+        and eligibility.
+      </p>
+    </div>
+
+
+    <div class="resource-list">
+
+      <!-- 01 -->
+      <article class="resource">
+        <div class="resource-number">01</div>
+
+        <div class="resource-info">
+          <h3>
+            <a href="https://www.gfaop.org/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="resource-button">
+              GFAOP <span>→</span>
+            </a>
+          </h3>
+
+          <p>
+            The Franco-African Group of Paediatric Oncology is a
+            network of childhood cancer specialists working across
+            18 countries in North Africa and sub-Saharan Africa.
+            Its activities include supporting pediatric oncology
+            units, helping families, and advocacy for better access
+            to childhood cancer care.
+          </p>
+        </div>
+
+        <div class="location">
+          Africa<br>
+          18 countries
+        </div>
+      </article>
+
+
+      <!-- 02 -->
+      <article class="resource">
+        <div class="resource-number">02</div>
+
+        <div class="resource-info">
+          <h3>
+            <a href="https://www.childhoodcancerinternational.org/member-organisations"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="resource-button">
+              Childhood Cancer International · Africa Network <span>→</span>
+            </a>
+          </h3>
+
+          <p>
+            Childhood Cancer International connects parent and
+            childhood cancer organizations around the world.
+            Its African member network includes organizations
+            supporting families in countries such as Ghana,
+            Ethiopia, Kenya, Morocco, Niger, the Democratic
+            Republic of the Congo, and others.
+          </p>
+        </div>
+
+        <div class="location">
+          Africa<br>
+          Regional network
+        </div>
+      </article>
+
+
+      <!-- 03 -->
+      <article class="resource">
+        <div class="resource-number">03</div>
+
+        <div class="resource-info">
+          <h3>
+            <a href="https://choc.org.za/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="resource-button">
+              CHOC Childhood Cancer Foundation SA <span>→</span>
+            </a>
+          </h3>
+
+          <p>
+            A South African nonprofit advocating for children and
+            teenagers with cancer or life-threatening blood disorders
+            and their families. CHOC provides psychosocial, emotional,
+            practical, accommodation, transport, and family support,
+            while also advocating for the rights and well-being of
+            childhood cancer patients.
+          </p>
+        </div>
+
+        <div class="location">
+          South Africa
+        </div>
+      </article>
+
+
+      <!-- 04 -->
+      <article class="resource">
+        <div class="resource-number">04</div>
+
+        <div class="resource-info">
+          <h3>
+            <a href="https://cansa.org.za/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="resource-button">
+              CANSA · The Cancer Association of South Africa <span>→</span>
+            </a>
+          </h3>
+
+          <p>
+            A South African cancer organization providing cancer
+            information, patient support, advocacy, and practical
+            resources. CANSA also provides information and support
+            relating to childhood cancer and can help families find
+            cancer-related services in South Africa.
+          </p>
+        </div>
+
+        <div class="location">
+          South Africa
+        </div>
+      </article>
+
+
+      <!-- 05 -->
+      <article class="resource">
+        <div class="resource-number">05</div>
+
+        <div class="resource-info">
+          <h3>
+            <a href="https://hope4cancerkids.org/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="resource-button">
+              Hope for Cancer Kids <span>→</span>
+            </a>
+          </h3>
+
+          <p>
+            A Kenyan nonprofit supporting children with cancer and
+            their caregivers. Its programs include medical access,
+            health insurance support, transport, accommodation,
+            nutrition, psychosocial care, and advocacy aimed at
+            reducing barriers to completing treatment.
+          </p>
+        </div>
+
+        <div class="location">
+          Kenya
+        </div>
+      </article>
+
+
+      <!-- 06 -->
+      <article class="resource">
+        <div class="resource-number">06</div>
+
+        <div class="resource-info">
+          <h3>
+            <a href="https://mathiwos.org/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="resource-button">
+              Mathiwos Wondu Foundation <span>→</span>
+            </a>
+          </h3>
+
+          <p>
+            An Ethiopian cancer organization founded by the family
+            of a child who died from leukemia. The foundation began
+            with a focus on pediatric cancer and continues to support
+            cancer patients and families while working to strengthen
+            cancer care and public health systems in Ethiopia.
+          </p>
+        </div>
+
+        <div class="location">
+          Ethiopia
+        </div>
+      </article>
+
+
+      <!-- 07 -->
+      <article class="resource">
+        <div class="resource-number">07</div>
+
+        <div class="resource-info">
+          <h3>
+            <a href="https://www.who.int/initiatives/the-global-initiative-for-childhood-cancer"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="resource-button">
+              WHO Global Initiative for Childhood Cancer <span>→</span>
+            </a>
+          </h3>
+
+          <p>
+            The World Health Organization's global initiative works
+            with countries and partners to improve childhood cancer
+            care, strengthen health systems, increase access to
+            essential medicines, and reduce inequalities. It also
+            supports governments in developing stronger national
+            childhood cancer programs.
+          </p>
+        </div>
+
+        <div class="location">
+          Global<br>
+          WHO resource
+        </div>
+      </article>
+
+
+      <!-- 08 -->
+      <article class="resource">
+        <div class="resource-number">08</div>
+
+        <div class="resource-info">
+          <h3>
+            <a href="https://www.who.int/afro"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="resource-button">
+              WHO Regional Office for Africa <span>→</span>
+            </a>
+          </h3>
+
+          <p>
+            The WHO Regional Office for Africa provides health
+            information, regional policy guidance, and resources
+            for African countries. Its work includes childhood
+            cancer initiatives, strengthening health systems,
+            improving access to treatment, and supporting national
+            cancer programs.
+          </p>
+        </div>
+
+        <div class="location">
+          Africa<br>
+          WHO region
+        </div>
+      </article>
+
+
+      <!-- 09 -->
+      <article class="resource">
+        <div class="resource-number">09</div>
+
+        <div class="resource-info">
+          <h3>
+            <a href="https://www.afro.who.int/health-topics/cancer"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="resource-button">
+              WHO Africa · Cancer Resources <span>→</span>
+            </a>
+          </h3>
+
+          <p>
+            Regional WHO resources on cancer prevention, treatment,
+            health-system strengthening, and access to care in
+            African countries. Families can use these resources to
+            understand broader healthcare initiatives and locate
+            information relevant to national cancer services.
+          </p>
+        </div>
+
+        <div class="location">
+          Africa<br>
+          WHO resource
+        </div>
+      </article>
+
+
+      <!-- 10 -->
+      <article class="resource">
+        <div class="resource-number">10</div>
+
+        <div class="resource-info">
+          <h3>
+            <a href="https://www.childhoodcancerinternational.org/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="resource-button">
+              Childhood Cancer International <span>→</span>
+            </a>
+          </h3>
+
+          <p>
+            A global network of childhood cancer parent and patient
+            organizations. Its African member organizations provide
+            a useful starting point for families looking for local
+            support groups, advocacy organizations, and family
+            assistance in different African countries.
+          </p>
+        </div>
+
+        <div class="location">
+          Global<br>
+          Africa network
+        </div>
+      </article>
+
+
+      <!-- 11 -->
+      <article class="resource">
+        <div class="resource-number">11</div>
+
+        <div class="resource-info">
+          <h3>
+            <a href="https://www.iarc.who.int/cancer-type/childhood-cancer/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="resource-button">
+              IARC · Childhood Cancer Resources <span>→</span>
+            </a>
+          </h3>
+
+          <p>
+            The International Agency for Research on Cancer provides
+            international information and research on childhood
+            cancer, including data on cancer burden and inequalities
+            in diagnosis and treatment. These resources can help
+            families and advocates understand the wider context of
+            childhood cancer in Africa.
+          </p>
+        </div>
+
+        <div class="location">
+          Global<br>
+          WHO / IARC
+        </div>
+      </article>
+
+
+      <!-- 12 -->
+      <article class="resource">
+        <div class="resource-number">12</div>
+
+        <div class="resource-info">
+          <h3>
+            <a href="https://www.saccsg.co.za/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="resource-button">
+              South African Children's Cancer Study Group <span>→</span>
+            </a>
+          </h3>
+
+          <p>
+            A South African pediatric oncology network providing
+            information and connections for patients, parents,
+            healthcare professionals, and childhood cancer support
+            organizations. Its patient and parent resources can help
+            families identify appropriate support during treatment.
+          </p>
+        </div>
+
+        <div class="location">
+          South Africa
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- NOTE -->
+<section class="note-section">
+  <div class="note">
+
+    <div class="eyebrow">
+      BEFORE REACHING OUT
+    </div>
+
+    <h2>
+      A note about legal support
+    </h2>
+
+    <p>
+      Legal rights, public healthcare systems, insurance rules,
+      education protections, social benefits, and available family
+      services vary significantly between African countries.
+      Some organizations listed here provide direct family
+      assistance, while others focus on advocacy, healthcare access,
+      information, policy, or referrals. Before contacting an
+      organization, visit its official website and check which
+      services are currently available for your family and location.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- CLOSING -->
+<section class="closing">
+
+  <div class="eyebrow">
+    AFRICA
+  </div>
+
+  <h2>
+    You don't have to navigate this alone.
+  </h2>
+
+  <p>
+    Your child's healthcare team, hospital social worker, patient
+    advocate, or local childhood cancer organization may also be able
+    to help your family understand available rights, benefits, and
+    local support resources.
+  </p>
+
+</section>
+```
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+```
+<div class="footer-logo">
+  Alongside ♡
+</div>
+
+<div>
+  Families are stronger together.
+</div>
+```
+
+  </footer>
+
+</body>
+</html>
