@@ -1,678 +1,954 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Legal Support · South America | Alongside</title>
+  <title>Legal Support · South America · Alongside</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-:root {
-    --cream: #F2ECDD;
-    --light: #FAF8F5;
-    --green: #536B52;
-    --gold: #B4A276;
-    --text: #1D1D1A;
-    --muted: #5C5A54;
-    --quote: #EEE5D3;
-    --border: #DCD5C7;
-}
+  <style>
+    :root {
+      --cream: #F2ECDD;
+      --light: #FAF8F5;
+      --green: #536B52;
+      --gold: #B4A276;
+      --text: #1D1D1A;
+      --muted: #5C5A54;
+      --quote: #EEE5D3;
+      --border: #DCD5C7;
+    }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body {
-    background: var(--cream);
-    color: var(--text);
-    font-family: "Lato", sans-serif;
-    line-height: 1.6;
-}
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: "Lato", sans-serif;
+      line-height: 1.6;
+    }
 
-.site-header {
-    padding: 28px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--border);
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.logo {
-    text-decoration: none;
-    color: var(--text);
-    font-family: "Cormorant Garamond", serif;
-    font-size: 30px;
-    font-weight: 600;
-}
+    /* HEADER */
 
-.logo span {
-    color: var(--gold);
-}
-
-.nav {
-    display: flex;
-    gap: 25px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-}
-
-.nav a {
-    text-decoration: none;
-    color: var(--muted);
-    font-size: 13px;
-    transition: 0.2s;
-}
-
-.nav a:hover,
-.nav a.active {
-    color: var(--green);
-}
-
-.hero {
-    max-width: 1100px;
-    margin: auto;
-    padding: 105px 7% 80px;
-}
-
-.eyebrow {
-    color: var(--green);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 22px;
-}
-
-.hero h1 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(60px, 8vw, 100px);
-    line-height: 0.95;
-    font-weight: 600;
-    max-width: 900px;
-    margin-bottom: 30px;
-}
-
-.hero p {
-    max-width: 700px;
-    color: var(--muted);
-    font-size: 17px;
-}
-
-.resources-section {
-    background: var(--light);
-    padding: 95px 7% 100px;
-}
-
-.resources-inner {
-    max-width: 1100px;
-    margin: auto;
-}
-
-.section-heading {
-    margin-bottom: 55px;
-}
-
-.section-heading .eyebrow {
-    margin-bottom: 15px;
-}
-
-.section-heading h2 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 48px;
-    line-height: 1;
-    font-weight: 600;
-}
-
-.resource-list {
-    border-top: 1px solid var(--border);
-}
-
-.resource {
-    display: grid;
-    grid-template-columns: 55px 1fr 150px;
-    gap: 25px;
-    align-items: center;
-    padding: 28px 0;
-    border-bottom: 1px solid var(--border);
-}
-
-.resource-number {
-    color: var(--gold);
-    font-family: "Cormorant Garamond", serif;
-    font-size: 25px;
-}
-
-.resource-content h3 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 27px;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-.resource-content p {
-    color: var(--muted);
-    font-size: 14px;
-    max-width: 720px;
-}
-
-.location {
-    color: var(--green);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-align: right;
-    text-transform: uppercase;
-}
-
-.resource-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 10px 17px;
-    border: 1px solid var(--green);
-    border-radius: 999px;
-    color: var(--green);
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 700;
-    margin-top: 13px;
-    transition: 0.2s;
-}
-
-.resource-button:hover {
-    background: var(--green);
-    color: white;
-}
-
-.note-section {
-    padding: 90px 7%;
-}
-
-.note {
-    max-width: 900px;
-    margin: auto;
-    background: var(--quote);
-    padding: 55px 60px;
-    border-radius: 4px;
-}
-
-.note .eyebrow {
-    margin-bottom: 15px;
-}
-
-.note h2 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 42px;
-    line-height: 1.05;
-    margin-bottom: 18px;
-}
-
-.note p {
-    color: var(--muted);
-    max-width: 760px;
-}
-
-.closing {
-    background: var(--green);
-    color: white;
-    text-align: center;
-    padding: 95px 7%;
-}
-
-.closing .eyebrow {
-    color: #D8D0B6;
-}
-
-.closing h2 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 58px;
-    line-height: 1;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-.closing p {
-    max-width: 650px;
-    margin: auto;
-    color: #E9E6DE;
-    font-size: 16px;
-}
-
-footer {
-    background: var(--green);
-    color: white;
-    padding: 30px 7%;
-    border-top: 1px solid rgba(255,255,255,0.15);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-logo {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 25px;
-}
-
-.footer-text {
-    font-size: 12px;
-    color: #DCD8CE;
-}
-
-@media (max-width: 800px) {
     .site-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+      width: 100%;
+      padding: 28px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(29, 29, 26, 0.08);
+    }
+
+    .logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: var(--green);
     }
 
     .nav {
-        justify-content: flex-start;
-        gap: 15px;
+      display: flex;
+      gap: 34px;
+      align-items: center;
     }
+
+    .nav a {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: var(--muted);
+      transition: 0.2s ease;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--green);
+    }
+
+    /* HERO */
 
     .hero {
-        padding-top: 75px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 105px 7% 80px;
     }
 
-    .resource {
-        grid-template-columns: 40px 1fr;
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2.4px;
+      color: var(--green);
+      font-weight: 600;
+      margin-bottom: 20px;
     }
 
-    .location {
-        grid-column: 2;
-        text-align: left;
-    }
-
-    .note {
-        padding: 40px 30px;
-    }
-
-    footer {
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
-    }
-}
-
-@media (max-width: 500px) {
     .hero h1 {
-        font-size: 58px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(58px, 8vw, 92px);
+      line-height: 0.95;
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    /* RESOURCES */
+
+    .resources-section {
+      background: var(--light);
+      padding: 95px 7% 100px;
+    }
+
+    .resources-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      margin-bottom: 55px;
     }
 
     .section-heading h2 {
-        font-size: 40px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 50px;
+      line-height: 1;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    .section-heading p {
+      max-width: 690px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .resource-list {
+      border-top: 1px solid var(--border);
+    }
+
+    .resource {
+      display: grid;
+      grid-template-columns: 55px 1fr 150px;
+      gap: 28px;
+      align-items: start;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .resource-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 22px;
+      color: var(--gold);
+      padding-top: 8px;
+    }
+
+    .resource-info h3 {
+      margin-bottom: 12px;
+    }
+
+    .resource-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border: 1px solid var(--green);
+      border-radius: 30px;
+      color: var(--green);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 23px;
+      line-height: 1;
+      transition: all 0.2s ease;
+    }
+
+    .resource-button span {
+      font-family: "Lato", sans-serif;
+      font-size: 14px;
+    }
+
+    .resource-button:hover {
+      background: var(--green);
+      color: white;
+    }
+
+    .resource-info p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 650px;
+    }
+
+    .location {
+      justify-self: end;
+      padding-top: 12px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--green);
+      font-weight: 600;
+      text-align: right;
+    }
+
+    /* NOTE */
+
+    .note-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 90px 7%;
+    }
+
+    .note {
+      background: var(--quote);
+      padding: 45px 50px;
+      border-radius: 4px;
+    }
+
+    .note .eyebrow {
+      margin-bottom: 12px;
+    }
+
+    .note h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 38px;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .note p {
+      color: var(--muted);
+      max-width: 760px;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* CLOSING */
+
+    .closing {
+      background: var(--green);
+      color: white;
+      text-align: center;
+      padding: 90px 7%;
+    }
+
+    .closing .eyebrow {
+      color: #DCD2B6;
     }
 
     .closing h2 {
-        font-size: 45px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1;
+      font-weight: 500;
+      margin-bottom: 20px;
     }
 
-    .resource-content h3 {
-        font-size: 24px;
+    .closing p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.8;
+      font-size: 16px;
     }
-}
-</style>
+
+    /* FOOTER */
+
+    footer {
+      background: var(--green);
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding: 25px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: rgba(255,255,255,0.65);
+      font-size: 12px;
+    }
+
+    footer .footer-logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 23px;
+      color: white;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+      .site-header {
+        padding: 24px 6%;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .nav {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .nav a {
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+
+      .hero {
+        padding: 75px 6% 65px;
+      }
+
+      .resources-section {
+        padding: 70px 6%;
+      }
+
+      .resource {
+        grid-template-columns: 40px 1fr;
+        gap: 10px 20px;
+        padding: 30px 0;
+      }
+
+      .resource-number {
+        grid-row: span 2;
+      }
+
+      .location {
+        grid-column: 2;
+        justify-self: start;
+        text-align: left;
+        padding-top: 4px;
+      }
+
+      .note-section {
+        padding: 65px 6%;
+      }
+
+      .note {
+        padding: 35px 28px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .logo {
+        font-size: 29px;
+      }
+
+      .hero h1 {
+        font-size: 62px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .section-heading h2 {
+        font-size: 42px;
+      }
+
+      .resource-button {
+        font-size: 21px;
+      }
+
+      .resource-info p {
+        font-size: 13px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="site-header">
-    <a href="index.html" class="logo">Alongside <span>♡</span></a>
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <a href="index.html" class="logo">
+      Alongside <span>♡</span>
+    </a>
 
     <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="financial-support.html">Financial Support</a>
-        <a href="psychological-support.html">Psychological Support</a>
-        <a href="social-support.html">Social Support</a>
-        <a href="legal-support.html" class="active">Legal Support</a>
-        <a href="about.html">About Website</a>
+      <a href="index.html">Home</a>
+      <a href="financial-support.html">Financial Support</a>
+      <a href="psychological-support.html">Psychological Support</a>
+      <a href="social-support.html">Social Support</a>
+      <a href="legal-support.html" class="active">Legal Support</a>
+      <a href="about.html">About Website</a>
     </nav>
-</header>
+
+  </header>
 
 
-<section class="hero">
-    <div class="eyebrow">LEGAL SUPPORT · SOUTH AMERICA</div>
+  <main>
 
-    <h1>South America</h1>
+    <!-- HERO -->
 
-    <p>
-        Organizations and official resources that may help families understand
-        legal rights, access healthcare, navigate social benefits, caregiver
-        protections, education, and advocacy related to childhood cancer
+    <section class="hero">
+
+      <div class="eyebrow">
+        LEGAL SUPPORT · SOUTH AMERICA
+      </div>
+
+      <h1>South America</h1>
+
+      <p>
+        Organizations and programs that may help families affected by
+        childhood cancer understand their rights, access benefits,
+        navigate healthcare systems, and find legal or advocacy support
         across South America.
-    </p>
-</section>
+      </p>
+
+    </section>
 
 
-<section class="resources-section">
-    <div class="resources-inner">
+    <!-- RESOURCES -->
+
+    <section class="resources-section">
+
+      <div class="resources-inner">
 
         <div class="section-heading">
-            <div class="eyebrow">RESOURCES</div>
-            <h2>Legal & rights support</h2>
+
+          <div class="eyebrow">
+            LEGAL RESOURCES
+          </div>
+
+          <h2>
+            Support for families.
+          </h2>
+
+          <p>
+            The organizations below provide different forms of legal
+            information, advocacy, rights education, benefits guidance,
+            and family support. Not every organization provides direct
+            legal representation, so always check the organization's
+            official website for current services and eligibility.
+          </p>
+
         </div>
+
 
         <div class="resource-list">
 
-            <div class="resource">
-                <div class="resource-number">01</div>
 
-                <div class="resource-content">
-                    <h3>Argentina — Childhood Cancer Rights</h3>
-                    <p>
-                        Argentina — Law 27.674 establishes a comprehensive
-                        protection system for children and adolescents with
-                        cancer, including rights related to healthcare,
-                        education, transportation, housing, financial support,
-                        and protections for caregivers.
-                    </p>
-                    <a class="resource-button"
-                       href="https://www.argentina.gob.ar/justicia/derechofacil/leysimple/salud/proteccion-integral-del-nino-nina-y-adolescente-con-cancer"
-                       target="_blank" rel="noopener">
-                        Visit website →
-                    </a>
-                </div>
+          <!-- 01 -->
 
-                <div class="location">Argentina</div>
+          <article class="resource">
+
+            <div class="resource-number">01</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://www.argentina.gob.ar/justicia/derechofacil/leysimple/salud/proteccion-integral-del-nino-nina-y-adolescente-con-cancer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Argentina — Childhood Cancer Rights <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Argentina — Law 27.674 establishes a comprehensive
+                protection system for children and adolescents with
+                cancer. It includes rights related to healthcare,
+                education, transportation, financial assistance,
+                housing, and caregiver protections.
+              </p>
+
             </div>
 
-
-            <div class="resource">
-                <div class="resource-number">02</div>
-
-                <div class="resource-content">
-                    <h3>Instituto Nacional del Cáncer</h3>
-                    <p>
-                        Argentina — official information about the rights
-                        established by Law 27.674 and the National Childhood
-                        Cancer Program, helping families understand available
-                        protections and support.
-                    </p>
-                    <a class="resource-button"
-                       href="https://www.argentina.gob.ar/node/372549"
-                       target="_blank" rel="noopener">
-                        Visit website →
-                    </a>
-                </div>
-
-                <div class="location">Argentina</div>
+            <div class="location">
+              Argentina
             </div>
 
+          </article>
 
-            <div class="resource">
-                <div class="resource-number">03</div>
 
-                <div class="resource-content">
-                    <h3>Fundación Natalí Dafne Flexer</h3>
-                    <p>
-                        Argentina — nonprofit organization supporting children
-                        and young people with cancer and their families,
-                        including information, guidance, family support, and
-                        help navigating access to treatment and social resources.
-                    </p>
-                    <a class="resource-button"
-                       href="https://www.fundacionflexer.org/"
-                       target="_blank" rel="noopener">
-                        Visit website →
-                    </a>
-                </div>
+          <!-- 02 -->
 
-                <div class="location">Argentina</div>
+          <article class="resource">
+
+            <div class="resource-number">02</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://www.argentina.gob.ar/node/372549"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Instituto Nacional del Cáncer <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Argentina — official information about the rights and
+                benefits provided under Law 27.674, including healthcare
+                coverage, financial assistance, transportation,
+                housing, education, and caregiver leave.
+              </p>
+
             </div>
 
-
-            <div class="resource">
-                <div class="resource-number">04</div>
-
-                <div class="resource-content">
-                    <h3>CONIACC</h3>
-                    <p>
-                        Brazil — national confederation of organizations
-                        working with children and adolescents with cancer.
-                        It supports member organizations and advocates for
-                        the rights and needs of children with cancer and
-                        their families.
-                    </p>
-                    <a class="resource-button"
-                       href="https://coniacc.org.br/institucional/"
-                       target="_blank" rel="noopener">
-                        Visit website →
-                    </a>
-                </div>
-
-                <div class="location">Brazil</div>
+            <div class="location">
+              Argentina
             </div>
 
+          </article>
 
-            <div class="resource">
-                <div class="resource-number">05</div>
 
-                <div class="resource-content">
-                    <h3>Brazil — Statute of Rights of People with Cancer</h3>
-                    <p>
-                        Brazil — Federal Law 14.238 establishes rights for
-                        people with cancer, including access to healthcare,
-                        social and legal assistance, priority treatment, and
-                        special protections for children and adolescents.
-                    </p>
-                    <a class="resource-button"
-                       href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14238.htm"
-                       target="_blank" rel="noopener">
-                        Visit website →
-                    </a>
-                </div>
+          <!-- 03 -->
 
-                <div class="location">Brazil</div>
+          <article class="resource">
+
+            <div class="resource-number">03</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://www.fundacionflexer.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Fundación Natalí Dafne Flexer <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Argentina — nonprofit organization supporting children
+                and young people with cancer and their families through
+                information, guidance, family support, and assistance
+                in navigating treatment and social resources.
+              </p>
+
             </div>
 
-
-            <div class="resource">
-                <div class="resource-number">06</div>
-
-                <div class="resource-content">
-                    <h3>Brazil — Ministry of Health</h3>
-                    <p>
-                        Brazil — official Ministry of Health information about
-                        access to cancer treatment through the public health
-                        system, including policies and services relevant to
-                        pediatric oncology.
-                    </p>
-                    <a class="resource-button"
-                       href="https://www.gov.br/saude/pt-br/composicao/saes/atencao-ao-cancer/faq/faq"
-                       target="_blank" rel="noopener">
-                        Visit website →
-                    </a>
-                </div>
-
-                <div class="location">Brazil</div>
+            <div class="location">
+              Argentina
             </div>
 
+          </article>
 
-            <div class="resource">
-                <div class="resource-number">07</div>
 
-                <div class="resource-content">
-                    <h3>Chile — Ley SANNA</h3>
-                    <p>
-                        Chile — the SANNA insurance system provides protected
-                        leave and a financial subsidy for eligible working
-                        parents and caregivers who need to care for a child
-                        affected by cancer or another serious health condition.
-                    </p>
-                    <a class="resource-button"
-                       href="https://www.chileatiende.gob.cl/fichas/53276-seguro-para-el-acompanamiento-de-ninos-y-ninas-afectados-por-una-condicion-grave-de-salud-ley-sanna"
-                       target="_blank" rel="noopener">
-                        Visit website →
-                    </a>
-                </div>
+          <!-- 04 -->
 
-                <div class="location">Chile</div>
+          <article class="resource">
+
+            <div class="resource-number">04</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://coniacc.org.br/institucional/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  CONIACC <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Brazil — national confederation of organizations working
+                with children and adolescents with cancer. It advocates
+                for the rights and needs of children with cancer and
+                their families and supports organizations across Brazil.
+              </p>
+
             </div>
 
-
-            <div class="resource">
-                <div class="resource-number">08</div>
-
-                <div class="resource-content">
-                    <h3>Corporación Oncomamás</h3>
-                    <p>
-                        Chile — organization supporting parents of children
-                        with cancer through family guidance, information,
-                        advocacy, and work related to treatment access and
-                        caregiver protections.
-                    </p>
-                    <a class="resource-button"
-                       href="https://oncomamas.cl/"
-                       target="_blank" rel="noopener">
-                        Visit website →
-                    </a>
-                </div>
-
-                <div class="location">Chile</div>
+            <div class="location">
+              Brazil
             </div>
 
+          </article>
 
-            <div class="resource">
-                <div class="resource-number">09</div>
 
-                <div class="resource-content">
-                    <h3>Fundación Nuestros Hijos</h3>
-                    <p>
-                        Chile — nonprofit organization supporting children
-                        with cancer and their families through medical,
-                        rehabilitation, social, educational, and family
-                        support programs.
-                    </p>
-                    <a class="resource-button"
-                       href="https://fnh.cl/nosotros/"
-                       target="_blank" rel="noopener">
-                        Visit website →
-                    </a>
-                </div>
+          <!-- 05 -->
 
-                <div class="location">Chile</div>
+          <article class="resource">
+
+            <div class="resource-number">05</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14238.htm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Brazil — Statute of Rights of People with Cancer <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Brazil — Federal Law 14.238 establishes rights for
+                people with cancer, including access to healthcare,
+                social and legal assistance, priority treatment, and
+                special protections for children and adolescents.
+              </p>
+
             </div>
 
-
-            <div class="resource">
-                <div class="resource-number">10</div>
-
-                <div class="resource-content">
-                    <h3>Colombia — Ley Jacobo</h3>
-                    <p>
-                        Colombia — Law 2026 establishes comprehensive,
-                        continuous, and priority care for children and
-                        adolescents with cancer, including measures intended
-                        to support timely treatment and reduce barriers to care.
-                    </p>
-                    <a class="resource-button"
-                       href="https://www.suin-juriscol.gov.co/viewDocument.asp?id=30039611"
-                       target="_blank" rel="noopener">
-                        Visit website →
-                    </a>
-                </div>
-
-                <div class="location">Colombia</div>
+            <div class="location">
+              Brazil
             </div>
 
+          </article>
 
-            <div class="resource">
-                <div class="resource-number">11</div>
 
-                <div class="resource-content">
-                    <h3>Fundación Colombiana de Leucemia y Linfoma</h3>
-                    <p>
-                        Colombia — provides support and guidance to children,
-                        young people, parents, and caregivers affected by
-                        blood cancers, including help addressing barriers to
-                        healthcare, social support, education, and patient
-                        rights.
-                    </p>
-                    <a class="resource-button"
-                       href="https://funleucemialinfoma.org/programa-de-cancer-infantil-y-jovenes/"
-                       target="_blank" rel="noopener">
-                        Visit website →
-                    </a>
-                </div>
+          <!-- 06 -->
 
-                <div class="location">Colombia</div>
+          <article class="resource">
+
+            <div class="resource-number">06</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://www.gov.br/saude/pt-br/composicao/saes/atencao-ao-cancer/faq/faq"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Brazil — Ministry of Health <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Brazil — official information about access to cancer
+                treatment through the public health system. The Ministry
+                confirms that people with suspected or diagnosed cancer
+                can receive oncology care through SUS, including
+                specialized pediatric oncology services.
+              </p>
+
             </div>
 
-
-            <div class="resource">
-                <div class="resource-number">12</div>
-
-                <div class="resource-content">
-                    <h3>Colombia — Ministry of Health</h3>
-                    <p>
-                        Colombia — official government information about the
-                        rights of children with suspected or diagnosed cancer,
-                        including access to timely healthcare, diagnostic
-                        examinations, specialized oncology services,
-                        comprehensive treatment, and protection from
-                        copayments.
-                    </p>
-                    <a class="resource-button"
-                       href="https://www2.minsalud.gov.co/Regiones/Paginas/Salud-y-vida-para-los-ni%C3%B1os-con-c%C3%A1ncer.aspx"
-                       target="_blank" rel="noopener">
-                        Visit website →
-                    </a>
-                </div>
-
-                <div class="location">Colombia</div>
+            <div class="location">
+              Brazil
             </div>
+
+          </article>
+
+
+          <!-- 07 -->
+
+          <article class="resource">
+
+            <div class="resource-number">07</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://www.chileatiende.gob.cl/fichas/53276-seguro-para-el-acompanamiento-de-ninos-y-ninas-afectados-por-una-condicion-grave-de-salud-ley-sanna"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Chile — Ley SANNA <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Chile — the SANNA system provides protected leave and
+                a financial subsidy for eligible working parents and
+                caregivers who need to care for a child affected by
+                cancer or another serious health condition.
+              </p>
+
+            </div>
+
+            <div class="location">
+              Chile
+            </div>
+
+          </article>
+
+
+          <!-- 08 -->
+
+          <article class="resource">
+
+            <div class="resource-number">08</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://oncomamas.cl/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Corporación Oncomamás <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Chile — organization supporting parents of children
+                with cancer through family guidance, information,
+                advocacy, and support related to treatment access
+                and caregiver protections.
+              </p>
+
+            </div>
+
+            <div class="location">
+              Chile
+            </div>
+
+          </article>
+
+
+          <!-- 09 -->
+
+          <article class="resource">
+
+            <div class="resource-number">09</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://fnh.cl/nosotros/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Fundación Nuestros Hijos <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Chile — nonprofit organization supporting children
+                with cancer and their families through medical,
+                rehabilitation, social, educational, and family
+                support programs.
+              </p>
+
+            </div>
+
+            <div class="location">
+              Chile
+            </div>
+
+          </article>
+
+
+          <!-- 10 -->
+
+          <article class="resource">
+
+            <div class="resource-number">10</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://www.suin-juriscol.gov.co/viewDocument.asp?id=30039611"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Colombia — Ley Jacobo <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Colombia — legislation establishing priority,
+                comprehensive, and continuous care for children and
+                adolescents with cancer, with measures intended to
+                support timely diagnosis and treatment.
+              </p>
+
+            </div>
+
+            <div class="location">
+              Colombia
+            </div>
+
+          </article>
+
+
+          <!-- 11 -->
+
+          <article class="resource">
+
+            <div class="resource-number">11</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://funleucemialinfoma.org/programa-de-cancer-infantil-y-jovenes/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Fundación Colombiana de Leucemia y Linfoma <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Colombia — provides support and guidance to children,
+                young people, parents, and caregivers affected by blood
+                cancers, including help addressing barriers to healthcare,
+                social support, education, and patient rights.
+              </p>
+
+            </div>
+
+            <div class="location">
+              Colombia
+            </div>
+
+          </article>
+
+
+          <!-- 12 -->
+
+          <article class="resource">
+
+            <div class="resource-number">12</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://www.defensoria.gob.pe/dia-internacional-de-la-lucha-contra-el-cancer-infantil-defensoria-del-pueblo-recuerda-temas-pendientes-para-garantizar-acceso-oportuno-a-tratamientos/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Defensoría del Pueblo — Peru <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Peru — the national Ombudsman's Office monitors and
+                promotes the rights of children and adolescents with
+                cancer. Its official information addresses timely access
+                to pediatric oncology treatment, implementation of
+                childhood cancer laws, and protection of healthcare rights.
+              </p>
+
+            </div>
+
+            <div class="location">
+              Peru<br>
+              Government resource
+            </div>
+
+          </article>
+
 
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
 
-<section class="note-section">
-    <div class="note">
+    <!-- NOTE -->
 
-        <div class="eyebrow">BEFORE REACHING OUT</div>
+    <section class="note-section">
 
-        <h2>A note about legal support</h2>
+      <div class="note">
+
+        <div class="eyebrow">
+          BEFORE REACHING OUT
+        </div>
+
+        <h2>
+          A note about legal support
+        </h2>
 
         <p>
-            Legal rights, public benefits, caregiver leave, healthcare
-            coverage, and available services vary between countries and may
-            also depend on the family's circumstances. Some resources listed
-            here provide direct family support or advocacy rather than legal
-            representation. Before contacting an organization, visit its
-            official website and check the current requirements, eligibility
-            rules, and services available in your location.
+          Legal rights, public benefits, caregiver leave, healthcare
+          coverage, and available services vary between countries and
+          may also depend on the family's circumstances. Some
+          organizations listed here provide direct family support or
+          advocacy rather than legal representation. Before contacting
+          an organization, visit its official website and check the
+          current requirements, eligibility rules, and services
+          available in your location.
         </p>
 
+      </div>
+
+    </section>
+
+
+    <!-- CLOSING -->
+
+    <section class="closing">
+
+      <div class="eyebrow">
+        SOUTH AMERICA
+      </div>
+
+      <h2>
+        You don't have to navigate this alone.
+      </h2>
+
+      <p>
+        Your child's healthcare team, hospital social worker, or
+        patient advocate may also be able to help your family
+        understand local rights, benefits, caregiver protections,
+        and available advocacy resources.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-logo">
+      Alongside ♡
     </div>
-</section>
 
+    <div>
+      Families are stronger together.
+    </div>
 
-<section class="closing">
-
-    <div class="eyebrow">SOUTH AMERICA</div>
-
-    <h2>You don't have to navigate this alone.</h2>
-
-    <p>
-        Your child's healthcare team, hospital social worker, or patient
-        advocate may also be able to help your family understand local rights,
-        benefits, caregiver protections, and available advocacy resources.
-    </p>
-
-</section>
-
-
-<footer>
-    <div class="footer-logo">Alongside ♡</div>
-    <div class="footer-text">Families are stronger together.</div>
-</footer>
+  </footer>
 
 </body>
 </html>
