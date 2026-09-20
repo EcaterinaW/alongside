@@ -1,773 +1,1170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Social Support in North America | Alongside</title>
-
-    <meta
-        name="description"
-        content="Social and practical support resources for families facing childhood cancer in North America."
-    >
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@300;400;700&display=swap"
-        rel="stylesheet"
-    >
-
-    <link rel="stylesheet" href="styles.css">
-
-    <style>
-        :root {
-            --background: #F2ECDD;
-            --card: #FAF8F5;
-            --green: #536B52;
-            --gold: #B4A276;
-            --text: #1D1D1A;
-            --muted: #5C5A54;
-            --border: rgba(83, 107, 82, 0.18);
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            background: var(--background);
-            color: var(--text);
-            font-family: "Lato", sans-serif;
-            line-height: 1.7;
-        }
-
-        /* HEADER */
-
-        .social-header {
-            padding: 22px 7%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-            background: #FAF8F5;
-            border-bottom: 1px solid rgba(83, 107, 82, 0.12);
-        }
-
-        .social-brand {
-            text-decoration: none;
-            color: var(--green);
-        }
-
-        .social-brand-name {
-            display: block;
-            font-family: "Cormorant Garamond", serif;
-            font-size: 34px;
-            font-weight: 700;
-            line-height: 1;
-        }
-
-        .social-brand-tagline {
-            display: block;
-            margin-top: 5px;
-            font-size: 9px;
-            letter-spacing: 2px;
-            color: var(--muted);
-        }
-
-        .social-nav {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        .social-nav a {
-            color: var(--text);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s ease;
-        }
-
-        .social-nav a:hover {
-            color: var(--green);
-        }
-
-        .social-nav .active {
-            color: var(--green);
-            font-weight: 700;
-        }
-
-        .social-nav .help-button {
-            color: white;
-            background: var(--green);
-            padding: 10px 20px;
-            border-radius: 30px;
-        }
-
-        .social-nav .help-button:hover {
-            color: white;
-            opacity: 0.9;
-        }
-
-        /* HERO */
-
-        .region-hero {
-            padding: 85px 7% 70px;
-            text-align: center;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 30px;
-            color: var(--green);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
-        .region-eyebrow {
-            margin: 0 0 15px;
-            font-size: 12px;
-            letter-spacing: 3px;
-            font-weight: 700;
-            color: var(--gold);
-        }
-
-        .region-hero h1 {
-            margin: 0 auto 20px;
-            font-family: "Cormorant Garamond", serif;
-            font-size: clamp(48px, 7vw, 78px);
-            line-height: 0.95;
-            font-weight: 600;
-            color: var(--green);
-        }
-
-        .region-intro {
-            max-width: 760px;
-            margin: 0 auto;
-            font-size: 18px;
-            color: var(--muted);
-        }
-
-        /* SUPPORT SECTION */
-
-        .support-section {
-            padding: 20px 7% 90px;
-            max-width: 1250px;
-            margin: 0 auto;
-        }
-
-        .section-heading {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .section-heading h2 {
-            margin: 0 0 10px;
-            font-family: "Cormorant Garamond", serif;
-            color: var(--text);
-            font-size: 42px;
-            font-weight: 600;
-        }
-
-        .section-heading p {
-            max-width: 650px;
-            margin: 0 auto;
-            color: var(--muted);
-            font-size: 15px;
-        }
-
-        .support-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 24px;
-        }
-
-        .support-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 32px;
-            display: flex;
-            flex-direction: column;
-            min-height: 340px;
-            transition:
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
-        }
-
-        .support-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 30px rgba(29, 29, 26, 0.07);
-        }
-
-        .card-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .card-number {
-            width: 48px;
-            height: 48px;
-            flex-shrink: 0;
-            border-radius: 50%;
-            background: var(--background);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--green);
-            font-family: "Cormorant Garamond", serif;
-            font-size: 20px;
-            font-weight: 700;
-        }
-
-        .location-tag {
-            background: rgba(180, 162, 118, 0.15);
-            color: #756846;
-            border-radius: 30px;
-            padding: 7px 12px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-align: center;
-        }
-
-        .support-card h3 {
-            margin: 0 0 13px;
-            font-family: "Cormorant Garamond", serif;
-            font-size: 30px;
-            line-height: 1.05;
-            color: var(--green);
-        }
-
-        .support-card p {
-            margin: 0 0 20px;
-            color: var(--muted);
-            font-size: 15px;
-        }
-
-        .services {
-            margin: 0 0 25px;
-            padding: 0;
-            list-style: none;
-        }
-
-        .services li {
-            position: relative;
-            padding-left: 18px;
-            margin-bottom: 7px;
-            font-size: 14px;
-            color: var(--text);
-        }
-
-        .services li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--gold);
-            font-weight: 700;
-        }
-
-        .resource-link {
-            margin-top: auto;
-            align-self: flex-start;
-            color: var(--green);
-            font-weight: 700;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(83, 107, 82, 0.4);
-            padding-bottom: 2px;
-        }
-
-        .resource-link:hover {
-            border-color: var(--green);
-        }
-
-        /* NOTE */
-
-        .support-note {
-            max-width: 900px;
-            margin: 55px auto 0;
-            padding: 28px 32px;
-            border-radius: 20px;
-            background: rgba(250, 248, 245, 0.62);
-            border: 1px solid rgba(180, 162, 118, 0.35);
-            text-align: center;
-        }
-
-        .support-note strong {
-            color: var(--green);
-        }
-
-        .support-note p {
-            margin: 0;
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        /* CLOSING */
-
-        .closing-section {
-            padding: 75px 7%;
-            text-align: center;
-            background: var(--green);
-            color: white;
-        }
-
-        .closing-section p {
-            margin: 0 auto 10px;
-            max-width: 700px;
-            font-family: "Cormorant Garamond", serif;
-            font-size: clamp(32px, 5vw, 48px);
-            line-height: 1.1;
-        }
-
-        .closing-section span {
-            font-size: 14px;
-            opacity: 0.8;
-        }
-
-        /* FOOTER */
-
-        .social-footer {
-            background: #FAF8F5;
-            padding: 36px 7%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .footer-brand {
-            color: var(--green);
-            font-family: "Cormorant Garamond", serif;
-            font-size: 28px;
-            font-weight: 700;
-        }
-
-        .footer-tagline {
-            display: block;
-            font-family: "Lato", sans-serif;
-            margin-top: 3px;
-            color: var(--muted);
-            font-size: 8px;
-            letter-spacing: 1.8px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            text-decoration: none;
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        .footer-links a:hover {
-            color: var(--green);
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 850px) {
-            .social-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .social-nav {
-                justify-content: flex-start;
-                gap: 15px;
-            }
-
-            .support-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 550px) {
-            .region-hero {
-                padding-top: 55px;
-            }
-
-            .support-card {
-                padding: 25px;
-            }
-
-            .social-nav {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .social-footer {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-    </style>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Social Support · North America · Alongside</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+
+      --cream: #F2ECDD;
+
+      --light: #FAF8F5;
+
+      --green: #536B52;
+
+      --gold: #B4A276;
+
+      --text: #1D1D1A;
+
+      --muted: #5C5A54;
+
+      --quote: #EEE5D3;
+
+      --border: #DCD5C7;
+
+    }
+
+    * {
+
+      box-sizing: border-box;
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+    body {
+
+      background: var(--cream);
+
+      color: var(--text);
+
+      font-family: "Lato", sans-serif;
+
+      line-height: 1.6;
+
+    }
+
+    a {
+
+      color: inherit;
+
+      text-decoration: none;
+
+    }
+
+
+    /* HEADER */
+
+    .site-header {
+
+      width: 100%;
+
+      padding: 28px 7%;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      border-bottom: 1px solid rgba(29, 29, 26, 0.08);
+
+    }
+
+    .logo {
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 32px;
+
+      font-weight: 600;
+
+      letter-spacing: 0.5px;
+
+    }
+
+    .logo span {
+
+      color: var(--green);
+
+    }
+
+    .nav {
+
+      display: flex;
+
+      gap: 34px;
+
+      align-items: center;
+
+    }
+
+    .nav a {
+
+      font-size: 13px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.4px;
+
+      color: var(--muted);
+
+      transition: 0.2s ease;
+
+    }
+
+    .nav a:hover,
+    .nav a.active {
+
+      color: var(--green);
+
+    }
+
+
+    /* HERO */
+
+    .hero {
+
+      max-width: 1100px;
+
+      margin: 0 auto;
+
+      padding: 105px 7% 80px;
+
+    }
+
+    .eyebrow {
+
+      font-size: 12px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 2.4px;
+
+      color: var(--green);
+
+      font-weight: 600;
+
+      margin-bottom: 20px;
+
+    }
+
+    .hero h1 {
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: clamp(58px, 8vw, 92px);
+
+      line-height: 0.95;
+
+      font-weight: 500;
+
+      margin-bottom: 28px;
+
+    }
+
+    .hero p {
+
+      max-width: 700px;
+
+      font-size: 18px;
+
+      line-height: 1.8;
+
+      color: var(--muted);
+
+      font-weight: 300;
+
+    }
+
+
+    /* RESOURCES */
+
+    .resources-section {
+
+      background: var(--light);
+
+      padding: 95px 7% 100px;
+
+    }
+
+    .resources-inner {
+
+      max-width: 1100px;
+
+      margin: 0 auto;
+
+    }
+
+    .section-heading {
+
+      margin-bottom: 55px;
+
+    }
+
+    .section-heading h2 {
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 50px;
+
+      line-height: 1;
+
+      font-weight: 500;
+
+      margin-bottom: 18px;
+
+    }
+
+    .section-heading p {
+
+      max-width: 690px;
+
+      color: var(--muted);
+
+      font-size: 16px;
+
+      line-height: 1.8;
+
+    }
+
+    .resource-list {
+
+      border-top: 1px solid var(--border);
+
+    }
+
+    .resource {
+
+      display: grid;
+
+      grid-template-columns: 55px 1fr 150px;
+
+      gap: 28px;
+
+      align-items: start;
+
+      padding: 32px 0;
+
+      border-bottom: 1px solid var(--border);
+
+    }
+
+    .resource-number {
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 22px;
+
+      color: var(--gold);
+
+      padding-top: 8px;
+
+    }
+
+    .resource-info h3 {
+
+      margin-bottom: 12px;
+
+    }
+
+    .resource-button {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      padding: 10px 18px;
+
+      border: 1px solid var(--green);
+
+      border-radius: 30px;
+
+      color: var(--green);
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 23px;
+
+      line-height: 1;
+
+      transition: all 0.2s ease;
+
+    }
+
+    .resource-button span {
+
+      font-family: "Lato", sans-serif;
+
+      font-size: 14px;
+
+    }
+
+    .resource-button:hover {
+
+      background: var(--green);
+
+      color: white;
+
+    }
+
+    .resource-info p {
+
+      color: var(--muted);
+
+      font-size: 14px;
+
+      line-height: 1.7;
+
+      max-width: 650px;
+
+    }
+
+    .location {
+
+      justify-self: end;
+
+      padding-top: 12px;
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.5px;
+
+      color: var(--green);
+
+      font-weight: 600;
+
+      text-align: right;
+
+    }
+
+
+    /* NOTE */
+
+    .note-section {
+
+      max-width: 1100px;
+
+      margin: 0 auto;
+
+      padding: 90px 7%;
+
+    }
+
+    .note {
+
+      background: var(--quote);
+
+      padding: 45px 50px;
+
+      border-radius: 4px;
+
+    }
+
+    .note .eyebrow {
+
+      margin-bottom: 12px;
+
+    }
+
+    .note h2 {
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 38px;
+
+      font-weight: 500;
+
+      margin-bottom: 15px;
+
+    }
+
+    .note p {
+
+      color: var(--muted);
+
+      max-width: 760px;
+
+      line-height: 1.8;
+
+      font-size: 15px;
+
+    }
+
+
+    /* CLOSING */
+
+    .closing {
+
+      background: var(--green);
+
+      color: white;
+
+      text-align: center;
+
+      padding: 90px 7%;
+
+    }
+
+    .closing .eyebrow {
+
+      color: #DCD2B6;
+
+    }
+
+    .closing h2 {
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: clamp(42px, 6vw, 68px);
+
+      line-height: 1;
+
+      font-weight: 500;
+
+      margin-bottom: 20px;
+
+    }
+
+    .closing p {
+
+      max-width: 600px;
+
+      margin: 0 auto;
+
+      color: rgba(255,255,255,0.82);
+
+      line-height: 1.8;
+
+      font-size: 16px;
+
+    }
+
+
+    /* FOOTER */
+
+    footer {
+
+      background: var(--green);
+
+      border-top: 1px solid rgba(255,255,255,0.15);
+
+      padding: 25px 7%;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      color: rgba(255,255,255,0.65);
+
+      font-size: 12px;
+
+    }
+
+    footer .footer-logo {
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 23px;
+
+      color: white;
+
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .site-header {
+
+        padding: 24px 6%;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+      }
+
+      .nav {
+
+        gap: 18px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+      }
+
+      .nav a {
+
+        font-size: 10px;
+
+        letter-spacing: 1px;
+
+      }
+
+      .hero {
+
+        padding: 75px 6% 65px;
+
+      }
+
+      .resources-section {
+
+        padding: 70px 6%;
+
+      }
+
+      .resource {
+
+        grid-template-columns: 40px 1fr;
+
+        gap: 10px 20px;
+
+        padding: 30px 0;
+
+      }
+
+      .resource-number {
+
+        grid-row: span 2;
+
+      }
+
+      .location {
+
+        grid-column: 2;
+
+        justify-self: start;
+
+        text-align: left;
+
+        padding-top: 4px;
+
+      }
+
+      .note-section {
+
+        padding: 65px 6%;
+
+      }
+
+      .note {
+
+        padding: 35px 28px;
+
+      }
+
+      footer {
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        text-align: center;
+
+      }
+
+    }
+
+    @media (max-width: 500px) {
+
+      .logo {
+
+        font-size: 29px;
+
+      }
+
+      .hero h1 {
+
+        font-size: 62px;
+
+      }
+
+      .hero p {
+
+        font-size: 16px;
+
+      }
+
+      .section-heading h2 {
+
+        font-size: 42px;
+
+      }
+
+      .resource-button {
+
+        font-size: 21px;
+
+      }
+
+      .resource-info p {
+
+        font-size: 13px;
+
+      }
+
+    }
+
+  </style>
+
 </head>
+
 
 <body>
 
-    <!-- HEADER -->
-    <header class="social-header">
 
-        <a href="index.html" class="social-brand">
-            <span class="social-brand-name">Alongside</span>
-            <span class="social-brand-tagline">FAMILIES ARE STRONGER TOGETHER</span>
-        </a>
+  <!-- HEADER -->
 
-        <nav class="social-nav" aria-label="Main navigation">
-            <a href="index.html">Homepage</a>
-            <a href="financial-support.html">Financial Support</a>
-            <a href="psychological-support.html">Psychological Support</a>
-            <a href="social-support.html" class="active">Social Support</a>
-            <a href="about.html">About Website</a>
-            <a href="social-support.html" class="help-button">Get Help</a>
-        </nav>
+  <header class="site-header">
 
-    </header>
-
+    <a href="index.html" class="logo">
 
-    <main>
-
-        <!-- HERO -->
-        <section class="region-hero">
-
-            <a href="social-support.html" class="back-link">
-                ← Back to Social Support
-            </a>
-
-            <p class="region-eyebrow">
-                SOCIAL SUPPORT · NORTH AMERICA
-            </p>
-
-            <h1>North America</h1>
-
-            <p class="region-intro">
-                Childhood cancer affects much more than medical treatment.
-                Families may need a place to stay, transportation, meals,
-                help navigating services, support for siblings, and connection
-                with people who understand what they are going through.
-                These organizations provide practical and social support
-                to children and families across North America.
-            </p>
-
-        </section>
-
-
-        <!-- RESOURCES -->
-        <section class="support-section">
-
-            <div class="section-heading">
-                <h2>Organizations that can help</h2>
-
-                <p>
-                    Services and eligibility vary by location. Visit each
-                    organization's website to find the programs available
-                    in your community.
-                </p>
-            </div>
-
-
-            <div class="support-grid">
-
-                <!-- 1 -->
-                <article class="support-card">
-
-                    <div class="card-top">
-                        <div class="card-number">01</div>
-                        <div class="location-tag">NORTH AMERICA</div>
-                    </div>
-
-                    <h3>Ronald McDonald House Charities</h3>
-
-                    <p>
-                        Ronald McDonald House Charities helps families stay
-                        close to a child receiving medical care. Local programs
-                        may provide accommodation near hospitals, meals,
-                        hospital Family Rooms and other services that help
-                        families stay together during treatment.
-                    </p>
-
-                    <ul class="services">
-                        <li>Family accommodation near hospitals</li>
-                        <li>Meals and everyday essentials</li>
-                        <li>Ronald McDonald Family Rooms</li>
-                        <li>Sibling and family resources</li>
-                        <li>Community and peer connection</li>
-                    </ul>
-
-                    <a
-                        href="https://rmhc.org/our-core-programs"
-                        class="resource-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Visit RMHC →
-                    </a>
-
-                </article>
-
-
-                <!-- 2 -->
-                <article class="support-card">
-
-                    <div class="card-top">
-                        <div class="card-number">02</div>
-                        <div class="location-tag">UNITED STATES</div>
-                    </div>
-
-                    <h3>CancerCare for Kids</h3>
-
-                    <p>
-                        CancerCare for Kids provides free professional support
-                        for children, teenagers and families affected by cancer.
-                        Oncology social workers can help families understand
-                        their options, locate resources and manage some of the
-                        practical and social challenges that come with cancer.
-                    </p>
-
-                    <ul class="services">
-                        <li>Oncology social workers</li>
-                        <li>Resource navigation</li>
-                        <li>Support groups and family programs</li>
-                        <li>Guidance for parents and caregivers</li>
-                        <li>Support related to school and everyday life</li>
-                    </ul>
-
-                    <a
-                        href="https://www.cancercare.org/services/specialized-programs/cancercare-for-kids"
-                        class="resource-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Visit CancerCare →
-                    </a>
-
-                </article>
-
-
-                <!-- 3 -->
-                <article class="support-card">
-
-                    <div class="card-top">
-                        <div class="card-number">03</div>
-                        <div class="location-tag">CANADA</div>
-                    </div>
-
-                    <h3>Childhood Cancer Canada</h3>
-
-                    <p>
-                        Childhood Cancer Canada supports children with cancer
-                        and their families through programs designed for the
-                        realities of childhood cancer. Its work includes
-                        resources for newly diagnosed families, community
-                        programs and support during and after treatment.
-                    </p>
-
-                    <ul class="services">
-                        <li>Programs for children and families</li>
-                        <li>Resources for newly diagnosed families</li>
-                        <li>Community connection</li>
-                        <li>Support during and after treatment</li>
-                        <li>Resources for survivors and caregivers</li>
-                    </ul>
-
-                    <a
-                        href="https://www.childhoodcancer.ca/"
-                        class="resource-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Visit Childhood Cancer Canada →
-                    </a>
-
-                </article>
-
-
-                <!-- 4 -->
-                <article class="support-card">
-
-                    <div class="card-top">
-                        <div class="card-number">04</div>
-                        <div class="location-tag">CANADA</div>
-                    </div>
-
-                    <h3>Canadian Cancer Society</h3>
-
-                    <p>
-                        The Canadian Cancer Society connects families with
-                        services throughout Canada. Support can include
-                        transportation to treatment, accommodation, community
-                        resources and programs designed for children, young
-                        people and families affected by cancer.
-                    </p>
-
-                    <ul class="services">
-                        <li>Transportation to cancer treatment</li>
-                        <li>Accommodation during treatment</li>
-                        <li>Child, youth and family programs</li>
-                        <li>Recreation and camp programs</li>
-                        <li>Community Services Locator</li>
-                    </ul>
-
-                    <a
-                        href="https://cancer.ca/en/living-with-cancer/how-we-can-help"
-                        class="resource-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Visit Canadian Cancer Society →
-                    </a>
-
-                </article>
-
-
-                <!-- 5 -->
-                <article class="support-card">
-
-                    <div class="card-top">
-                        <div class="card-number">05</div>
-                        <div class="location-tag">MEXICO</div>
-                    </div>
-
-                    <h3>AMANC</h3>
-
-                    <p>
-                        Asociación Mexicana de Ayuda a Niños con Cáncer
-                        supports children and adolescents with cancer and
-                        their families in Mexico. Its comprehensive support
-                        model helps families with many of the practical needs
-                        that arise while a child is receiving treatment.
-                    </p>
-
-                    <ul class="services">
-                        <li>Temporary accommodation</li>
-                        <li>Food and meals</li>
-                        <li>Transportation</li>
-                        <li>Access to medicines and other resources</li>
-                        <li>Psychosocial and family support</li>
-                    </ul>
-
-                    <a
-                        href="https://www.amanc.org/"
-                        class="resource-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Visit AMANC →
-                    </a>
-
-                </article>
-
-
-                <!-- 6 -->
-                <article class="support-card">
-
-                    <div class="card-top">
-                        <div class="card-number">06</div>
-                        <div class="location-tag">MEXICO</div>
-                    </div>
-
-                    <h3>Casa de la Amistad</h3>
-
-                    <p>
-                        Casa de la Amistad supports children and young people
-                        receiving cancer treatment in Mexico, including
-                        families who have traveled away from home to access
-                        care. Its programs address practical needs while also
-                        helping children continue learning and family life
-                        during treatment.
-                    </p>
-
-                    <ul class="services">
-                        <li>Family lodging</li>
-                        <li>Meals and essential supplies</li>
-                        <li>Transportation support</li>
-                        <li>Educational support</li>
-                        <li>Emotional and family support</li>
-                    </ul>
-
-                    <a
-                        href="https://www.casadelaamistad.org.mx/"
-                        class="resource-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Visit Casa de la Amistad →
-                    </a>
-
-                </article>
-
-            </div>
-
-
-            <!-- DISCLAIMER -->
-            <div class="support-note">
-                <p>
-                    <strong>Please note:</strong>
-                    Programs, locations, eligibility requirements and available
-                    services may change. Families should contact each organization
-                    directly to confirm current services in their area.
-                </p>
-            </div>
-
-        </section>
-
-
-        <!-- CLOSING -->
-        <section class="closing-section">
-
-            <p>
-                No family should have to navigate childhood cancer alone.
-            </p>
-
-            <span>
-                Support can also mean a meal, a ride, a place to stay,
-                or simply having someone beside you.
-            </span>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-    <footer class="social-footer">
-
-        <div class="footer-brand">
-            Alongside
-            <span class="footer-tagline">
-                FAMILIES ARE STRONGER TOGETHER
-            </span>
+      Alongside <span>♡</span>
+
+    </a>
+
+
+    <nav class="nav">
+
+      <a href="index.html">Home</a>
+
+      <a href="financial-support.html">Financial Support</a>
+
+      <a href="psychological-support.html">Psychological Support</a>
+
+      <a href="social-support.html" class="active">Social Support</a>
+
+      <a href="legal-support.html">Legal Support</a>
+
+      <a href="about.html">About Website</a>
+
+    </nav>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="eyebrow">
+
+        SOCIAL SUPPORT · NORTH AMERICA
+
+      </div>
+
+
+      <h1>North America</h1>
+
+
+      <p>
+
+        Organizations and programs that may help families affected by
+
+        childhood cancer with accommodation, transportation, meals,
+
+        family services, community support, and everyday needs.
+
+      </p>
+
+    </section>
+
+
+
+    <!-- RESOURCES -->
+
+    <section class="resources-section">
+
+      <div class="resources-inner">
+
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+
+            SOCIAL RESOURCES
+
+          </div>
+
+
+          <h2>
+
+            Support for families.
+
+          </h2>
+
+
+          <p>
+
+            The organizations below provide different forms of practical
+
+            and social support for children with cancer and their families.
+
+            Available services and eligibility vary by location, so always
+
+            check the organization's official website for current information.
+
+          </p>
+
         </div>
 
-        <div class="footer-links">
-            <a href="index.html">Homepage</a>
-            <a href="financial-support.html">Financial Support</a>
-            <a href="psychological-support.html">Psychological Support</a>
-            <a href="social-support.html">Social Support</a>
-            <a href="about.html">About Website</a>
+
+
+        <div class="resource-list">
+
+
+          <!-- 01 -->
+
+          <article class="resource">
+
+            <div class="resource-number">01</div>
+
+
+            <div class="resource-info">
+
+              <h3>
+
+                <a
+
+                  href="https://rmhc.org/our-core-programs"
+
+                  target="_blank"
+
+                  rel="noopener noreferrer"
+
+                  class="resource-button"
+
+                >
+
+                  Ronald McDonald House Charities <span>→</span>
+
+                </a>
+
+              </h3>
+
+
+              <p>
+
+                Helps families stay close to a child receiving medical care
+
+                through accommodation near hospitals, meals, Family Rooms,
+
+                and other services that support families during treatment.
+
+              </p>
+
+            </div>
+
+
+            <div class="location">
+
+              North America
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 02 -->
+
+          <article class="resource">
+
+            <div class="resource-number">02</div>
+
+
+            <div class="resource-info">
+
+              <h3>
+
+                <a
+
+                  href="https://www.cancercare.org/services/specialized-programs/cancercare-for-kids"
+
+                  target="_blank"
+
+                  rel="noopener noreferrer"
+
+                  class="resource-button"
+
+                >
+
+                  CancerCare for Kids <span>→</span>
+
+                </a>
+
+              </h3>
+
+
+              <p>
+
+                Free professional support for children, teenagers, parents,
+
+                and caregivers affected by cancer, including oncology social
+
+                workers, support groups, information, and resource navigation.
+
+              </p>
+
+            </div>
+
+
+            <div class="location">
+
+              United States
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 03 -->
+
+          <article class="resource">
+
+            <div class="resource-number">03</div>
+
+
+            <div class="resource-info">
+
+              <h3>
+
+                <a
+
+                  href="https://www.childhoodcancer.ca/"
+
+                  target="_blank"
+
+                  rel="noopener noreferrer"
+
+                  class="resource-button"
+
+                >
+
+                  Childhood Cancer Canada <span>→</span>
+
+                </a>
+
+              </h3>
+
+
+              <p>
+
+                Programs and resources for children with cancer and their
+
+                families, including support for newly diagnosed families,
+
+                community connection, and resources during and after treatment.
+
+              </p>
+
+            </div>
+
+
+            <div class="location">
+
+              Canada
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 04 -->
+
+          <article class="resource">
+
+            <div class="resource-number">04</div>
+
+
+            <div class="resource-info">
+
+              <h3>
+
+                <a
+
+                  href="https://cancer.ca/en/living-with-cancer/how-we-can-help"
+
+                  target="_blank"
+
+                  rel="noopener noreferrer"
+
+                  class="resource-button"
+
+                >
+
+                  Canadian Cancer Society <span>→</span>
+
+                </a>
+
+              </h3>
+
+
+              <p>
+
+                Connects families with transportation, accommodation,
+
+                community services, information, and programs that can help
+
+                children, young people, and families during cancer treatment.
+
+              </p>
+
+            </div>
+
+
+            <div class="location">
+
+              Canada
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 05 -->
+
+          <article class="resource">
+
+            <div class="resource-number">05</div>
+
+
+            <div class="resource-info">
+
+              <h3>
+
+                <a
+
+                  href="https://www.amanc.org/"
+
+                  target="_blank"
+
+                  rel="noopener noreferrer"
+
+                  class="resource-button"
+
+                >
+
+                  AMANC <span>→</span>
+
+                </a>
+
+              </h3>
+
+
+              <p>
+
+                Comprehensive support for children and adolescents with
+
+                cancer and their families, including accommodation, meals,
+
+                transportation, access to resources, and psychosocial support.
+
+              </p>
+
+            </div>
+
+
+            <div class="location">
+
+              Mexico
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 06 -->
+
+          <article class="resource">
+
+            <div class="resource-number">06</div>
+
+
+            <div class="resource-info">
+
+              <h3>
+
+                <a
+
+                  href="https://www.casadelaamistad.org.mx/"
+
+                  target="_blank"
+
+                  rel="noopener noreferrer"
+
+                  class="resource-button"
+
+                >
+
+                  Casa de la Amistad <span>→</span>
+
+                </a>
+
+              </h3>
+
+
+              <p>
+
+                Supports children and young people receiving cancer treatment
+
+                and their families with practical services such as lodging,
+
+                meals, transportation, education, and family support.
+
+              </p>
+
+            </div>
+
+
+            <div class="location">
+
+              Mexico
+
+            </div>
+
+          </article>
+
+
         </div>
 
-    </footer>
+      </div>
+
+    </section>
+
+
+
+    <!-- NOTE -->
+
+    <section class="note-section">
+
+      <div class="note">
+
+
+        <div class="eyebrow">
+
+          BEFORE REACHING OUT
+
+        </div>
+
+
+        <h2>
+
+          A note about social support
+
+        </h2>
+
+
+        <p>
+
+          Available services, locations, and eligibility requirements can
+
+          change. Some programs may require a referral through a hospital
+
+          social worker or healthcare team. Before contacting an organization,
+
+          visit its official website and check which services are currently
+
+          available for your family and location.
+
+        </p>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- CLOSING -->
+
+    <section class="closing">
+
+
+      <div class="eyebrow">
+
+        NORTH AMERICA
+
+      </div>
+
+
+      <h2>
+
+        You don't have to navigate this alone.
+
+      </h2>
+
+
+      <p>
+
+        A child's healthcare team or hospital social worker can also help
+
+        connect your family with local housing, transportation, family
+
+        programs, and community resources.
+
+      </p>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-logo">
+
+      Alongside ♡
+
+    </div>
+
+
+    <div>
+
+      Families are stronger together.
+
+    </div>
+
+  </footer>
+
 
 </body>
+
 </html>
