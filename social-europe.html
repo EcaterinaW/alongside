@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Social Support · Europe · Alongside</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+
+      --cream: #F2ECDD;
+
+      --light: #FAF8F5;
+
+      --green: #536B52;
+
+      --gold: #B4A276;
+
+      --text: #1D1D1A;
+
+      --muted: #5C5A54;
+
+      --quote: #EEE5D3;
+
+      --border: #DCD5C7;
+
+    }
+
+    * {
+
+      box-sizing: border-box;
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+    body {
+
+      background: var(--cream);
+
+      color: var(--text);
+
+      font-family: "Lato", sans-serif;
+
+      line-height: 1.6;
+
+    }
+
+    a {
+
+      color: inherit;
+
+      text-decoration: none;
+
+    }
+
+
+    /* HEADER */
+
+    .site-header {
+
+      width: 100%;
+
+      padding: 28px 7%;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      border-bottom: 1px solid rgba(29, 29, 26, 0.08);
+
+    }
+
+    .logo {
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 32px;
+
+      font-weight: 600;
+
+      letter-spacing: 0.5px;
+
+    }
+
+    .logo span {
+
+      color: var(--green);
+
+    }
+
+    .nav {
+
+      display: flex;
+
+      gap: 34px;
+
+      align-items: center;
+
+    }
+
+    .nav a {
+
+      font-size: 13px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.4px;
+
+      color: var(--muted);
+
+      transition: 0.2s ease;
+
+    }
+
+    .nav a:hover,
+    .nav a.active {
+
+      color: var(--green);
+
+    }
+
+
+    /* HERO */
+
+    .hero {
+
+      max-width: 1100px;
+
+      margin: 0 auto;
+
+      padding: 105px 7% 80px;
+
+    }
+
+    .eyebrow {
+
+      font-size: 12px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 2.4px;
+
+      color: var(--green);
+
+      font-weight: 600;
+
+      margin-bottom: 20px;
+
+    }
+
+    .hero h1 {
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: clamp(58px, 8vw, 92px);
+
+      line-height: 0.95;
+
+      font-weight: 500;
+
+      margin-bottom: 28px;
+
+    }
+
+    .hero p {
+
+      max-width: 700px;
+
+      font-size: 18px;
+
+      line-height: 1.8;
+
+      color: var(--muted);
+
+      font-weight: 300;
+
+    }
+
+
+    /* RESOURCES */
+
+    .resources-section {
+
+      background: var(--light);
+
+      padding: 95px 7% 100px;
+
+    }
+
+    .resources-inner {
+
+      max-width: 1100px;
+
+      margin: 0 auto;
+
+    }
+
+    .section-heading {
+
+      margin-bottom: 55px;
+
+    }
+
+    .section-heading h2 {
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 50px;
+
+      line-height: 1;
+
+      font-weight: 500;
+
+      margin-bottom: 18px;
+
+    }
+
+    .section-heading p {
+
+      max-width: 690px;
+
+      color: var(--muted);
+
+      font-size: 16px;
+
+      line-height: 1.8;
+
+    }
+
+    .resource-list {
+
+      border-top: 1px solid var(--border);
+
+    }
+
+    .resource {
+
+      display: grid;
+
+      grid-template-columns: 55px 1fr 150px;
+
+      gap: 28px;
+
+      align-items: start;
+
+      padding: 32px 0;
+
+      border-bottom: 1px solid var(--border);
+
+    }
+
+    .resource-number {
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 22px;
+
+      color: var(--gold);
+
+      padding-top: 8px;
+
+    }
+
+    .resource-info h3 {
+
+      margin-bottom: 12px;
+
+    }
+
+    .resource-button {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      padding: 10px 18px;
+
+      border: 1px solid var(--green);
+
+      border-radius: 30px;
+
+      color: var(--green);
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 23px;
+
+      line-height: 1;
+
+      transition: all 0.2s ease;
+
+    }
+
+    .resource-button span {
+
+      font-family: "Lato", sans-serif;
+
+      font-size: 14px;
+
+    }
+
+    .resource-button:hover {
+
+      background: var(--green);
+
+      color: white;
+
+    }
+
+    .resource-info p {
+
+      color: var(--muted);
+
+      font-size: 14px;
+
+      line-height: 1.7;
+
+      max-width: 650px;
+
+    }
+
+    .location {
+
+      justify-self: end;
+
+      padding-top: 12px;
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.5px;
+
+      color: var(--green);
+
+      font-weight: 600;
+
+      text-align: right;
+
+    }
+
+
+    /* NOTE */
+
+    .note-section {
+
+      max-width: 1100px;
+
+      margin: 0 auto;
+
+      padding: 90px 7%;
+
+    }
+
+    .note {
+
+      background: var(--quote);
+
+      padding: 45px 50px;
+
+      border-radius: 4px;
+
+    }
+
+    .note .eyebrow {
+
+      margin-bottom: 12px;
+
+    }
+
+    .note h2 {
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 38px;
+
+      font-weight: 500;
+
+      margin-bottom: 15px;
+
+    }
+
+    .note p {
+
+      color: var(--muted);
+
+      max-width: 760px;
+
+      line-height: 1.8;
+
+      font-size: 15px;
+
+    }
+
+
+    /* CLOSING */
+
+    .closing {
+
+      background: var(--green);
+
+      color: white;
+
+      text-align: center;
+
+      padding: 90px 7%;
+
+    }
+
+    .closing .eyebrow {
+
+      color: #DCD2B6;
+
+    }
+
+    .closing h2 {
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: clamp(42px, 6vw, 68px);
+
+      line-height: 1;
+
+      font-weight: 500;
+
+      margin-bottom: 20px;
+
+    }
+
+    .closing p {
+
+      max-width: 600px;
+
+      margin: 0 auto;
+
+      color: rgba(255,255,255,0.82);
+
+      line-height: 1.8;
+
+      font-size: 16px;
+
+    }
+
+
+    /* FOOTER */
+
+    footer {
+
+      background: var(--green);
+
+      border-top: 1px solid rgba(255,255,255,0.15);
+
+      padding: 25px 7%;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      color: rgba(255,255,255,0.65);
+
+      font-size: 12px;
+
+    }
+
+    footer .footer-logo {
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 23px;
+
+      color: white;
+
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .site-header {
+
+        padding: 24px 6%;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+      }
+
+      .nav {
+
+        gap: 18px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+      }
+
+      .nav a {
+
+        font-size: 10px;
+
+        letter-spacing: 1px;
+
+      }
+
+      .hero {
+
+        padding: 75px 6% 65px;
+
+      }
+
+      .resources-section {
+
+        padding: 70px 6%;
+
+      }
+
+      .resource {
+
+        grid-template-columns: 40px 1fr;
+
+        gap: 10px 20px;
+
+        padding: 30px 0;
+
+      }
+
+      .resource-number {
+
+        grid-row: span 2;
+
+      }
+
+      .location {
+
+        grid-column: 2;
+
+        justify-self: start;
+
+        text-align: left;
+
+        padding-top: 4px;
+
+      }
+
+      .note-section {
+
+        padding: 65px 6%;
+
+      }
+
+      .note {
+
+        padding: 35px 28px;
+
+      }
+
+      footer {
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        text-align: center;
+
+      }
+
+    }
+
+    @media (max-width: 500px) {
+
+      .logo {
+
+        font-size: 29px;
+
+      }
+
+      .hero h1 {
+
+        font-size: 62px;
+
+      }
+
+      .hero p {
+
+        font-size: 16px;
+
+      }
+
+      .section-heading h2 {
+
+        font-size: 42px;
+
+      }
+
+      .resource-button {
+
+        font-size: 21px;
+
+      }
+
+      .resource-info p {
+
+        font-size: 13px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <a href="index.html" class="logo">
+
+      Alongside <span>♡</span>
+
+    </a>
+
+
+    <nav class="nav">
+
+      <a href="index.html">Home</a>
+
+      <a href="financial-support.html">Financial Support</a>
+
+      <a href="psychological-support.html">Psychological Support</a>
+
+      <a href="social-support.html" class="active">Social Support</a>
+
+      <a href="legal-support.html">Legal Support</a>
+
+      <a href="about.html">About Website</a>
+
+    </nav>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="eyebrow">
+
+        SOCIAL SUPPORT · EUROPE
+
+      </div>
+
+
+      <h1>Europe</h1>
+
+
+      <p>
+
+        Organizations and programs that may help families affected by
+
+        childhood cancer with accommodation, family services, peer support,
+
+        education, community programs, and other everyday needs.
+
+      </p>
+
+    </section>
+
+
+
+    <!-- RESOURCES -->
+
+    <section class="resources-section">
+
+      <div class="resources-inner">
+
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+
+            SOCIAL RESOURCES
+
+          </div>
+
+
+          <h2>
+
+            Support for families.
+
+          </h2>
+
+
+          <p>
+
+            The organizations below support children and young people with
+
+            cancer and their families in different parts of Europe. Services
+
+            and eligibility vary by country and location, so always check
+
+            the organization's official website for current information.
+
+          </p>
+
+        </div>
+
+
+
+        <div class="resource-list">
+
+
+          <!-- 01 -->
+
+          <article class="resource">
+
+            <div class="resource-number">01</div>
+
+            <div class="resource-info">
+
+              <h3>
+
+                <a
+                  href="https://www.younglivesvscancer.org.uk/what-we-do/about-our-support/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+
+                  Young Lives vs Cancer <span>→</span>
+
+                </a>
+
+              </h3>
+
+              <p>
+
+                Provides specialist social workers who help children, young
+
+                people, and families navigate the practical and social impact
+
+                of cancer, including accommodation, education, family needs,
+
+                benefits, and connections to local services.
+
+              </p>
+
+            </div>
+
+            <div class="location">
+
+              United Kingdom
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 02 -->
+
+          <article class="resource">
+
+            <div class="resource-number">02</div>
+
+            <div class="resource-info">
+
+              <h3>
+
+                <a
+                  href="https://cancerfundforchildren.com/get-support/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+
+                  Cancer Fund for Children <span>→</span>
+
+                </a>
+
+              </h3>
+
+              <p>
+
+                Provides children, young people, siblings, and families
+
+                affected by cancer with social and emotional support,
+
+                community-based services, peer connection, family programs,
+
+                and therapeutic short breaks.
+
+              </p>
+
+            </div>
+
+            <div class="location">
+
+              Ireland
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 03 -->
+
+          <article class="resource">
+
+            <div class="resource-number">03</div>
+
+            <div class="resource-info">
+
+              <h3>
+
+                <a
+                  href="https://aladina.org/como-ayudamos/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+
+                  Fundación Aladina <span>→</span>
+
+                </a>
+
+              </h3>
+
+              <p>
+
+                Supports children and adolescents with cancer and their
+
+                families through emotional, psychological, and practical
+
+                programs, hospital activities, family assistance, and
+
+                opportunities for children to participate in camps.
+
+              </p>
+
+            </div>
+
+            <div class="location">
+
+              Spain
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 04 -->
+
+          <article class="resource">
+
+            <div class="resource-number">04</div>
+
+            <div class="resource-info">
+
+              <h3>
+
+                <a
+                  href="https://www.peterpanodv.it/cosa-facciamo/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+
+                  Peter Pan ODV <span>→</span>
+
+                </a>
+
+              </h3>
+
+              <p>
+
+                Welcomes children and adolescents receiving cancer treatment
+
+                in Rome and their families, providing free family accommodation
+
+                and a supportive community designed to make long periods away
+
+                from home easier.
+
+              </p>
+
+            </div>
+
+            <div class="location">
+
+              Italy
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 05 -->
+
+          <article class="resource">
+
+            <div class="resource-number">05</div>
+
+            <div class="resource-info">
+
+              <h3>
+
+                <a
+                  href="https://kinderkankerfonds.be/wat-wij-doen/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+
+                  Kinderkankerfonds <span>→</span>
+
+                </a>
+
+              </h3>
+
+              <p>
+
+                Provides additional support for children with cancer and their
+
+                families through family activities, peer connection, sibling
+
+                programs, hospital support, recreation, and other services
+
+                focused on family wellbeing.
+
+              </p>
+
+            </div>
+
+            <div class="location">
+
+              Belgium
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 06 -->
+
+          <article class="resource">
+
+            <div class="resource-number">06</div>
+
+            <div class="resource-info">
+
+              <h3>
+
+                <a
+                  href="https://www.floga.org.gr/en/floga/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+
+                  Floga <span>→</span>
+
+                </a>
+
+              </h3>
+
+              <p>
+
+                A parents' association supporting children with cancer and
+
+                their families throughout Greece. Services include family
+
+                accommodation in Athens, home-care support, information,
+
+                and assistance with the social challenges of treatment.
+
+              </p>
+
+            </div>
+
+            <div class="location">
+
+              Greece
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 07 -->
+
+          <article class="resource">
+
+            <div class="resource-number">07</div>
+
+            <div class="resource-info">
+
+              <h3>
+
+                <a
+                  href="https://www.kinderkrebsstiftung.de/wir-helfen/nach-der-diagnose/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+
+                  Deutsche Kinderkrebsstiftung <span>→</span>
+
+                </a>
+
+              </h3>
+
+              <p>
+
+                Supports children and adolescents with cancer and their
+
+                families through counseling, parent networks, family
+
+                programs, sibling support, camps, educational assistance,
+
+                and connections to local organizations.
+
+              </p>
+
+            </div>
+
+            <div class="location">
+
+              Germany
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 08 -->
+
+          <article class="resource">
+
+            <div class="resource-number">08</div>
+
+            <div class="resource-info">
+
+              <h3>
+
+                <a
+                  href="https://acreditar.org.pt/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+
+                  Acreditar <span>→</span>
+
+                </a>
+
+              </h3>
+
+              <p>
+
+                Accompanies children and young people with cancer and their
+
+                families throughout treatment. Its services include social
+
+                support, family guidance, psychological assistance, and free
+
+                accommodation for families who travel for treatment.
+
+              </p>
+
+            </div>
+
+            <div class="location">
+
+              Portugal
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 09 -->
+
+          <article class="resource">
+
+            <div class="resource-number">09</div>
+
+            <div class="resource-info">
+
+              <h3>
+
+                <a
+                  href="https://fundacjaiskierka.pl/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+
+                  Fundacja ISKIERKA <span>→</span>
+
+                </a>
+
+              </h3>
+
+              <p>
+
+                Supports children undergoing cancer treatment and their
+
+                families with psychological and social assistance, family
+
+                resources, therapeutic and recreational activities, education,
+
+                and programs that help families through treatment.
+
+              </p>
+
+            </div>
+
+            <div class="location">
+
+              Poland
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 10 -->
+
+          <article class="resource">
+
+            <div class="resource-number">10</div>
+
+            <div class="resource-info">
+
+              <h3>
+
+                <a
+                  href="https://www.barncancerfonden.se/rad-och-stod/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+
+                  Barncancerfonden <span>→</span>
+
+                </a>
+
+              </h3>
+
+              <p>
+
+                Offers guidance and support for families affected by childhood
+
+                cancer throughout Sweden, including family and sibling support,
+
+                counseling, local activities, peer connection, and assistance
+
+                during and after treatment.
+
+              </p>
+
+            </div>
+
+            <div class="location">
+
+              Sweden
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 11 -->
+
+          <article class="resource">
+
+            <div class="resource-number">11</div>
+
+            <div class="resource-info">
+
+              <h3>
+
+                <a
+                  href="https://www.barnekreftforeningen.no/foreldre"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+
+                  Barnekreftforeningen <span>→</span>
+
+                </a>
+
+              </h3>
+
+              <p>
+
+                Supports children with cancer and their families across Norway
+
+                with information, parent and family networks, community
+
+                connection, practical guidance, member programs, and resources
+
+                for life during and after treatment.
+
+              </p>
+
+            </div>
+
+            <div class="location">
+
+              Norway
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 12 -->
+
+          <article class="resource">
+
+            <div class="resource-number">12</div>
+
+            <div class="resource-info">
+
+              <h3>
+
+                <a
+                  href="https://boernecancerfonden.dk/for-boern-og-foraeldre/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+
+                  Børnecancerfonden <span>→</span>
+
+                </a>
+
+              </h3>
+
+              <p>
+
+                Provides support for Danish families affected by childhood
+
+                cancer through family-oriented programs, psychological help,
+
+                activities and experiences, sibling support, information,
+
+                and resources for parents and children.
+
+              </p>
+
+            </div>
+
+            <div class="location">
+
+              Denmark
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- NOTE -->
+
+    <section class="note-section">
+
+      <div class="note">
+
+        <div class="eyebrow">
+
+          BEFORE REACHING OUT
+
+        </div>
+
+        <h2>
+
+          A note about social support
+
+        </h2>
+
+        <p>
+
+          Social services, eligibility requirements, referral procedures,
+
+          and program availability vary across Europe. Some organizations
+
+          work with specific hospitals, regions, or national healthcare
+
+          systems. Visit the organization's official website or speak with
+
+          your child's healthcare or social-work team to confirm which
+
+          services are available to your family.
+
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- CLOSING -->
+
+    <section class="closing">
+
+      <div class="eyebrow">
+
+        EUROPE
+
+      </div>
+
+      <h2>
+
+        You don't have to navigate this alone.
+
+      </h2>
+
+      <p>
+
+        A child's healthcare team, hospital social worker, or local childhood
+
+        cancer organization can also help connect your family with housing,
+
+        education, family programs, peer support, and community resources.
+
+      </p>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-logo">
+
+      Alongside ♡
+
+    </div>
+
+    <div>
+
+      Families are stronger together.
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>
