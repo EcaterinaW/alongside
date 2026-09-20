@@ -9,166 +9,1040 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css">
+  <style>
+
+    :root {
+      --cream: #F2ECDD;
+      --light: #FAF8F5;
+      --green: #536B52;
+      --gold: #B4A276;
+      --text: #1D1D1A;
+      --muted: #5C5A54;
+      --quote: #EEE5D3;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--cream);
+      font-family: "Lato", Arial, sans-serif;
+    }
+
+    a {
+      color: inherit;
+    }
+
+
+    /* ================================
+       HEADER
+    ================================= */
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+
+      padding: 18px 6%;
+
+      background: var(--light);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      text-decoration: none;
+    }
+
+    .brand-heart {
+      color: var(--gold);
+      font-size: 38px;
+      line-height: 1;
+    }
+
+    .brand-name {
+      display: block;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    .brand-tagline {
+      display: block;
+
+      margin-top: 4px;
+
+      font-size: 9px;
+      letter-spacing: 2.2px;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      font-size: 15px;
+      transition: color .2s ease;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--green);
+    }
+
+
+    /* ================================
+       HERO
+    ================================= */
+
+    .about-hero {
+      padding: 100px 7% 85px;
+
+      text-align: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+
+      color: #675b42;
+
+      font-size: 13px;
+      letter-spacing: 1.8px;
+    }
+
+    .about-hero h1 {
+      max-width: 900px;
+
+      margin: 0 auto 25px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(50px, 7vw, 82px);
+      font-weight: 500;
+      line-height: .96;
+    }
+
+    .about-intro {
+      max-width: 700px;
+
+      margin: 0 auto;
+
+      color: var(--muted);
+
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+
+    /* ================================
+       WHY ALONGSIDE
+    ================================= */
+
+    .story-section {
+      padding: 80px 6% 90px;
+
+      background: var(--light);
+    }
+
+    .story-inner {
+      max-width: 1050px;
+
+      margin: 0 auto;
+    }
+
+    .story-label {
+      margin-bottom: 15px;
+
+      color: #675b42;
+
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 80px;
+
+      align-items: start;
+    }
+
+    .story-title {
+      margin: 0;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(42px, 5vw, 62px);
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .story-text p {
+      margin: 0 0 18px;
+
+      color: var(--muted);
+
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .story-text p:last-child {
+      margin-bottom: 0;
+    }
+
+
+    /* ================================
+       SUPPORT AREAS
+    ================================= */
+
+    .support-section {
+      padding: 90px 6%;
+    }
+
+    .support-heading {
+      max-width: 760px;
+
+      margin: 0 auto 55px;
+
+      text-align: center;
+    }
+
+    .support-heading h2 {
+      margin: 0 0 18px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(42px, 5vw, 60px);
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .support-heading p {
+      max-width: 650px;
+
+      margin: 0 auto;
+
+      color: var(--muted);
+
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      max-width: 1050px;
+
+      margin: 0 auto;
+
+      border-top: 1px solid rgba(83, 107, 82, .28);
+      border-left: 1px solid rgba(83, 107, 82, .28);
+    }
+
+    .support-card {
+      min-height: 220px;
+
+      padding: 32px;
+
+      border-right: 1px solid rgba(83, 107, 82, .28);
+      border-bottom: 1px solid rgba(83, 107, 82, .28);
+
+      text-decoration: none;
+
+      transition:
+        background .25s ease,
+        padding .25s ease;
+    }
+
+    .support-card:hover {
+      padding-top: 27px;
+
+      background: var(--light);
+    }
+
+    .support-number {
+      display: block;
+
+      margin-bottom: 28px;
+
+      color: var(--gold);
+
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    .support-card h3 {
+      margin: 0 0 10px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 35px;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .support-card p {
+      max-width: 410px;
+
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .support-arrow {
+      display: block;
+
+      margin-top: 22px;
+
+      color: var(--green);
+
+      font-size: 20px;
+
+      transition: transform .25s ease;
+    }
+
+    .support-card:hover .support-arrow {
+      transform: translateX(7px);
+    }
+
+
+    /* ================================
+       HOW TO USE
+    ================================= */
+
+    .guide-section {
+      padding: 80px 6%;
+
+      background: var(--quote);
+    }
+
+    .guide-inner {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 60px;
+
+      max-width: 1000px;
+
+      margin: 0 auto;
+    }
+
+    .guide-label {
+      color: #675b42;
+
+      font-size: 11px;
+      letter-spacing: 2px;
+      line-height: 1.5;
+    }
+
+    .guide-content h2 {
+      margin: 0 0 18px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(38px, 5vw, 55px);
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .guide-content p {
+      max-width: 720px;
+
+      margin: 0 0 18px;
+
+      color: var(--muted);
+
+      line-height: 1.7;
+    }
+
+    .guide-content p:last-child {
+      margin-bottom: 0;
+    }
+
+
+    /* ================================
+       INFORMATION NOTE
+    ================================= */
+
+    .note-section {
+      padding: 80px 6%;
+    }
+
+    .note-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 22px;
+
+      max-width: 1000px;
+
+      margin: 0 auto;
+      padding: 30px;
+
+      background: var(--light);
+
+      border: 1px solid rgba(83, 107, 82, .18);
+      border-radius: 18px;
+    }
+
+    .note-icon {
+      flex-shrink: 0;
+
+      width: 43px;
+      height: 43px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+
+      color: var(--gold);
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+    }
+
+    .note-content h2 {
+      margin: 0 0 8px;
+
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .note-content p {
+      margin: 0;
+
+      color: var(--muted);
+
+      line-height: 1.65;
+    }
+
+
+    /* ================================
+       CLOSING
+    ================================= */
+
+    .about-closing {
+      padding: 85px 7%;
+
+      background: var(--cream);
+
+      text-align: center;
+    }
+
+    .closing-eyebrow {
+      margin: 0 0 14px;
+
+      color: #675b42;
+
+      font-size: 11px;
+      letter-spacing: 2.2px;
+    }
+
+    .about-closing h2 {
+      max-width: 800px;
+
+      margin: 0 auto;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(38px, 5vw, 56px);
+      font-weight: 500;
+      line-height: 1.1;
+    }
+
+
+    /* ================================
+       FOOTER
+    ================================= */
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+
+      padding: 30px 5%;
+
+      background: var(--light);
+    }
+
+    .footer-brand {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 26px;
+    }
+
+    .footer-tagline {
+      display: block;
+
+      margin-top: 3px;
+
+      color: var(--muted);
+
+      font-size: 9px;
+      letter-spacing: 2px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+
+      text-decoration: none;
+
+      font-size: 14px;
+
+      transition: color .2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--green);
+    }
+
+
+    /* ================================
+       TABLET
+    ================================= */
+
+    @media (max-width: 850px) {
+
+      .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        gap: 14px 20px;
+      }
+
+      .story-grid {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+      }
+
+      .guide-inner {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+      }
+
+      footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+
+    /* ================================
+       MOBILE
+    ================================= */
+
+    @media (max-width: 600px) {
+
+      .site-header {
+        padding: 16px 5%;
+      }
+
+      .brand-name {
+        font-size: 26px;
+      }
+
+      .brand-tagline {
+        font-size: 8px;
+      }
+
+      .nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        width: 100%;
+      }
+
+
+      /* HERO */
+
+      .about-hero {
+        padding: 65px 6% 55px;
+      }
+
+      .about-hero h1 {
+        font-size: 46px;
+      }
+
+      .about-intro {
+        font-size: 16px;
+      }
+
+
+      /* STORY */
+
+      .story-section {
+        padding: 60px 6%;
+      }
+
+      .story-title {
+        font-size: 44px;
+      }
+
+      .story-text p {
+        font-size: 15px;
+      }
+
+
+      /* SUPPORT */
+
+      .support-section {
+        padding: 65px 6%;
+      }
+
+      .support-heading {
+        margin-bottom: 35px;
+      }
+
+      .support-heading h2 {
+        font-size: 43px;
+      }
+
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .support-card {
+        min-height: auto;
+
+        padding: 27px;
+      }
+
+      .support-card h3 {
+        font-size: 32px;
+      }
+
+
+      /* GUIDE */
+
+      .guide-section {
+        padding: 60px 6%;
+      }
+
+      .guide-content h2 {
+        font-size: 40px;
+      }
+
+      .guide-content p {
+        font-size: 15px;
+      }
+
+
+      /* NOTE */
+
+      .note-section {
+        padding: 55px 6%;
+      }
+
+      .note-box {
+        padding: 23px;
+
+        gap: 15px;
+      }
+
+      .note-icon {
+        width: 38px;
+        height: 38px;
+
+        font-size: 22px;
+      }
+
+      .note-content h2 {
+        font-size: 17px;
+      }
+
+      .note-content p {
+        font-size: 14px;
+      }
+
+
+      /* CLOSING */
+
+      .about-closing {
+        padding: 60px 7%;
+      }
+
+      .about-closing h2 {
+        font-size: 34px;
+      }
+
+
+      /* FOOTER */
+
+      .footer-links {
+        gap: 14px 20px;
+      }
+    }
+
+  </style>
 </head>
+
 
 <body>
 
+
+  <!-- ================================
+       HEADER
+  ================================= -->
+
   <header class="site-header">
 
-    <a class="brand" href="index.html">
+    <a href="index.html" class="brand">
+
       <span class="brand-heart">♡</span>
 
       <span>
         <span class="brand-name">Alongside</span>
         <span class="brand-tagline">FAMILIES ARE STRONGER TOGETHER</span>
       </span>
+
     </a>
 
+
     <nav class="nav">
-      <a href="index.html">Homepage</a>
-      <a href="financial-support.html">Financial Support</a>
-      <a href="psychological-support.html">Psychological Support</a>
-      <a href="social-support.html">Social Support</a>
-      <a href="legal-support.html">Legal Support</a>
-      <a class="active" href="about.html">About Website</a>
+
+      <a href="index.html">
+        Homepage
+      </a>
+
+      <a href="financial-support.html">
+        Financial Support
+      </a>
+
+      <a href="psychological-support.html">
+        Psychological Support
+      </a>
+
+      <a href="social-support.html">
+        Social Support
+      </a>
+
+      <a href="legal-support.html">
+        Legal Support
+      </a>
+
+      <a href="about.html" class="active">
+        About Website
+      </a>
+
     </nav>
 
   </header>
 
 
-  <main class="about-page">
 
-    <!-- INTRO -->
+  <main>
+
+
+    <!-- ================================
+         HERO
+    ================================= -->
 
     <section class="about-hero">
 
-      <p class="eyebrow">ALONGSIDE</p>
+      <p class="eyebrow">
+        ABOUT ALONGSIDE
+      </p>
 
-      <h1>A place to find support when you need it most.</h1>
+      <h1>
+        A place to find support when you need it most.
+      </h1>
 
       <p class="about-intro">
         Alongside is an informational platform created for parents and
-        guardians facing the difficult experience of a childhood cancer
-        diagnosis. Our goal is to make reliable support resources easier
-        to find and help families feel less alone.
+        guardians facing the difficult experience of childhood cancer.
+        Our goal is to make reliable support resources easier to find
+        and help families feel less alone.
       </p>
 
     </section>
 
 
-    <!-- WHY ALONGSIDE -->
 
-    <section class="about-note">
+    <!-- ================================
+         WHY ALONGSIDE
+    ================================= -->
 
-      <div class="about-note-icon">♡</div>
+    <section class="story-section">
 
-      <div>
-        <h2>Why Alongside?</h2>
+      <div class="story-inner">
 
-        <p>
-          A childhood cancer diagnosis can bring many challenges at once.
-          Families may have to navigate unfamiliar information, unexpected
-          financial difficulties, emotional stress, and difficult decisions.
-          Finding trustworthy resources can be overwhelming, especially
-          during an already difficult time.
+        <p class="story-label">
+          WHY ALONGSIDE
         </p>
 
-        <p>
-          Alongside was created to bring important support information
-          together in one place, so families can spend less time searching
-          and more time focusing on what matters most.
-        </p>
+        <div class="story-grid">
+
+          <h2 class="story-title">
+            Because finding support shouldn't feel like another challenge.
+          </h2>
+
+          <div class="story-text">
+
+            <p>
+              A childhood cancer diagnosis can bring many challenges at
+              once. Families may have to navigate unfamiliar information,
+              unexpected financial difficulties, emotional stress, and
+              difficult decisions.
+            </p>
+
+            <p>
+              Finding trustworthy resources can be overwhelming,
+              especially during an already difficult time.
+            </p>
+
+            <p>
+              Alongside was created to bring important support information
+              together in one place, so families can spend less time
+              searching and more time focusing on what matters most.
+            </p>
+
+          </div>
+
+        </div>
+
       </div>
 
     </section>
 
 
-    <!-- HOW TO USE -->
 
-    <section class="about-note">
+    <!-- ================================
+         SUPPORT AREAS
+    ================================= -->
 
-      <div class="about-note-icon">→</div>
+    <section class="support-section">
 
-      <div>
-        <h2>How to use this website</h2>
+      <div class="support-heading">
 
-        <p>
-          Alongside brings together practical and emotional support
-          resources in several main areas. Visit the Financial Support page
-          to explore organizations that may help families with financial
-          challenges. The Psychological Support page provides information
-          about counseling, support groups, coping resources, and emotional
-          support.
+        <p class="eyebrow">
+          EXPLORE ALONGSIDE
         </p>
 
-        <p>
-          Social Support focuses on practical and community resources,
-          while Legal Support provides information about rights, benefits,
-          and other legal matters that families may need to navigate.
-        </p>
+        <h2>
+          Four areas of support.
+        </h2>
 
         <p>
-          You can explore the resources that are most relevant to your
-          situation and visit the official websites of the organizations
-          listed to learn more about their services and eligibility
-          requirements.
+          Each section brings together organizations and resources that
+          may help families navigate different parts of life during
+          childhood cancer.
         </p>
+
+      </div>
+
+
+
+      <div class="support-grid">
+
+
+        <a href="financial-support.html" class="support-card">
+
+          <span class="support-number">
+            01
+          </span>
+
+          <h3>
+            Financial Support
+          </h3>
+
+          <p>
+            Resources that may help families with treatment-related
+            expenses, accommodation, transportation, and everyday needs.
+          </p>
+
+          <span class="support-arrow">
+            →
+          </span>
+
+        </a>
+
+
+
+        <a href="psychological-support.html" class="support-card">
+
+          <span class="support-number">
+            02
+          </span>
+
+          <h3>
+            Psychological Support
+          </h3>
+
+          <p>
+            Organizations and services offering emotional, psychological,
+            psychosocial, and peer support for children and families.
+          </p>
+
+          <span class="support-arrow">
+            →
+          </span>
+
+        </a>
+
+
+
+        <a href="social-support.html" class="support-card">
+
+          <span class="support-number">
+            03
+          </span>
+
+          <h3>
+            Social Support
+          </h3>
+
+          <p>
+            Practical and community resources that may help families
+            with everyday challenges during treatment.
+          </p>
+
+          <span class="support-arrow">
+            →
+          </span>
+
+        </a>
+
+
+
+        <a href="legal-support.html" class="support-card">
+
+          <span class="support-number">
+            04
+          </span>
+
+          <h3>
+            Legal Support
+          </h3>
+
+          <p>
+            Information and organizations that may help families
+            understand rights, benefits, advocacy, and legal services.
+          </p>
+
+          <span class="support-arrow">
+            →
+          </span>
+
+        </a>
+
+
       </div>
 
     </section>
 
 
-    <!-- WHO IS IT FOR -->
 
-    <section class="about-note">
+    <!-- ================================
+         HOW TO USE
+    ================================= -->
 
-      <div class="about-note-icon">i</div>
+    <section class="guide-section">
 
-      <div>
-        <h2>Who is Alongside for?</h2>
+      <div class="guide-inner">
 
-        <p>
-          This website is designed primarily for parents and guardians of
-          children who have been diagnosed with cancer. It may also be
-          useful for family members, caregivers, and anyone looking for
-          reliable information about support resources for a child and
-          their family.
-        </p>
+        <div class="guide-label">
+          HOW TO USE<br>
+          THIS WEBSITE
+        </div>
+
+        <div class="guide-content">
+
+          <h2>
+            Start with what your family needs right now.
+          </h2>
+
+          <p>
+            Alongside is organized into four main areas of support.
+            You can explore the section that is most relevant to your
+            situation and then choose a region to find organizations
+            and resources.
+          </p>
+
+          <p>
+            Each regional page provides information about organizations
+            that may offer support. Visit the official website of each
+            organization to learn more about its services, eligibility
+            requirements, and current contact information.
+          </p>
+
+        </div>
+
       </div>
 
     </section>
 
 
-    <!-- INFORMATIONAL RESOURCE -->
 
-    <section class="about-note">
+    <!-- ================================
+         INFORMATION NOTE
+    ================================= -->
 
-      <div class="about-note-icon">!</div>
+    <section class="note-section">
 
-      <div>
-        <h2>An informational resource</h2>
+      <div class="note-box">
 
-        <p>
-          Alongside does not provide medical diagnoses, treatment, or
-          professional psychological care. The information on this website
-          is intended to help families discover available support and
-          resources. Eligibility requirements and available services can
-          change, so please check each organization's official website
-          for the most current information.
-        </p>
+        <div class="note-icon">
+          i
+        </div>
+
+        <div class="note-content">
+
+          <h2>
+            An informational resource
+          </h2>
+
+          <p>
+            Alongside does not provide medical diagnoses, treatment,
+            legal advice, or professional psychological care. The
+            information on this website is intended to help families
+            discover available support and resources. Eligibility
+            requirements and available services can change, so please
+            check each organization's official website for the most
+            current information.
+          </p>
+
+        </div>
+
       </div>
 
     </section>
 
 
-    <!-- CLOSING -->
+
+    <!-- ================================
+         CLOSING
+    ================================= -->
 
     <section class="about-closing">
 
-      <p class="eyebrow">YOU ARE NOT ALONE</p>
+      <p class="closing-eyebrow">
+        YOU ARE NOT ALONE
+      </p>
 
       <h2>
         When the journey feels overwhelming, finding the right support
@@ -180,25 +1054,56 @@
   </main>
 
 
+
+  <!-- ================================
+       FOOTER
+    ================================= -->
+
   <footer>
 
     <div>
-      <div class="footer-brand">Alongside</div>
-      <div class="footer-tagline">
-        FAMILIES ARE STRONGER TOGETHER
+
+      <div class="footer-brand">
+        Alongside
       </div>
+
+      <span class="footer-tagline">
+        FAMILIES ARE STRONGER TOGETHER
+      </span>
+
     </div>
 
+
     <div class="footer-links">
-      <a href="index.html">Homepage</a>
-      <a href="financial-support.html">Financial Support</a>
-      <a href="psychological-support.html">Psychological Support</a>
-      <a href="social-support.html">Social Support</a>
-      <a href="legal-support.html">Legal Support</a>
-      <a href="about.html">About Website</a>
+
+      <a href="index.html">
+        Homepage
+      </a>
+
+      <a href="financial-support.html">
+        Financial Support
+      </a>
+
+      <a href="psychological-support.html">
+        Psychological Support
+      </a>
+
+      <a href="social-support.html">
+        Social Support
+      </a>
+
+      <a href="legal-support.html">
+        Legal Support
+      </a>
+
+      <a href="about.html">
+        About Website
+      </a>
+
     </div>
 
   </footer>
+
 
 </body>
 </html>
