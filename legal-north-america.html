@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Legal Support — North America | Alongside</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+      --cream: #F2ECDD;
+      --light: #FAF8F5;
+      --green: #536B52;
+      --gold: #B4A276;
+      --text: #1D1D1A;
+      --muted: #5C5A54;
+      --quote: #EEE5D3;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--cream);
+      font-family: "Lato", Arial, sans-serif;
+    }
+
+    a {
+      color: inherit;
+    }
+
+
+    /* ================================
+       HEADER
+    ================================= */
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+
+      padding: 18px 6%;
+
+      background: var(--light);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      text-decoration: none;
+    }
+
+    .brand-heart {
+      color: var(--gold);
+      font-size: 38px;
+      line-height: 1;
+    }
+
+    .brand-name {
+      display: block;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    .brand-tagline {
+      display: block;
+
+      margin-top: 4px;
+
+      font-size: 9px;
+      letter-spacing: 2.2px;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      font-size: 15px;
+      transition: color .2s ease;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--green);
+    }
+
+
+    /* ================================
+       HERO
+    ================================= */
+
+    .regional-hero {
+      padding: 90px 7% 70px;
+
+      text-align: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+
+      color: #675b42;
+
+      font-size: 13px;
+      letter-spacing: 1.8px;
+    }
+
+    .regional-hero h1 {
+      max-width: 850px;
+
+      margin: 0 auto 24px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(50px, 7vw, 80px);
+      font-weight: 500;
+      line-height: .98;
+    }
+
+    .regional-intro {
+      max-width: 720px;
+
+      margin: 0 auto;
+
+      color: var(--muted);
+
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+
+    /* ================================
+       RESOURCES
+    ================================= */
+
+    .resources-section {
+      padding: 25px 6% 85px;
+    }
+
+    .resources-heading {
+      max-width: 760px;
+
+      margin: 0 auto 55px;
+
+      text-align: center;
+    }
+
+    .resources-heading h2 {
+      margin: 0 0 18px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(40px, 5vw, 60px);
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .resources-heading p:last-child {
+      max-width: 680px;
+
+      margin: 0 auto;
+
+      color: var(--muted);
+
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+
+    /* ================================
+       RESOURCE LIST
+    ================================= */
+
+    .resource-list {
+      max-width: 1050px;
+
+      margin: 0 auto;
+
+      border-top: 1px solid rgba(83, 107, 82, .28);
+    }
+
+    .resource {
+      display: grid;
+      grid-template-columns: 70px 1fr 170px;
+
+      gap: 25px;
+
+      align-items: center;
+
+      min-height: 150px;
+
+      padding: 22px 10px;
+
+      border-bottom: 1px solid rgba(83, 107, 82, .28);
+
+      transition:
+        background .25s ease,
+        padding .25s ease;
+    }
+
+    .resource:hover {
+      padding-left: 25px;
+      padding-right: 25px;
+
+      background: rgba(250, 248, 245, .65);
+    }
+
+    .resource-number {
+      align-self: start;
+
+      padding-top: 10px;
+
+      color: var(--gold);
+
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    .resource-info {
+      min-width: 0;
+    }
+
+    .resource-button {
+      display: inline-block;
+
+      margin-bottom: 12px;
+      padding: 9px 18px 10px;
+
+      border: 1px solid rgba(83, 107, 82, .38);
+      border-radius: 999px;
+
+      background: var(--light);
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+      font-weight: 500;
+      line-height: 1.05;
+
+      text-decoration: none;
+
+      transition:
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease;
+    }
+
+    .resource-button:hover {
+      color: white;
+
+      background: var(--green);
+
+      border-color: var(--green);
+    }
+
+    .resource-description {
+      max-width: 680px;
+
+      color: var(--muted);
+
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .resource-location {
+      color: #675b42;
+
+      font-size: 11px;
+      line-height: 1.5;
+
+      text-align: right;
+      letter-spacing: .5px;
+    }
+
+
+    /* ================================
+       NOTE
+    ================================= */
+
+    .legal-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 22px;
+
+      max-width: 1000px;
+
+      margin: 0 auto 80px;
+
+      padding: 30px;
+
+      background: var(--quote);
+
+      border-radius: 18px;
+    }
+
+    .note-icon {
+      flex-shrink: 0;
+
+      width: 43px;
+      height: 43px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+
+      color: var(--gold);
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+    }
+
+    .note-content h2 {
+      margin: 0 0 8px;
+
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .note-content p {
+      margin: 0;
+
+      color: var(--muted);
+
+      line-height: 1.65;
+    }
+
+
+    /* ================================
+       CLOSING
+    ================================= */
+
+    .regional-closing {
+      padding: 75px 7%;
+
+      background: var(--quote);
+
+      text-align: center;
+    }
+
+    .closing-eyebrow {
+      margin: 0 0 14px;
+
+      color: #675b42;
+
+      font-size: 11px;
+      letter-spacing: 2.2px;
+    }
+
+    .regional-closing h2 {
+      max-width: 780px;
+
+      margin: 0 auto;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(34px, 4vw, 48px);
+      font-weight: 500;
+      line-height: 1.15;
+    }
+
+
+    /* ================================
+       FOOTER
+    ================================= */
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+
+      padding: 30px 5%;
+
+      background: var(--light);
+    }
+
+    .footer-brand {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 26px;
+    }
+
+    .footer-tagline {
+      display: block;
+
+      margin-top: 3px;
+
+      color: var(--muted);
+
+      font-size: 9px;
+      letter-spacing: 2px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+
+      text-decoration: none;
+
+      font-size: 14px;
+
+      transition: color .2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--green);
+    }
+
+
+    /* ================================
+       TABLET
+    ================================= */
+
+    @media (max-width: 850px) {
+
+      .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        gap: 14px 20px;
+      }
+
+      .resource {
+        grid-template-columns: 55px 1fr 130px;
+        gap: 18px;
+      }
+
+      footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+
+    /* ================================
+       MOBILE
+    ================================= */
+
+    @media (max-width: 600px) {
+
+      .site-header {
+        padding: 16px 5%;
+      }
+
+      .brand-name {
+        font-size: 26px;
+      }
+
+      .brand-tagline {
+        font-size: 8px;
+      }
+
+      .nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        width: 100%;
+      }
+
+
+      /* HERO */
+
+      .regional-hero {
+        padding: 60px 6% 45px;
+      }
+
+      .regional-hero h1 {
+        font-size: 48px;
+      }
+
+      .regional-intro {
+        font-size: 16px;
+      }
+
+
+      /* RESOURCES */
+
+      .resources-section {
+        padding: 15px 6% 60px;
+      }
+
+      .resources-heading {
+        margin-bottom: 35px;
+      }
+
+      .resources-heading h2 {
+        font-size: 43px;
+      }
+
+      .resources-heading p:last-child {
+        font-size: 15px;
+      }
+
+
+      /* RESOURCE LIST */
+
+      .resource {
+        grid-template-columns: 35px 1fr;
+
+        gap: 10px;
+
+        min-height: 0;
+
+        padding: 23px 3px;
+      }
+
+      .resource:hover {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      .resource-number {
+        padding-top: 7px;
+
+        font-size: 9px;
+      }
+
+      .resource-button {
+        font-size: 23px;
+
+        padding: 8px 14px 9px;
+      }
+
+      .resource-description {
+        font-size: 12px;
+      }
+
+      .resource-location {
+        grid-column: 2;
+
+        margin-top: 4px;
+
+        text-align: left;
+
+        font-size: 10px;
+      }
+
+
+      /* NOTE */
+
+      .legal-note {
+        margin: 0 6% 55px;
+
+        padding: 23px;
+
+        gap: 15px;
+      }
+
+      .note-icon {
+        width: 38px;
+        height: 38px;
+
+        font-size: 22px;
+      }
+
+      .note-content h2 {
+        font-size: 17px;
+      }
+
+      .note-content p {
+        font-size: 14px;
+      }
+
+
+      /* CLOSING */
+
+      .regional-closing {
+        padding: 55px 7%;
+      }
+
+      .regional-closing h2 {
+        font-size: 32px;
+      }
+
+
+      /* FOOTER */
+
+      .footer-links {
+        gap: 14px 20px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- ================================
+       HEADER
+  ================================= -->
+
+  <header class="site-header">
+
+    <a href="index.html" class="brand">
+
+      <span class="brand-heart">♡</span>
+
+      <span>
+        <span class="brand-name">Alongside</span>
+        <span class="brand-tagline">SUPPORT FOR THE JOURNEY</span>
+      </span>
+
+    </a>
+
+
+    <nav class="nav">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="financial-support.html">
+        Financial Support
+      </a>
+
+      <a href="psychological-support.html">
+        Psychological Support
+      </a>
+
+      <a href="social-support.html">
+        Social Support
+      </a>
+
+      <a href="legal-support.html" class="active">
+        Legal Support
+      </a>
+
+      <a href="about.html">
+        About Website
+      </a>
+
+    </nav>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- ================================
+         HERO
+    ================================= -->
+
+    <section class="regional-hero">
+
+      <p class="eyebrow">
+        LEGAL SUPPORT · NORTH AMERICA
+      </p>
+
+      <h1>
+        North America
+      </h1>
+
+      <p class="regional-intro">
+        Legal information, advocacy, and support resources for families
+        navigating childhood cancer in the United States, Canada, and Mexico.
+        Some organizations provide direct legal assistance, while others
+        help families understand rights, benefits, insurance, employment
+        protections, or available support systems.
+      </p>
+
+    </section>
+
+
+
+    <!-- ================================
+         RESOURCES
+    ================================= -->
+
+    <section class="resources-section">
+
+      <div class="resources-heading">
+
+        <p class="eyebrow">
+          LEGAL &amp; ADVOCACY RESOURCES
+        </p>
+
+        <h2>
+          Support for families.
+        </h2>
+
+        <p>
+          Explore organizations and official resources that may help
+          families understand legal rights, access benefits, navigate
+          healthcare systems, or advocate for children affected by cancer.
+        </p>
+
+      </div>
+
+
+
+      <div class="resource-list">
+
+
+        <!-- 01 -->
+
+        <article class="resource">
+
+          <div class="resource-number">
+            01
+          </div>
+
+          <div class="resource-info">
+
+            <a
+              class="resource-button"
+              href="https://www.cancerlegalcare.org/getting-the-help-you-need/for-patients-and-caregivers.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Cancer Legal Care
+            </a>
+
+            <div class="resource-description">
+              Free legal information and assistance for Minnesota residents
+              affected by cancer, including caregivers. Support can cover
+              employment, disability benefits, health insurance, medical debt,
+              and estate planning.
+            </div>
+
+          </div>
+
+          <div class="resource-location">
+            United States<br>
+            Minnesota
+          </div>
+
+        </article>
+
+
+
+        <!-- 02 -->
+
+        <article class="resource">
+
+          <div class="resource-number">
+            02
+          </div>
+
+          <div class="resource-info">
+
+            <a
+              class="resource-button"
+              href="https://triagecancer.org/cancer-caregiver-resources"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Triage Cancer
+            </a>
+
+            <div class="resource-description">
+              Free legal and practical resources for caregivers dealing with
+              cancer, including information about leave from work, employment
+              protections, family finances, insurance, disability, and other
+              rights-related issues.
+            </div>
+
+          </div>
+
+          <div class="resource-location">
+            United States
+          </div>
+
+        </article>
+
+
+
+        <!-- 03 -->
+
+        <article class="resource">
+
+          <div class="resource-number">
+            03
+          </div>
+
+          <div class="resource-info">
+
+            <a
+              class="resource-button"
+              href="https://www.acco.org/advocacy/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              American Childhood Cancer Organization
+            </a>
+
+            <div class="resource-description">
+              National childhood cancer advocacy organization representing
+              children and families and working to shape policies at local,
+              state, and federal levels.
+            </div>
+
+          </div>
+
+          <div class="resource-location">
+            United States
+          </div>
+
+        </article>
+
+
+
+        <!-- 04 -->
+
+        <article class="resource">
+
+          <div class="resource-number">
+            04
+          </div>
+
+          <div class="resource-info">
+
+            <a
+              class="resource-button"
+              href="https://www.cac2.org/family-support/childhood-cancer-hub/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Childhood Cancer Hub
+            </a>
+
+            <div class="resource-description">
+              A curated resource hub connecting childhood cancer families
+              in the United States and Canada with organizations offering
+              support in areas including financial and legal needs,
+              insurance, disability, employment, and psychosocial care.
+            </div>
+
+          </div>
+
+          <div class="resource-location">
+            United States · Canada
+          </div>
+
+        </article>
+
+
+
+        <!-- 05 -->
+
+        <article class="resource">
+
+          <div class="resource-number">
+            05
+          </div>
+
+          <div class="resource-info">
+
+            <a
+              class="resource-button"
+              href="https://www.cancer.org/involved/fundraise/gold-together.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              American Cancer Society — Gold Together
+            </a>
+
+            <div class="resource-description">
+              The American Cancer Society's childhood cancer initiative,
+              supporting research, advocacy, and patient support and
+              connecting families with broader cancer resources.
+            </div>
+
+          </div>
+
+          <div class="resource-location">
+            United States
+          </div>
+
+        </article>
+
+
+
+        <!-- 06 -->
+
+        <article class="resource">
+
+          <div class="resource-number">
+            06
+          </div>
+
+          <div class="resource-info">
+
+            <a
+              class="resource-button"
+              href="https://www.childhoodcancer.ca/childhood-cancer-awareness-month/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Childhood Cancer Canada
+            </a>
+
+            <div class="resource-description">
+              A national childhood cancer organization supporting families
+              and advocating for better support for caregivers and children
+              affected by childhood cancer across Canada.
+            </div>
+
+          </div>
+
+          <div class="resource-location">
+            Canada
+          </div>
+
+        </article>
+
+
+
+        <!-- 07 -->
+
+        <article class="resource">
+
+          <div class="resource-number">
+            07
+          </div>
+
+          <div class="resource-info">
+
+            <a
+              class="resource-button"
+              href="https://www.opacc.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ontario Parents Advocating for Children with Cancer
+            </a>
+
+            <div class="resource-description">
+              Parent-led organization providing support and advocacy for
+              families of children with cancer in Ontario, including
+              information about benefits, education, caregiver issues,
+              and the rights and needs of childhood cancer families.
+            </div>
+
+          </div>
+
+          <div class="resource-location">
+            Canada<br>
+            Ontario
+          </div>
+
+        </article>
+
+
+
+        <!-- 08 -->
+
+        <article class="resource">
+
+          <div class="resource-number">
+            08
+          </div>
+
+          <div class="resource-info">
+
+            <a
+              class="resource-button"
+              href="https://www.pogo.ca/about-us/our-story/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Pediatric Oncology Group of Ontario
+            </a>
+
+            <div class="resource-description">
+              Ontario's childhood cancer organization and official advisor
+              to the provincial government on childhood cancer care, helping
+              shape access to care and support for children, survivors,
+              and families.
+            </div>
+
+          </div>
+
+          <div class="resource-location">
+            Canada<br>
+            Ontario
+          </div>
+
+        </article>
+
+
+
+        <!-- 09 -->
+
+        <article class="resource">
+
+          <div class="resource-number">
+            09
+          </div>
+
+          <div class="resource-info">
+
+            <a
+              class="resource-button"
+              href="https://cancer.ca/en/get-involved/advocacy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Canadian Cancer Society — Advocacy
+            </a>
+
+            <div class="resource-description">
+              National cancer advocacy organization working with governments
+              to improve policies, access to care, and support for people
+              affected by cancer and their caregivers.
+            </div>
+
+          </div>
+
+          <div class="resource-location">
+            Canada
+          </div>
+
+        </article>
+
+
+
+        <!-- 10 -->
+
+        <article class="resource">
+
+          <div class="resource-number">
+            10
+          </div>
+
+          <div class="resource-info">
+
+            <a
+              class="resource-button"
+              href="https://www.amanc.org/somos/modelo/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              AMANC
+            </a>
+
+            <div class="resource-description">
+              Mexican organization providing comprehensive support,
+              guidance, and psychosocial assistance to children and
+              adolescents with cancer and their families throughout
+              treatment and recovery.
+            </div>
+
+          </div>
+
+          <div class="resource-location">
+            Mexico
+          </div>
+
+        </article>
+
+
+
+        <!-- 11 -->
+
+        <article class="resource">
+
+          <div class="resource-number">
+            11
+          </div>
+
+          <div class="resource-info">
+
+            <a
+              class="resource-button"
+              href="https://www.amanec.org.mx/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              AMANEC
+            </a>
+
+            <div class="resource-description">
+              Mexican organization supporting children, adolescents,
+              and families affected by serious illnesses, including
+              guidance and coordinated support throughout treatment.
+            </div>
+
+          </div>
+
+          <div class="resource-location">
+            Mexico
+          </div>
+
+        </article>
+
+
+
+        <!-- 12 -->
+
+        <article class="resource">
+
+          <div class="resource-number">
+            12
+          </div>
+
+          <div class="resource-info">
+
+            <a
+              class="resource-button"
+              href="https://www.gob.mx/salud/censia/acciones-y-programas/programa-de-cancer-en-la-infancia-y-adolescencia-131069"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Programa de Cáncer en la Infancia y Adolescencia
+            </a>
+
+            <div class="resource-description">
+              Official Mexican government program focused on childhood and
+              adolescent cancer. It provides information about the national
+              system of care and helps families understand pathways to
+              diagnosis, treatment, and public health services.
+            </div>
+
+          </div>
+
+          <div class="resource-location">
+            Mexico<br>
+            Government resource
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         NOTE
+    ================================= -->
+
+    <section class="legal-note">
+
+      <div class="note-icon">
+        i
+      </div>
+
+      <div class="note-content">
+
+        <h2>
+          Before seeking legal support
+        </h2>
+
+        <p>
+          Legal systems, eligibility rules, public benefits, insurance
+          protections, and available services differ between countries,
+          states, provinces, and territories. Not every organization listed
+          here provides direct legal representation. Some provide legal
+          information, advocacy, navigation, or referrals to appropriate
+          services. Always check the organization's official website for
+          current eligibility and contact information.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         CLOSING
+    ================================= -->
+
+    <section class="regional-closing">
+
+      <p class="closing-eyebrow">
+        NORTH AMERICA
+      </p>
+
+      <h2>
+        Understanding your rights can make an unfamiliar journey a little easier to navigate.
+      </h2>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- ================================
+       FOOTER
+  ================================= -->
+
+  <footer>
+
+    <div>
+
+      <div class="footer-brand">
+        Alongside
+      </div>
+
+      <span class="footer-tagline">
+        SUPPORT FOR THE JOURNEY
+      </span>
+
+    </div>
+
+
+    <div class="footer-links">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="financial-support.html">
+        Financial Support
+      </a>
+
+      <a href="psychological-support.html">
+        Psychological Support
+      </a>
+
+      <a href="social-support.html">
+        Social Support
+      </a>
+
+      <a href="legal-support.html">
+        Legal Support
+      </a>
+
+      <a href="about.html">
+        About Website
+      </a>
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
