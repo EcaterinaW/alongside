@@ -3,13 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Psychological Support | Alongside</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@400;500;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --cream: #F2ECDD;
@@ -18,561 +15,638 @@
       --gold: #B4A276;
       --text: #1D1D1A;
       --muted: #5C5A54;
-      --border: #D9D1C1;
       --quote: #EEE5D3;
     }
-
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
-
+    html {
+      scroll-behavior: smooth;
+    }
     body {
-      background: var(--cream);
+      margin: 0;
       color: var(--text);
-      font-family: "Lato", sans-serif;
-      line-height: 1.6;
+      background: var(--cream);
+      font-family: "Lato", Arial, sans-serif;
     }
-
     a {
       color: inherit;
+    }
+    /* ================================
+       HEADER
+    ================================= */
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 18px 6%;
+      background: var(--light);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       text-decoration: none;
     }
-
-    header {
-      max-width: 1180px;
-      margin: auto;
-      padding: 28px 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .logo {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 30px;
-      font-weight: 600;
-      color: var(--green);
-    }
-
-    nav {
-      display: flex;
-      gap: 28px;
-      font-size: 14px;
-    }
-
-    nav a {
-      color: var(--muted);
-      transition: 0.2s ease;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: var(--green);
-    }
-
-    .hero {
-      max-width: 1180px;
-      margin: auto;
-      padding: 90px 32px 80px;
-    }
-
-    .eyebrow {
-      font-size: 12px;
-      letter-spacing: 2px;
+    .brand-heart {
       color: var(--gold);
-      font-weight: 600;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(48px, 7vw, 78px);
-      line-height: 0.95;
-      font-weight: 600;
-      max-width: 850px;
-      margin-bottom: 28px;
-    }
-
-    .hero p {
-      max-width: 680px;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .regions-section {
-      background: var(--light);
-      padding: 85px 32px;
-    }
-
-    .regions-inner {
-      max-width: 1180px;
-      margin: auto;
-    }
-
-    .section-label {
-      font-size: 12px;
-      letter-spacing: 2px;
-      color: var(--gold);
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
-    h2 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 48px;
+      font-size: 38px;
       line-height: 1;
-      font-weight: 600;
-      margin-bottom: 18px;
     }
-
-    .section-intro {
-      max-width: 680px;
-      color: var(--muted);
-      margin-bottom: 48px;
-    }
-
-    .region-list {
-      border-top: 1px solid var(--border);
-    }
-
-    .region {
-      display: grid;
-      grid-template-columns: 70px 1fr auto;
-      gap: 28px;
-      align-items: center;
-      padding: 30px 0;
-      border-bottom: 1px solid var(--border);
-      transition: 0.2s ease;
-    }
-
-    .region:hover {
-      padding-left: 8px;
-    }
-
-    .region-number {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 25px;
-      color: var(--gold);
-    }
-
-    .region-name {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 31px;
-      font-weight: 600;
-    }
-
-    .region-description {
-      color: var(--muted);
-      font-size: 14px;
-      margin-top: 4px;
-      max-width: 620px;
-    }
-
-    .arrow {
-      font-size: 24px;
-      color: var(--green);
-      transition: 0.2s ease;
-    }
-
-    .region:hover .arrow {
-      transform: translateX(5px);
-    }
-
-    .note {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 70px 32px;
-    }
-
-    .note-box {
-      background: var(--quote);
-      padding: 38px 42px;
-      border-radius: 16px;
-    }
-
-    .note-box h3 {
+    .brand-name {
+      display: block;
       font-family: "Cormorant Garamond", serif;
       font-size: 30px;
-      margin-bottom: 10px;
+      line-height: 1;
     }
-
-    .note-box p {
-      color: var(--muted);
-      max-width: 800px;
-      font-size: 14px;
+    .brand-tagline {
+      display: block;
+      margin-top: 4px;
+      font-size: 9px;
+      letter-spacing: 2.2px;
     }
-
-    .closing {
-      max-width: 1180px;
-      margin: auto;
-      padding: 70px 32px 100px;
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+    }
+    .nav a {
+      text-decoration: none;
+      font-size: 15px;
+      transition: color .2s ease;
+    }
+    .nav a:hover,
+    .nav a.active {
+      color: var(--green);
+    }
+    /* ================================
+       HERO
+    ================================= */
+    .financial-hero {
+      padding: 95px 7% 70px;
       text-align: center;
     }
-
-    .closing p:first-child {
-      font-size: 12px;
-      letter-spacing: 2px;
-      color: var(--gold);
-      font-weight: 600;
-      margin-bottom: 14px;
+    .eyebrow {
+      margin: 0 0 14px;
+      color: #675b42;
+      font-size: 13px;
+      letter-spacing: 1.8px;
     }
-
-    .closing h2 {
+    .financial-hero h1 {
+      max-width: 900px;
+      margin: 0 auto 24px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(48px, 6vw, 78px);
+      font-weight: 500;
+      line-height: .98;
+    }
+    .financial-intro {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+    /* ================================
+       REGIONS SECTION
+    ================================= */
+    .regions-section {
+      padding: 20px 6% 90px;
+    }
+    .regions-heading {
+      max-width: 760px;
+      margin: 0 auto 55px;
+      text-align: center;
+    }
+    .regions-heading h2 {
+      margin: 0 0 18px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(40px, 5vw, 60px);
+      font-weight: 500;
+      line-height: 1;
+    }
+    .regions-heading p:last-child {
       max-width: 650px;
-      margin: auto;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
     }
-
+    /* ================================
+       REGIONS LIST
+    ================================= */
+    .regions-list {
+      max-width: 1050px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(83, 107, 82, .28);
+    }
+    .region-link {
+      display: grid;
+      grid-template-columns: 70px 1fr 50px;
+      align-items: center;
+      gap: 25px;
+      min-height: 125px;
+      padding: 18px 10px;
+      border-bottom: 1px solid rgba(83, 107, 82, .28);
+      text-decoration: none;
+      transition:
+        background .25s ease,
+        padding .25s ease;
+    }
+    .region-link:hover {
+      padding-left: 25px;
+      padding-right: 25px;
+      background: rgba(250, 248, 245, .65);
+    }
+    .region-number {
+      align-self: start;
+      padding-top: 10px;
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+    .region-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .region-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(31px, 4vw, 46px);
+      font-weight: 500;
+      line-height: 1;
+      transition: color .25s ease;
+    }
+    .region-description {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+      letter-spacing: .3px;
+    }
+    .region-arrow {
+      color: var(--green);
+      font-size: 29px;
+      font-weight: 400;
+      text-align: right;
+      transition: transform .25s ease;
+    }
+    .region-link:hover .region-name {
+      color: var(--green);
+    }
+    .region-link:hover .region-arrow {
+      transform: translateX(7px);
+    }
+    /* ================================
+       INFORMATION NOTE
+    ================================= */
+    .financial-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 22px;
+      max-width: 1000px;
+      margin: 0 auto 80px;
+      padding: 30px;
+      background: var(--quote);
+      border-radius: 18px;
+    }
+    .note-icon {
+      flex-shrink: 0;
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+    }
+    .note-content h2 {
+      margin: 0 0 8px;
+      font-size: 19px;
+      font-weight: 700;
+    }
+    .note-content p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    /* ================================
+       CLOSING
+    ================================= */
+    .financial-closing {
+      padding: 75px 7%;
+      background: var(--quote);
+      text-align: center;
+    }
+    .closing-eyebrow {
+      margin: 0 0 14px;
+      color: #675b42;
+      font-size: 11px;
+      letter-spacing: 2.2px;
+    }
+    .financial-closing h2 {
+      max-width: 780px;
+      margin: 0 auto;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(34px, 4vw, 48px);
+      font-weight: 500;
+      line-height: 1.15;
+    }
+    /* ================================
+       FOOTER
+    ================================= */
     footer {
-      border-top: 1px solid var(--border);
-      padding: 30px 32px;
-      max-width: 1180px;
-      margin: auto;
       display: flex;
       justify-content: space-between;
-      gap: 20px;
-      font-size: 13px;
-      color: var(--muted);
+      align-items: center;
+      gap: 30px;
+      padding: 30px 5%;
+      background: var(--light);
     }
-
-    @media (max-width: 750px) {
-
-      header {
-        padding: 22px 20px;
-        flex-direction: column;
+    .footer-brand {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 26px;
+    }
+    .footer-tagline {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 2px;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      align-items: center;
+    }
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color .2s ease;
+    }
+    .footer-links a:hover {
+      color: var(--green);
+    }
+    /* ================================
+       TABLET
+    ================================= */
+    @media (max-width: 850px) {
+      .site-header {
         align-items: flex-start;
+        flex-direction: column;
+      }
+      .nav {
+        gap: 14px 20px;
+      }
+      .region-link {
+        grid-template-columns: 55px 1fr 40px;
         gap: 18px;
       }
-
-      nav {
-        flex-wrap: wrap;
-        gap: 12px 18px;
+      footer {
+        align-items: flex-start;
+        flex-direction: column;
       }
-
-      .hero {
-        padding: 65px 20px 60px;
+    }
+    /* ================================
+       MOBILE
+    ================================= */
+    @media (max-width: 600px) {
+      .site-header {
+        padding: 16px 5%;
       }
-
-      .regions-section {
-        padding: 65px 20px;
-      }
-
-      h2 {
-        font-size: 40px;
-      }
-
-      .region {
-        grid-template-columns: 40px 1fr auto;
-        gap: 16px;
-        padding: 25px 0;
-      }
-
-      .region-name {
+      .brand-name {
         font-size: 26px;
       }
-
+      .brand-tagline {
+        font-size: 8px;
+      }
+      .nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+      }
+      /* HERO */
+      .financial-hero {
+        padding: 60px 6% 45px;
+      }
+      .financial-hero h1 {
+        font-size: 45px;
+      }
+      .financial-intro {
+        font-size: 16px;
+      }
+      /* REGIONS */
+      .regions-section {
+        padding: 15px 6% 60px;
+      }
+      .regions-heading {
+        margin-bottom: 35px;
+      }
+      .regions-heading h2 {
+        font-size: 43px;
+      }
+      .regions-heading p:last-child {
+        font-size: 15px;
+      }
+      .region-link {
+        grid-template-columns: 35px 1fr 25px;
+        gap: 10px;
+        min-height: 105px;
+        padding: 15px 3px;
+      }
+      .region-link:hover {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+      .region-number {
+        padding-top: 7px;
+        font-size: 9px;
+      }
+      .region-name {
+        font-size: 30px;
+      }
       .region-description {
-        font-size: 13px;
+        font-size: 10px;
       }
-
-      .note {
-        padding: 55px 20px;
+      .region-arrow {
+        font-size: 22px;
       }
-
-      .note-box {
-        padding: 28px 25px;
+      /* NOTE */
+      .financial-note {
+        margin: 0 6% 55px;
+        padding: 23px;
+        gap: 15px;
       }
-
-      .closing {
-        padding: 55px 20px 75px;
+      .note-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 22px;
       }
-
-      footer {
-        padding: 25px 20px;
-        flex-direction: column;
+      .note-content h2 {
+        font-size: 17px;
+      }
+      .note-content p {
+        font-size: 14px;
+      }
+      /* CLOSING */
+      .financial-closing {
+        padding: 55px 7%;
+      }
+      .financial-closing h2 {
+        font-size: 32px;
+      }
+      /* FOOTER */
+      .footer-links {
+        gap: 14px 20px;
       }
     }
   </style>
 </head>
-
 <body>
-
-  <header>
-
-    <a href="index.html" class="logo">
-      Alongside ♡
+  <!-- ================================
+       HEADER
+  ================================= -->
+  <header class="site-header">
+    <a href="index.html" class="brand">
+      <span class="brand-heart">♡</span>
+      <span>
+        <span class="brand-name">Alongside</span>
+        <span class="brand-tagline">SUPPORT FOR THE JOURNEY</span>
+      </span>
     </a>
-
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="financial-support.html">Financial Support</a>
-      <a href="psychological-support.html" class="active">Psychological Support</a>
-      <a href="social-support.html">Social Support</a>
-      <a href="legal-support.html">Legal Support</a>
-      <a href="about.html">About Website</a>
+    <nav class="nav">
+      <a href="index.html">
+        Home
+      </a>
+      <a href="financial-support.html">
+        Financial Support
+      </a>
+      <a href="psychological-support.html" class="active">
+        Psychological Support
+      </a>
+      <a href="social-support.html">
+        Social Support
+      </a>
+      <a href="legal-support.html">
+        Legal Support
+      </a>
+      <a href="about.html">
+        About Website
+      </a>
     </nav>
-
   </header>
-
-
+  <!-- ================================
+       HERO
+  ================================= -->
   <main>
-
-    <section class="hero">
-
-      <div class="eyebrow">
+    <section class="financial-hero">
+      <p class="eyebrow">
         PSYCHOLOGICAL SUPPORT
-      </div>
-
+      </p>
       <h1>
         Support for the emotional side of childhood cancer.
       </h1>
-
-      <p>
+      <p class="financial-intro">
         A child's cancer diagnosis can affect the whole family.
-        Find organisations and resources that offer psychological,
-        emotional and psychosocial support for children, parents,
-        siblings and caregivers.
+        Alongside brings together organizations and support resources
+        from different parts of the world that may offer psychological,
+        emotional, and psychosocial support for children, parents,
+        siblings, and caregivers.
       </p>
-
     </section>
-
-
+    <!-- ================================
+         REGIONS
+    ================================= -->
     <section class="regions-section">
-
-      <div class="regions-inner">
-
-        <div class="section-label">
+      <div class="regions-heading">
+        <p class="eyebrow">
           FIND SUPPORT BY REGION
-        </div>
-
+        </p>
         <h2>
           Resources around the world.
         </h2>
-
-        <p class="section-intro">
-          Explore support organisations by region. Many provide
-          counselling, peer support, family programmes, psychosocial
-          services and practical guidance for coping with childhood cancer.
+        <p>
+          Choose your region to explore organizations and programs that
+          may provide counselling, peer support, family programmes,
+          psychosocial services, and practical guidance for coping with
+          childhood cancer.
         </p>
-
-
-        <div class="region-list">
-
-
-          <!-- 01 -->
-
-          <a href="psychological-north-america.html" class="region">
-
-            <div class="region-number">
-              01
-            </div>
-
-            <div>
-              <div class="region-name">
-                North America
-              </div>
-
-              <div class="region-description">
-                Psychological and family support services across the United
-                States, Canada and Mexico.
-              </div>
-            </div>
-
-            <div class="arrow">
-              →
-            </div>
-
-          </a>
-
-
-          <!-- 02 -->
-
-          <a href="psychological-south-america.html" class="region">
-
-            <div class="region-number">
-              02
-            </div>
-
-            <div>
-              <div class="region-name">
-                South America
-              </div>
-
-              <div class="region-description">
-                Organisations supporting children with cancer and their
-                families through counselling, connection and psychosocial care.
-              </div>
-            </div>
-
-            <div class="arrow">
-              →
-            </div>
-
-          </a>
-
-
-          <!-- 03 -->
-
-          <a href="psychological-europe.html" class="region">
-
-            <div class="region-number">
-              03
-            </div>
-
-            <div>
-              <div class="region-name">
-                Europe
-              </div>
-
-              <div class="region-description">
-                Emotional and psychosocial support from childhood cancer
-                organisations across Europe.
-              </div>
-            </div>
-
-            <div class="arrow">
-              →
-            </div>
-
-          </a>
-
-
-          <!-- 04 -->
-
-          <a href="psychological-asia.html" class="region">
-
-            <div class="region-number">
-              04
-            </div>
-
-            <div>
-              <div class="region-name">
-                Asia
-              </div>
-
-              <div class="region-description">
-                Family support, counselling, peer connection and emotional
-                wellbeing resources across Asia.
-              </div>
-            </div>
-
-            <div class="arrow">
-              →
-            </div>
-
-          </a>
-
-
-          <!-- 05 -->
-
-          <a href="psychological-africa.html" class="region">
-
-            <div class="region-number">
-              05
-            </div>
-
-            <div>
-              <div class="region-name">
-                Africa
-              </div>
-
-              <div class="region-description">
-                Psychosocial and emotional support resources for children
-                with cancer and their families across Africa.
-              </div>
-            </div>
-
-            <div class="arrow">
-              →
-            </div>
-
-          </a>
-
-
-          <!-- 06 -->
-
-          <a href="psychological-oceania.html" class="region">
-
-            <div class="region-number">
-              06
-            </div>
-
-            <div>
-              <div class="region-name">
-                Australia & Oceania
-              </div>
-
-              <div class="region-description">
-                Family wellbeing, counselling, peer support and emotional
-                resources across Australia and New Zealand.
-              </div>
-            </div>
-
-            <div class="arrow">
-              →
-            </div>
-
-          </a>
-
-
-        </div>
-
       </div>
-
+      <div class="regions-list">
+        <!-- NORTH AMERICA -->
+        <a href="psychological-north-america.html" class="region-link">
+          <span class="region-number">
+            01
+          </span>
+          <span class="region-info">
+            <span class="region-name">
+              North America
+            </span>
+            <span class="region-description">
+              Psychological and family support services across the United States, Canada and Mexico.
+            </span>
+          </span>
+          <span class="region-arrow">
+            →
+          </span>
+        </a>
+        <!-- SOUTH AMERICA -->
+        <a href="psychological-south-america.html" class="region-link">
+          <span class="region-number">
+            02
+          </span>
+          <span class="region-info">
+            <span class="region-name">
+              South America
+            </span>
+            <span class="region-description">
+              Organizations supporting children with cancer and their families through counselling, connection and psychosocial care.
+            </span>
+          </span>
+          <span class="region-arrow">
+            →
+          </span>
+        </a>
+        <!-- EUROPE -->
+        <a href="psychological-europe.html" class="region-link">
+          <span class="region-number">
+            03
+          </span>
+          <span class="region-info">
+            <span class="region-name">
+              Europe
+            </span>
+            <span class="region-description">
+              Emotional and psychosocial support from childhood cancer organizations across Europe.
+            </span>
+          </span>
+          <span class="region-arrow">
+            →
+          </span>
+        </a>
+        <!-- ASIA -->
+        <a href="psychological-asia.html" class="region-link">
+          <span class="region-number">
+            04
+          </span>
+          <span class="region-info">
+            <span class="region-name">
+              Asia
+            </span>
+            <span class="region-description">
+              Family support, counselling, peer connection and emotional wellbeing resources across Asia.
+            </span>
+          </span>
+          <span class="region-arrow">
+            →
+          </span>
+        </a>
+        <!-- AFRICA -->
+        <a href="psychological-africa.html" class="region-link">
+          <span class="region-number">
+            05
+          </span>
+          <span class="region-info">
+            <span class="region-name">
+              Africa
+            </span>
+            <span class="region-description">
+              Psychosocial and emotional support resources for children with cancer and their families across Africa.
+            </span>
+          </span>
+          <span class="region-arrow">
+            →
+          </span>
+        </a>
+        <!-- AUSTRALIA & OCEANIA -->
+        <a href="psychological-oceania.html" class="region-link">
+          <span class="region-number">
+            06
+          </span>
+          <span class="region-info">
+            <span class="region-name">
+              Australia &amp; Oceania
+            </span>
+            <span class="region-description">
+              Family wellbeing, counselling, peer support and emotional resources across Australia and New Zealand.
+            </span>
+          </span>
+          <span class="region-arrow">
+            →
+          </span>
+        </a>
+      </div>
     </section>
-
-
-    <section class="note">
-
-      <div class="note-box">
-
-        <h3>
+    <!-- ================================
+         INFORMATION NOTE
+    ================================= -->
+    <section class="financial-note">
+      <div class="note-icon">
+        i
+      </div>
+      <div class="note-content">
+        <h2>
           A note about psychological support
-        </h3>
-
+        </h2>
         <p>
           Every family responds to a cancer diagnosis differently.
           Psychological and psychosocial support can include professional
           counselling, child-life services, peer support, family programmes,
-          support for siblings and help from social workers. If a child or
-          family member is experiencing persistent distress, anxiety or
-          changes in mood, consider speaking with the child's healthcare
+          support for siblings, and help from social workers. If a child
+          or family member is experiencing persistent distress, anxiety,
+          or changes in mood, consider speaking with the child's healthcare
           team about appropriate professional support.
         </p>
-
       </div>
-
     </section>
-
-
-    <section class="closing">
-
-      <p>
+    <!-- ================================
+         CLOSING
+    ================================= -->
+    <section class="financial-closing">
+      <p class="closing-eyebrow">
         YOU DON'T HAVE TO NAVIGATE THIS ALONE
       </p>
-
       <h2>
         There is support for the child — and for the people beside them.
       </h2>
-
     </section>
-
   </main>
-
-
+  <!-- ================================
+       FOOTER
+  ================================= -->
   <footer>
-
     <div>
-      © 2026 Alongside
+      <div class="footer-brand">
+        Alongside
+      </div>
+      <span class="footer-tagline">
+        SUPPORT FOR THE JOURNEY
+      </span>
     </div>
-
-    <div>
-      Families are stronger together.
+    <div class="footer-links">
+      <a href="index.html">
+        Home
+      </a>
+      <a href="financial-support.html">
+        Financial Support
+      </a>
+      <a href="psychological-support.html">
+        Psychological Support
+      </a>
+      <a href="social-support.html">
+        Social Support
+      </a>
+      <a href="legal-support.html">
+        Legal Support
+      </a>
+      <a href="about.html">
+        About Website
+      </a>
     </div>
-
   </footer>
-
 </body>
 </html>
